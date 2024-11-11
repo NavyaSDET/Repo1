@@ -1,18 +1,27 @@
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginSteps {
+	
+// public  WebDriver driver = new ChromeDriver();
 
-
-
+// public LoginPage Ip;
 
 	@Given("user is on the login page")
 	public void user_is_on_the_login_page() {
+		
+		
+		
+		// driver.get("https//:www.google.com");
 	System.out.println("Inside Step-user is on the login page");
+	//System.setProperty);
+
 	}
 
 	@When("user enters username and password")

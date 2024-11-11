@@ -1,4 +1,4 @@
-Feature: Array detail page
+  Feature: Array detail page
 
   Scenario: Validate user navigated to array details page when clicked on get started
     Given The user is on the DS Introduction home page

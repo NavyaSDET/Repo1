@@ -1,0 +1,133 @@
+package pageObjects;
+
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class IntroductionPage {
+	public WebDriver driver;
+
+	public IntroductionPage(WebDriver driver) {
+		this.driver = driver;
+		//PageFactory.initElements(driver, this);
+	}
+	By NumpyNinja =  By.cssSelector("a[href='/home']");
+	By Datastructure = By.cssSelector("a.dropdown-toggle");
+	By DsDropdown = By.cssSelector("a.dropdown-item");
+
+	By cardBody = By.cssSelector("div.card-body");
+	By cardTitle = By.cssSelector("h5.card-title");
+	By cardText = By.cssSelector("p.card-text");
+	By getStartedButtonOnCard = By.cssSelector("a.btn-primary");
+	By signInButton=By.cssSelector("a[href='/login']");
+	By registerButton=By.cssSelector("a[href='/register']");
+	By warningMessage = By.cssSelector(".alert.alert-primary");
+	By userNameInputfield=By.cssSelector("input[name='username']");
+	By passWordNameInputField=By.cssSelector("input[name='password']");
+	By loginButton=By.cssSelector("input[type='submit']");
+	By displayQaChamps=By.cssSelector(".navbar-nav ul a:nth-child(2)");
+    By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
+    By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
+    By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
+    By tryHereButton=By.cssSelector("a[href='/tryEditor']");
+    By codeEditorPage=By.cssSelector("pre.codeMirror-line");
+    By runButton=By.cssSelector("[button[type='button']");
+    By errorMessage=By.cssSelector(null);
+    
+    
+	public void validateUserIsOnIntroductionPage() {
+		Assert.assertEquals(driver.findElement(NumpyNinja).getText(), "NumpyNinja"); 
+		Assert.assertTrue(driver.findElement(cardBody).isDisplayed());
+		Assert.assertTrue(driver.findElement(signInButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(registerButton).isDisplayed());
+	}
+
+	public void clickOnDataStructureDropdown() {
+		driver.findElement(Datastructure).click();
+		Assert.assertTrue(driver.findElement(DsDropdown).isDisplayed());
+	}
+
+	public void validateListInDataStructureDropDownMenu() {
+		Assert.assertEquals(driver.findElements(DsDropdown).size(), 6);
+		Assert.assertEquals(driver.findElements(DsDropdown).get(0).getText(), "Arrays");
+		Assert.assertEquals(driver.findElements(DsDropdown).get(1).getText(), "Linked List");
+		Assert.assertEquals(driver.findElements(DsDropdown).get(2).getText(), "Stack");
+		Assert.assertEquals(driver.findElements(DsDropdown).get(3).getText(), "Queue");
+		Assert.assertEquals(driver.findElements(DsDropdown).get(4).getText(), "Tree");
+		Assert.assertEquals(driver.findElements(DsDropdown).get(5).getText(), "Graph");
+	}
+
+	public void clickOnDSIntroductionhomepage() {
+		driver.findElements(getStartedButtonOnCard).get(0).click();
+	}
+
+	public void validateWarningMessageWhenNotLoggedIn() {
+		Assert.assertTrue(driver.findElement(warningMessage).isDisplayed());
+		Assert.assertEquals(driver.findElement(warningMessage).getText(), "You are not logged in");
+		Assert.assertEquals(driver.findElements(warningMessage).size(), 1);
+	}
+
+	public void clickOnRegisterlink() {
+		driver.findElement(registerButton).click();	
+	}
+
+	public void validateUserNavigatedToRegisterPage() {
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/register");
+	}
+
+	public void completeTheLOgin() {
+		driver.findElement(signInButton).click();
+		driver.findElement(userNameInputfield).sendKeys("qachamps3");
+		driver.findElement(passWordNameInputField).sendKeys("Ninjatest@123");	
+		driver.findElement(loginButton).click();
+		Assert.assertTrue(driver.findElement(displayQaChamps).isDisplayed());
+	}
+
+	public void clickOnGetStartedButtonOfDSIntroduction() {
+		driver.findElements(getStartedButtonOnCard).get(0).click();			
+	}
+	
+	public void validateUserisOnDSIntroduction() {
+		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
+
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+	}	
+		public void validateTimeComplexiButtonDisplayed() {
+        Assert.assertTrue(driver.findElement(dispalyTimeComplexity).isDisplayed());
+	}
+		
+		public void clickOnTimeComplexiButton() {
+	        driver.findElement(dispalyTimeComplexity).click();
+		}
+       public void validateTimeComplexitypage() {
+    	Assert.assertTrue(driver.findElement(timeComplexityPage).isDisplayed());   
+		Assert.assertEquals(driver.findElement(timeComplexityPage).getText(), " Time Complexity");
+				
+       }
+       
+      public void clickOnTryHerebutton () {
+    driver.findElement(tryHereButton).click();	  
+    	  
+      }
+      
+   public void codeTryEditorPage()  {
+	Assert.assertTrue(driver.findElement(codeEditorPage).isDisplayed());
+	Assert.assertTrue(driver.findElement(runButton).isDisplayed());
+   }
+
+   public void enterCodeInEditor(String codeText  )  {
+		driver.findElement(codeEditorPage).sendKeys(codeText);
+	   }
+   public void clickOnRunButton() {
+	 driver.findElement(runButton).click();  
+   }
+   public void errorMessageDisplayed() {
+	  Alert alert= driver.switchTo().alert();
+	   String alertText=alert.getText();
+	   alert.dismiss();
+   Assert.assertEquals("flase",driver.findElement(By.id(alertText)).getText());   
+   }
+    }
+

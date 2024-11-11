@@ -16,9 +16,9 @@ Feature: Geetha AUtomation Scenarios
     When The user clicks Register link on the DS Introduction page
     Then The user should navigate to register page
 
-  Scenario: Clicking on get started for data structers lands on Data Structers details page
+	Scenario: Clicking on get started for data structers lands on Data Structers details page
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button
+    When The user clicks the Get Started button of Ds Introduction
     Then The user should navigate to DS Intoduction details page
     And User should see the timeComplexity link
 

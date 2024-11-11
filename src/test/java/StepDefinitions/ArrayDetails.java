@@ -7,22 +7,27 @@ import io.cucumber.java.en.When;
 public class ArrayDetails {
 	@Given("The user is on the DS Introduction home page")
 	public void the_user_is_on_the_ds_introduction_home_page() {
+		ip.validateUserIsOnIntroductionPage();
 		System.out.println("The user is on the DS Introduction home page");
 	   
 	}
 
 	@When("The user clicks on Get Started link for array")
 	public void the_user_clicks_on_get_started_link_for_array() {
+	
+		ip.arrayGetStartedBtn();
 		System.out.println("The user clicks on Get Started link for array");
 	}
 
 	@Then("The user is on the array details page")
 	public void the_user_is_on_the_array_details_page() {
+		ip.arrayDetail();
 		System.out.println("The user is on the array details page");
 	}
 
 	@Given("The user is on the Array page")
 	public void the_user_is_on_the_array_page() {
+		ip.arrayDetail();
 		System.out.println("The user is on the Array page");
 	}
 

@@ -1,26 +1,39 @@
 package StepDefinitions;
 
+import org.openqa.selenium.By;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class QueueDetails {
+	
 	@When("The user clicks on Get started link for Queue")
 	public void the_user_clicks_on_get_started_link_for_queue() {
+	
+		//driver.findElement(By.xpath("//a[@href='queue']")).Click;
+		
 	   System.out.println("The user clicks on Get started link for Queue");
 	}
 	@Then("The user is on Queue Details page")
 	public void the_user_is_on_queue_details_page() {
+		
+	//driver.findElement.(By.xapth("//a[@href='implementation-lists']")).click;
 		 System.out.println("The user is on Queue Details page");
 	}
 
 	@Given("The user is on the Queue page")
 	public void the_user_is_on_the_queue_page() {
+		//driver.findElement(By.xpath("//a[@href='/tryEditor']")).Click;
+		
 		 System.out.println("The user is on the Queue page");
 	}
 
 	@When("The user clicks on Implementation of Queue python link")
 	public void the_user_clicks_on_implementation_of_queue_python_link() {
+		
+		
+	// driver.findElement(By.xapth("//button[@type='button']")).click;
 		 System.out.println("The user clicks on Implementation of Queue python link");
 	}
 
