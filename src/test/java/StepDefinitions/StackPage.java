@@ -8,6 +8,7 @@ public class StackPage {
 
 	@Given("The user is on the DS Algo Home Page")
 	public void the_user_is_on_the_ds_algo_home_page() {
+		
 		System.out.println("User is on DS algo homepage ");
 		
 	}
@@ -71,12 +72,12 @@ public class StackPage {
 
 	@When("The User writes Valid python code")
 	public void the_user_writes_valid_python_code() {
-		System.out.println("");
+		System.out.println("The User writes Valid python code");
 		}
 
 	@When("click Run button")
 	public void click_run_button() {
-		System.out.println("");
+		System.out.println("click Run button");
 	}
 
 	@Then("User is able to see the output in console")
@@ -86,57 +87,57 @@ public class StackPage {
 
 	@When("the user writes invalid python code")
 	public void the_user_writes_invalid_python_code() {
-		System.out.println("");
+		System.out.println("the user writes invalid python code");
 	}
 
 	@Then("User is able to see the error msg in pop up window")
 	public void user_is_able_to_see_the_error_msg_in_pop_up_window() {
-		System.out.println("");
+		System.out.println("User is able to see the error msg in pop up window");
 	}
 
 	@Given("The user is on the editor page withAlert error message")
 	public void the_user_is_on_the_editor_page_with_alert_error_message() {
-		System.out.println("");
+		System.out.println("The user is on the editor page withAlert error message");
 	}
 
 	@When("The user click the ok button in the alert window")
 	public void the_user_click_the_ok_button_in_the_alert_window() {
-		System.out.println("");
+		System.out.println("The user click the ok button in the alert window");
 	}
 
 	@Then("The user is on the same page having Editor and Run button")
 	public void the_user_is_on_the_same_page_having_editor_and_run_button() {
-		System.out.println("");
+		System.out.println("The user is on the same page having Editor and Run butto");
 	}
 
 	@Given("The user is in the Stack page after logged in")
 	public void the_user_is_in_the_stack_page_after_logged_in() {
-		System.out.println("");
+		System.out.println("The user is in the Stack page after logged i");
 	}
 
 	@Then("The user should be directed to {string} Page")
 	public void the_user_should_be_directed_to_page(String string) {
-		System.out.println("");
+		System.out.println("The user should be directed to {string} Page");
 	}
 
 	@Given("The user is in the Implementation page")
 	public void the_user_is_in_the_implementation_page() {
-		System.out.println("");
+		System.out.println("The user is in the Implementation pag");
 	}
 
 	@Given("The user is on the editor page with Alert error message")
 	public void the_user_is_on_the_editor_page_with_alert_error_message1() {
-		System.out.println("");
+		System.out.println("The user is on the editor page with Alert error message");
 	}
 
 	@Given("The user is in the Applications page")
 	public void the_user_is_in_the_applications_page() {
-		System.out.println("");
+		System.out.println("The user is in the Applications pag");
 	}
 
 	@Then("The user should be redirected to {string} page")
 	public void the_user_should_be_redirected_to_page(String string) {
-		System.out.println("");
+		System.out.println("The user should be redirected to {string} page");
 	}
 
 

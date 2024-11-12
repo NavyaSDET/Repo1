@@ -80,6 +80,7 @@ public class LoginSteps {
 	public void the_user_clicks_login_button_after_entering_invalid_and_invalid(String string, String string2) throws InterruptedException {
 		login.loginValiduser(string, string2);
 	}
+<<<<<<< HEAD
 
 
 	@Then("The user should able to see an error message {string}.")
@@ -110,4 +111,6 @@ public class LoginSteps {
 
 
 
+=======
+>>>>>>> 990a941843e0d6936563cff5d74748873e9f40eb
 }
