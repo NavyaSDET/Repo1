@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.junit.*;
+import org.testng.*;
 
 public class HomePage { 
 	public WebDriver driver;

@@ -12,20 +12,9 @@ import pageObjects.HomePage;
 
 public class Home {
 
-	public WebDriver driver;
+	public WebDriver driver = Hooks.driver;
 	public HomePage hp;
 
-	@Before
-	public void setup() {
-		driver = new ChromeDriver();
-	}
-	
-	@After
-	public void tearDown() {
-		if(driver!=null) {
-			driver.quit();
-		}
-	}
 
 	@Given("The user should be open the browser")
 	public void the_user_should_be_open_the_browser() {	

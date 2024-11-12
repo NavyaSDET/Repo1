@@ -1,6 +1,6 @@
 package pageObjects;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +12,7 @@ public class IntroductionPage {
 		this.driver = driver;
 		//PageFactory.initElements(driver, this);
 	}
+
 	By NumpyNinja =  By.cssSelector("a[href='/home']");
 	By Datastructure = By.cssSelector("a.dropdown-toggle");
 	By DsDropdown = By.cssSelector("a.dropdown-item");
@@ -27,16 +28,19 @@ public class IntroductionPage {
 	By passWordNameInputField=By.cssSelector("input[name='password']");
 	By loginButton=By.cssSelector("input[type='submit']");
 	By displayQaChamps=By.cssSelector(".navbar-nav ul a:nth-child(2)");
-    By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
-    By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
-    By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
-    By tryHereButton=By.cssSelector("a[href='/tryEditor']");
-    By codeEditorPage=By.cssSelector("pre.codeMirror-line");
-    By runButton=By.cssSelector("[button[type='button']");
-    By errorMessage=By.cssSelector(null);
-    
-    
+	By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
+	By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
+	By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
+	By tryHereButton=By.cssSelector("a[href='/tryEditor']");
+	By codeEditorPage=By.cssSelector("pre.codeMirror-line");
+	By codeInputField = By.cssSelector(".CodeMirror textarea");
+	By consoleOutput = By.cssSelector("#output");
+	By runButton=By.cssSelector("button[type='button']");   
+	By arrayGetStartedBtn= By.cssSelector("a[href='array']");
+	By queueGetStartedBtn= By.cssSelector("a[href='queue']");
+
 	public void validateUserIsOnIntroductionPage() {
+
 		Assert.assertEquals(driver.findElement(NumpyNinja).getText(), "NumpyNinja"); 
 		Assert.assertTrue(driver.findElement(cardBody).isDisplayed());
 		Assert.assertTrue(driver.findElement(signInButton).isDisplayed());
@@ -87,47 +91,53 @@ public class IntroductionPage {
 	public void clickOnGetStartedButtonOfDSIntroduction() {
 		driver.findElements(getStartedButtonOnCard).get(0).click();			
 	}
-	
+
 	public void validateUserisOnDSIntroduction() {
 		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
 		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
 
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
 	}	
-		public void validateTimeComplexiButtonDisplayed() {
-        Assert.assertTrue(driver.findElement(dispalyTimeComplexity).isDisplayed());
+	public void validateTimeComplexiButtonDisplayed() {
+		Assert.assertTrue(driver.findElement(dispalyTimeComplexity).isDisplayed());
 	}
-		
-		public void clickOnTimeComplexiButton() {
-	        driver.findElement(dispalyTimeComplexity).click();
-		}
-       public void validateTimeComplexitypage() {
-    	Assert.assertTrue(driver.findElement(timeComplexityPage).isDisplayed());   
-		Assert.assertEquals(driver.findElement(timeComplexityPage).getText(), " Time Complexity");
-				
-       }
-       
-      public void clickOnTryHerebutton () {
-    driver.findElement(tryHereButton).click();	  
-    	  
-      }
-      
-   public void codeTryEditorPage()  {
-	Assert.assertTrue(driver.findElement(codeEditorPage).isDisplayed());
-	Assert.assertTrue(driver.findElement(runButton).isDisplayed());
-   }
 
-   public void enterCodeInEditor(String codeText  )  {
-		driver.findElement(codeEditorPage).sendKeys(codeText);
-	   }
-   public void clickOnRunButton() {
-	 driver.findElement(runButton).click();  
-   }
-   public void errorMessageDisplayed() {
-	  Alert alert= driver.switchTo().alert();
-	   String alertText=alert.getText();
-	   alert.dismiss();
-   Assert.assertEquals("flase",driver.findElement(By.id(alertText)).getText());   
-   }
-    }
+	public void clickOnTimeComplexiButton() {
+		driver.findElement(dispalyTimeComplexity).click();
+	}
+	
+	public void validateTimeComplexitypage() {
+		Assert.assertTrue(driver.findElement(timeComplexityPage).isDisplayed());   
+		Assert.assertEquals(driver.findElement(timeComplexityPage).getText(), "Time Complexity");
+	}
 
+	public void clickOnTryHerebutton () {
+		driver.findElement(tryHereButton).click();	  
+
+	}
+
+	public void codeTryEditorPage()  {
+		Assert.assertTrue(driver.findElement(codeEditorPage).isDisplayed());
+		Assert.assertTrue(driver.findElement(runButton).isDisplayed());
+	}
+
+	public void enterCodeInEditor(String codeText  )  {
+		driver.findElement(codeInputField).sendKeys(codeText);
+	}
+	public void clickOnRunButton() {
+		driver.findElement(runButton).click();  
+	}
+	public void validateErrorMessageDisplayedOnAlert(String expectedErrorHeader, String expectedErrorMessage) {
+		Alert alert= driver.switchTo().alert();
+		String alertText=alert.getText();
+		Assert.assertEquals(alertText, expectedErrorMessage);   
+	}
+
+	public void clickOnGetStartedButtonOfArray() {
+		driver.findElement(arrayGetStartedBtn).click();			
+	}
+	
+	public void clickOnGetStartedButtonOfQueue() {
+		driver.findElement(queueGetStartedBtn).click();			
+	}
+}

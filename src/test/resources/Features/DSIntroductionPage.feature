@@ -18,36 +18,48 @@ Feature: Geetha AUtomation Scenarios
 
 	Scenario: Clicking on get started for data structers lands on Data Structers details page
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of Ds Introduction
+    When The user clicks the Get Started button of DS Introduction
     Then The user should navigate to DS Intoduction details page
     And User should see the timeComplexity link
 
   Scenario: Clicking on time complexity navigate to the page
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button
+    When The user clicks the Get Started button of DS Introduction
     And The user clicks the Time Complexity button
     Then User should navigate to Time Complexity page
     And User should see Practice Question link and try here
 
   Scenario: Clicking on Try Here on time complexity opens python editor
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button
+    When The user clicks the Get Started button of DS Introduction
     And The user clicks the Time Complexity button
     And User clicks Try here link
     Then User should navigate to tryEditor page
 
   Scenario: Error message displayed for invalid code on try editor for Time Complexity
-    Given User is on Try Here page for time complexity
+    Given The user is on the DS Introduction page as signedIn
+    And The user clicks the Get Started button of DS Introduction
+    And The user clicks the Time Complexity button
+    And User clicks Try here link
+    And User is on Try Here page for time complexity
     When The user write the invalid code in Editor
     And Click the Run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for Time Complexity
-    Given User is on Try Here page for time complexity
+    Given The user is on the DS Introduction page as signedIn
+    And The user clicks the Get Started button of DS Introduction
+    And The user clicks the Time Complexity button
+    And User clicks Try here link
+    And User is on Try Here page for time complexity
     When Click the Run button
     Then The user should not see any error message or alert
 
   Scenario: Valid code on try editor for Time Complexity runs successfully
-    Given User is on Try Here page for time complexity
+    Given The user is on the DS Introduction page as signedIn
+    And The user clicks the Get Started button of DS Introduction
+    And The user clicks the Time Complexity button
+    And User clicks Try here link
+    And User is on Try Here page for time complexity
     When The user write the valid code in Editor
     And Click the Run button
