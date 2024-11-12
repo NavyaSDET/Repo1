@@ -16,7 +16,7 @@ Feature: Geetha AUtomation Scenarios
     When The user clicks Register link on the DS Introduction page
     Then The user should navigate to register page
 
-	Scenario: Clicking on get started for data structers lands on Data Structers details page
+  Scenario: Clicking on get started for data structers lands on Data Structers details page
     Given The user is on the DS Introduction page as signedIn
     When The user clicks the Get Started button of DS Introduction
     Then The user should navigate to DS Intoduction details page
@@ -63,3 +63,4 @@ Feature: Geetha AUtomation Scenarios
     And User is on Try Here page for time complexity
     When The user write the valid code in Editor
     And Click the Run button
+    Then The user should able to see output in the console

@@ -26,6 +26,7 @@ Feature: Queue Details page
 
   Scenario: No error message displayed for empty code on try editor for Implementation of Queue in python
     Given The user on implementation Queue in python page
+    And User clicks Try here link
     When The user write the invalid code in Editor
     And Click the Run button
     Then The user should able to see an error message in alert window

@@ -105,7 +105,7 @@ public class IntroductionPage {
 	public void clickOnTimeComplexiButton() {
 		driver.findElement(dispalyTimeComplexity).click();
 	}
-	
+
 	public void validateTimeComplexitypage() {
 		Assert.assertTrue(driver.findElement(timeComplexityPage).isDisplayed());   
 		Assert.assertEquals(driver.findElement(timeComplexityPage).getText(), "Time Complexity");
@@ -124,6 +124,7 @@ public class IntroductionPage {
 	public void enterCodeInEditor(String codeText  )  {
 		driver.findElement(codeInputField).sendKeys(codeText);
 	}
+
 	public void clickOnRunButton() {
 		driver.findElement(runButton).click();  
 	}
@@ -136,8 +137,16 @@ public class IntroductionPage {
 	public void clickOnGetStartedButtonOfArray() {
 		driver.findElement(arrayGetStartedBtn).click();			
 	}
-	
+
 	public void clickOnGetStartedButtonOfQueue() {
 		driver.findElement(queueGetStartedBtn).click();			
+	}
+
+	public void validateConsoleOutput(String expectedOuputText) {
+		Assert.assertEquals(driver.findElement(consoleOutput).getText(), expectedOuputText);
+	}
+
+	public void validateNoConsoleOuput() {
+		Assert.assertFalse(driver.findElement(consoleOutput).isDisplayed());
 	}
 }

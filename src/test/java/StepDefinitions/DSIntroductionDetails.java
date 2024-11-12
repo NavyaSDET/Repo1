@@ -1,15 +1,10 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
-import pageObjects.IntroductionPage;
 import pageObjects.IntroductionPage;
 
 public class DSIntroductionDetails {
@@ -17,7 +12,6 @@ public class DSIntroductionDetails {
 	public WebDriver driver = Hooks.driver;
 	public HomePage hp;
 	public IntroductionPage ip;
-
 
 	@Given("The user should open the DS Algo Portal URL in any supported browser")
 	public void the_user_should_open_the_ds_algo_portal_url_in_any_supported_browser() {
@@ -102,7 +96,6 @@ public class DSIntroductionDetails {
 	@Then("User should see the timeComplexity link")
 	public void user_should_see_the_time_complexity_link() {
 		ip.validateTimeComplexiButtonDisplayed();
-
 	}
 
 	@When("The user clicks the Time Complexity button")
@@ -128,42 +121,41 @@ public class DSIntroductionDetails {
 	@Then("User should navigate to tryEditor page")
 	public void user_should_navigate_to_try_editor_page() {
 		ip.codeTryEditorPage();
-		System.out.println("User should navigate to tryEditor page");
 	}
 
 	@Given("User is on Try Here page for time complexity")
 	public void user_is_on_try_here_page_for_time_complexity() {
-		
 		ip.codeTryEditorPage();
-		System.out.println("User is on Try Here page for time complexity");
 	}
 
 	@When("The user write the invalid code in Editor")
 	public void the_user_write_the_invalid_code_in_editor() {
 		ip.enterCodeInEditor("ABC");
-		System.out.println("The user write the invalid code in Editor");
 	}
 
 	@When("Click the Run button")
 	public void click_the_run_button() {
 		ip.clickOnRunButton();
-		System.out.println("Click the Run button");
 	}
 
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 		ip.validateErrorMessageDisplayedOnAlert("dsportalapp.herokuapp.com says", "NameError: name 'ABC' is not defined on line 1");
-		System.out.println("The user should able to see an error message in alert window");
 	}
 
 	@Then("The user should not see any error message or alert")
 	public void the_user_should_not_see_any_error_message_or_alert() {
-		System.out.println("The user should not see any error message or alert");
+		ip.validateNoConsoleOuput();
 	}
 
 	@When("The user write the valid code in Editor")
 	public void the_user_write_the_valid_code_in_editor() {
-		System.out.println("The user write the valid code in Editor");
+		ip.enterCodeInEditor("print(\"hello\")");
+	}
+
+	@Then("The user should able to see output in the console")
+	public void the_user_should_able_to_see_output_in_the_console() {
+	    ip.validateConsoleOutput("hello");
 	}
 
 }
