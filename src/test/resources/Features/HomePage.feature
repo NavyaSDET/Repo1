@@ -1,7 +1,6 @@
 Feature: DS Homepage
 
   Scenario: Validate user lands on default home page
-    Given The user should be open the browser
     When The user enter the DS_Algo Portal <URL>
     Then The user should landed on the DS_Algo Get Started page with message You are at the right place
 
