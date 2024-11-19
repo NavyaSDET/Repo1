@@ -1,22 +1,17 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.IntroductionPage;
-import pageObjects.QueuePage;
+import PageObjects.IntroductionPage;
+import PageObjects.QueuePage;
 
-public class QueueDetails {
-	public WebDriver driver = Hooks.driver;
-	public QueuePage qp;
-	public IntroductionPage ip;
+public class QueueStepDefinitions {
+	public QueuePage qp = new QueuePage();
+	public IntroductionPage ip = new IntroductionPage();
 
 	@When("The user clicks on Get started link for Queue")
 	public void the_user_clicks_on_get_started_link_for_queue() {
-		qp = new QueuePage(driver);
-		ip = new IntroductionPage(driver);
 		ip.clickOnGetStartedButtonOfQueue();
 	}
 

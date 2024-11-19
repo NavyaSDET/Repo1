@@ -1,27 +1,19 @@
 package PageObjects;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-import java.time.Duration;
-
-import org.junit.Assert;
+import StepDefinitions.Hooks;
 
 public class LoginPage {
-	WebDriver driver;
+	WebDriver driver=Hooks.getDriver();
+
 	By txt_username = By.id("id_username");
 	By txt_password = By.id("id_password");
 	By btn_login =   By.xpath("//input[@value='Login']");
 	By warningMessage = By.cssSelector(".alert.alert-primary");
-	
-	public LoginPage(WebDriver rdriver) {
-		this.driver = rdriver;
-	}
 	
 	public void enterUsername(String username) {
 		driver.findElement(txt_username).sendKeys(username);

@@ -1,15 +1,14 @@
-package pageObjects;
+package PageObjects;
 
 import org.testng.Assert;
+
+import StepDefinitions.Hooks;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ArrayPage {
-	public WebDriver driver;
-
-	public ArrayPage(WebDriver rdriver) {
-		this.driver = rdriver;		
-	}
+	WebDriver driver=Hooks.getDriver();
 
 	By arrayDetail=By.cssSelector("h4.bg-secondary");
 	By topicsCovered = By.cssSelector("p.bg-secondary");

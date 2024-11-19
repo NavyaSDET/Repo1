@@ -1,112 +1,99 @@
+Feature: Stack page
+  I want to test the StackPage
 
-Feature: Stack feature
-  I want to use this template for my feature file
+  Background: Login and navigate to stack page
+    Given The user is on the DS Introduction page as signedIn
+    And The user clicks on Get Started link for stack
 
-Scenario: Home Page
- Given  The user is on the DS Algo Home Page
- When The user clicks Get Started button below the Stack
- Then The user should land in "Stack" page
+  Scenario: Validate user navigated to stack details page when clicked on get started
+    Then The user is on the stack details page
 
-Scenario: Operations in Stack Page
- Given  The user is on the Stack Home Page
- When The user clicks on Operations in Stack link below Topics Covered
- Then The user should land in "Operations in Stack" page
+  Scenario: Validate user can navigate to Operations in Stack page
+    Given The user is on the stack details page
+    When The user click on Operations in Stack link
+    Then the user is navigated to Operations in Stack page
 
+  Scenario: Validate user can Try here link page from Operations in Stack
+    Given The user is on the Operations in Stack page
+    When User clicks Try here link
+    Then User should navigate to tryEditor page
 
-  
-Scenario: Stack Operations Try here
- Given  The user is in the Operations in Stack page
- When The user clicks "Try Here" button
- Then The user should be redirected to a page having an tryEditor with a Run button to test
-  
-Scenario: Stack Operations try here with no code
- Given  The user is in the Operations in Stack page
- When The user clicks the Run Button without entering the code in the Editor
- Then Nothing happens to the page and no error message is displayed
-  
-Scenario: Stack Operations try here with valid code
- Given  The user is on the tryEditor page
- When The User writes Valid python code
- And click Run button
- Then User is able to see the output in console
-  
-Scenario: Stack Operations try here with invalid code
- Given  The user is on the tryEditor page
- When the user writes invalid python code
- And click Run button
- Then User is able to see the error msg in pop up window
-  
-Scenario: Stack  Operations try here error alert
- Given  The user is on the editor page withAlert error message
- When The user click the ok button in the alert window
- Then The user is on the same page having Editor and Run button
-  
-Scenario: Stack Implementation page
- Given  The user is in the Stack page after logged in
- When The user clicks "Implementation" button
- Then The user should be directed to "Implementation" Page
-  
-Scenario: Stack Implementation Try here
- Given  The user is in the Implementation page
- When The user clicks "Try Here" button
- Then The user should be redirected to a page having an tryEditor with a Run button to test
+  Scenario: Error message displayed for invalid code on try Editor for Operations in Stack page
+    Given The user is on the Operations in Stack page
+    And User clicks Try here link
+    When The user write the invalid code in Editor
+    And Click the Run button
+    Then The user should able to see an error message in alert window
 
-Scenario: Stack Implementation Try here with no code
- Given  The user is in the Implementation page
- When The user clicks the Run Button without entering the code in the Editor
- Then Nothing happens to the page and no error message is displayed
+  Scenario: No error message displayed for empty code on try editor for Operations in Stack page
+    Given The user is on the Operations in Stack page
+    And User clicks Try here link
+    When Click the Run button
+    Then The user should not see any error message or alert
 
-Scenario: Stack Implementation Try here with valid code
- Given  The user is on the tryEditor page
- When The User writes Valid python code
- And click Run button
- Then User is able to see the output in console
-  
-Scenario: Stack Implementation Try here with invalid code
- Given  The user is on the tryEditor page
- When the user writes invalid python code
- And click Run button
- Then User is able to see the error msg in pop up window
-  
-Scenario: Stack Implementation Try here Error Alert
- Given  The user is on the editor page with Alert error message
- When The user click the ok button in the alert window
- Then The user is on the same page having Editor and Run button
-  
-Scenario: Stack Applications page
- Given  The user is in the Stack page after logged in
- When The user clicks "Applications" button
- Then The user should be directed to "Applications" Page
-  
-Scenario: Stack Applications Try here
- Given  The user is in the Applications page
- When The user clicks "Try Here" button
- Then The user should be redirected to a page having an tryEditor with a Run button to test
+  Scenario: Valid code on try editor for Operations in Stack runs successfully
+    Given The user is on the Operations in Stack page
+    And User clicks Try here link
+    When The user write the valid code in Editor
+    And Click the Run button
+    Then The user should able to see output in the console
 
-Scenario: Stack Applications Try here with no code
- Given  The user is in the Applications page
- When The user clicks the Run Button without entering the code in the Editor
- Then Nothing happens to the page and no error message is displayed
-  
-Scenario: Stack Applications Try here with valid code
- Given  The user is on the tryEditor page
- When The User writes Valid python code
- And click Run button
- Then User is able to see the output in console
-  
-Scenario: Stack Applications Try here with invalid code
- Given  The user is on the tryEditor page
- When the user writes invalid python code
- And click Run button
- Then User is able to see the error msg in pop up window
-  
-Scenario: Stack Applications Try here Error Alert 
- Given  The user is on the editor page with Alert error message
- When The user click the ok button in the alert window
- Then The user is on the same page having Editor and Run button
-  
-Scenario: Stack Pratice Questions
- Given  The user is in the Stack page after logged in
- When The user clicks "Practice Questions" button
- Then The user should be redirected to "Practice" page
-  
+  Scenario: Validate user can navigate to Implementation page
+    Given The user is on the stack details page
+    When The user click on Implementation link
+    Then the user is navigated to Implementation page 
+    
+  Scenario: Validate user can click on Try here link from Implementation page
+    Given The user is on the Implementation page
+    When User clicks Try here link
+    Then User should navigate to tryEditor page
+
+  Scenario: Error message displayed for invalid code on try Editor for Implementation page
+    Given The user is on the Implementation page
+    And User clicks Try here link
+    When The user write the invalid code in Editor
+    And Click the Run button
+    Then The user should able to see an error message in alert window
+
+  Scenario: No error message displayed for empty code on try editor for Implementation page
+    Given The user is on the Implementation page
+    And User clicks Try here link
+    When Click the Run button
+    Then The user should not see any error message or alert
+
+  Scenario: Valid code on try editor for Implementation runs successfully
+    Given The user is on the Implementation page
+    And User clicks Try here link
+    When The user write the valid code in Editor
+    And Click the Run button
+    Then The user should able to see output in the console
+    
+    Scenario: Validate user can navigate to Applications page
+    Given The user is on the stack details page
+    When The user click on Applications link
+    Then the user is navigated to Applications page 
+    
+  Scenario: Validate user can click on Try here link from Applications page
+    Given The user is on the Applications page
+    When User clicks Try here link
+    Then User should navigate to tryEditor page
+
+  Scenario: Error message displayed for invalid code on try Editor for Applications page
+    Given The user is on the Applications page
+    And User clicks Try here link
+    When The user write the invalid code in Editor
+    And Click the Run button
+    Then The user should able to see an error message in alert window
+
+  Scenario: No error message displayed for empty code on try editor for Applications page
+    Given The user is on the Applications page
+    And User clicks Try here link
+    When Click the Run button
+    Then The user should not see any error message or alert
+
+  Scenario: Valid code on try editor for Applications runs successfully
+    Given The user is on the Applications page
+    And User clicks Try here link
+    When The user write the valid code in Editor
+    And Click the Run button
+    Then The user should able to see output in the console

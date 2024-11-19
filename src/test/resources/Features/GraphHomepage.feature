@@ -1,91 +1,69 @@
-
 Feature: Title of your feature
   I want to use this template for my feature file
 
- Scenario: DS_algo Home page
- Given  The user comes back to the DS_algo home page to select or start DS Graph
- When The user select "Graph" from the Data Structure dropdown menuor clicks the "Get Started" button in Graph Panel
- Then The user should be redirected to "Graph" home page.
-  
-Scenario: Graph home page
- Given  The user is on the "Graph" home page
- When The user clicks "Graph" link
- Then The user should be redirected to "Graph" page.
-  
-Scenario: Graph tyr here page
- Given  The user is on the "Graph" page
- When The user clicks "Try Here" button
- Then The user should be redirected to a page having Editor and run button
-  
-Scenario:  Graph Python Editor page without data
- Given  The user is on the Python Editor
- When The user clicks the Run Button without entering the code in the Editor
- Then Nothing happens to the page and no error message is displayed
-  
-Scenario:  Graph Python Editor page with valid data
- Given  The user is on the editor page
- When The user writes the valid python code
- And click run button
- Then The user is able to see the output inside the console.
-  
-Scenario: Graph Python Editor page with invalid data
- Given  The user is on the editor page
- When The user writes the invalid python code
- And click run button
- Then The user see error msg in alert window
-  
-Scenario: Graph Python Editor page with alert message
- Given  The user is on the editor page with Alert error message
- When The user click the ok button in the alert window
- Then The user is on the same page having Editor and Run button
-  
-Scenario: Graph Representations page
- Given  The user is on the "Graph" page
- When The user clicks "Graph Representations" link
- Then The user should be redirected to "Graph Representations" page.
-  
-Scenario: Graph Representations try here page
- Given  The user is on the "Graph Representations" page
- When The user clicks "Try Here" button
- Then The user should be redirected to a page having Editor and run button
-  
-Scenario: Graph Representations Python Editor page without data
- Given  The user is on the Python Editor
- When The user clicks the Run Button without entering the code in the Editor
- Then Nothing happens to the page and no error message is displayed
-  
-Scenario: Graph Representations Python Editor page with valid data
- Given  The user is on the editor page
- When The user writes the valid python code
- And click run button
- Then The user is able to see the output inside the console.
-  
-Scenario: Graph Representations Python Editor page with invalid data
- Given  The user is on the editor page
- When The user writes the invalid python code
- And click run button
- Then The user see error msg in alert window
-  
-Scenario: Graph Representations Python Editor page with alert message
- Given  The user is on the editor page with Alert error message
- When The user click the ok button in the alert window
- Then The user is on the same page having Editor and Run button
-  
-Scenario: Graph Practice Questions
- Given  The user is on the "Graph" page
- When The user clicks "Practice Questions" link
- Then The user should be redirected to "Practice Questions" page.
-  
-Scenario: signing out
- Given  The user is on the DS Algo Home Page
- When The user click the Sign out link
- Then The user able to see successful message :"Logged out successfully"
- And The user should able to see his Register and sign in link on the right side of the DS Algo Introduction Page
+  Background: Login and navigate to graph page
+    Given The user is on the DS Introduction page as signedIn
+    And The user clicks on Get Started link for graph
 
-Scenario: Close the Browser
- Given  The user is on the DS Algo Introduction Page
- When The user close the browser
- Then Browser should be closed.
-  
+  Scenario: Validate user navigated to graph details page when clicked on get started
+    Then The user is on the graph details page
 
- 
+  Scenario: Validate user can navigate to Graph in Graph page
+    Given The user is on the graph details page
+    When The user click on graph link in graph details page
+    Then the user is navigated to graph page under graph details
+
+  Scenario: Validate user can Try here link page from graphs
+    Given The user is on the graphs page under graph detials
+    When User clicks Try here link
+    Then User should navigate to tryEditor page
+
+  Scenario: Error message displayed for invalid code on try Editor for graphs page
+    Given The user is on the graphs page under graph detials
+    And User clicks Try here link
+    When The user write the invalid code in Editor
+    And Click the Run button
+    Then The user should able to see an error message in alert window
+
+  Scenario: No error message displayed for empty code on try editor for graphs page
+    Given The user is on the graphs page under graph detials
+    And User clicks Try here link
+    When Click the Run button
+    Then The user should not see any error message or alert
+
+  Scenario: Valid code on try editor for graphs runs successfully
+    Given The user is on the graphs page under graph detials
+    And User clicks Try here link
+    When The user write the valid code in Editor
+    And Click the Run button
+    Then The user should able to see output in the console
+
+  Scenario: Validate user can navigate to Graph Representations page
+    Given The user is on the graph details page
+    When The user click on graph representations link
+    Then the user is navigated to graph representations page 
+    
+  Scenario: Validate user can click on Try here link from graph representations page
+    Given The user is on the graphs representations page
+    When User clicks Try here link
+    Then User should navigate to tryEditor page
+
+  Scenario: Error message displayed for invalid code on try Editor for graph representations page
+    Given The user is on the graphs representations page
+    And User clicks Try here link
+    When The user write the invalid code in Editor
+    And Click the Run button
+    Then The user should able to see an error message in alert window
+
+  Scenario: No error message displayed for empty code on try editor for graph representations page
+    Given The user is on the graphs representations page
+    And User clicks Try here link
+    When Click the Run button
+    Then The user should not see any error message or alert
+
+  Scenario: Valid code on try editor for graph representations runs successfully
+    Given The user is on the graphs representations page
+    And User clicks Try here link
+    When The user write the valid code in Editor
+    And Click the Run button
+    Then The user should able to see output in the console

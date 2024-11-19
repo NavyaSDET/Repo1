@@ -1,24 +1,19 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.HomePage;
-import pageObjects.IntroductionPage;
+import PageObjects.HomePage;
+import PageObjects.IntroductionPage;
 
 public class DSIntroductionDetails {
 
-	public WebDriver driver = Hooks.driver;
-	public HomePage hp;
-	public IntroductionPage ip;
+	public HomePage hp = new HomePage();
+	public IntroductionPage ip =  new IntroductionPage();
 
 	@Given("The user should open the DS Algo Portal URL in any supported browser")
 	public void the_user_should_open_the_ds_algo_portal_url_in_any_supported_browser() {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		hp = new HomePage(driver);
-		ip = new IntroductionPage(driver);
-		System.out.println("The user enter the DS_Algo Portal <URL>");
+		hp.openUrl();
 	}
 
 	@Then("The user should land in Data Structure Introduction Page with register and Sign in links")
@@ -48,9 +43,6 @@ public class DSIntroductionDetails {
 
 	@Given("The user is on the DS Introduction page")
 	public void the_user_is_on_the_ds_introduction_page() {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		hp = new HomePage(driver);
-		ip = new IntroductionPage(driver);
 		hp.clickOnHomePageGetStartedButton();	
 	}
 
@@ -76,9 +68,7 @@ public class DSIntroductionDetails {
 
 	@Given("The user is on the DS Introduction page as signedIn")
 	public void the_user_is_on_the_ds_introduction_page_as_signed_in() {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		hp = new HomePage(driver);
-		ip = new IntroductionPage(driver);
+		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
 		ip.completeTheLOgin();
 	}
@@ -155,7 +145,7 @@ public class DSIntroductionDetails {
 
 	@Then("The user should able to see output in the console")
 	public void the_user_should_able_to_see_output_in_the_console() {
-	    ip.validateConsoleOutput("hello");
+		ip.validateConsoleOutput("hello");
 	}
 
 }
