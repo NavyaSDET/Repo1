@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -51,7 +52,7 @@ public class DSIntroductionDetails {
 		driver.get("https://dsportalapp.herokuapp.com/");
 		hp = new HomePage(driver);
 		ip = new IntroductionPage(driver);
-		hp.clickOnHomePageGetStartedButton();	
+		hp.clickOnHomePageGetStartedButton();
 	}
 
 	@When("The user clicks any Get Started buttons of data structures on the DS Introduction page")
@@ -108,8 +109,8 @@ public class DSIntroductionDetails {
 		ip.validateTimeComplexitypage();
 	}
 
-	@Then("User should see Practice Question link and try here")
-	public void user_should_see_practice_question_link_and_try_here() {
+	@Then(" User clicks on Get Started button from Tree panel")
+	public void  user_clicks_on_get_started_button_from_tree_panel() {
 		ip.validateTimeComplexitypage();
 	}
 

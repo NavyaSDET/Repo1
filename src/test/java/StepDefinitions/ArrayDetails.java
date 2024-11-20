@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -77,7 +78,7 @@ public class ArrayDetails {
 	public void the_user_click_on_applications_of_array_link() {
 		ap.clickOnApplicationOfArrayLink();
 	}
-	
+
 	@Then("the user is navigated to applications of array")
 	public void the_user_is_navigated_to_applications_of_array() {
 		ap.validateUserIsOnApplicationsOfArray();
