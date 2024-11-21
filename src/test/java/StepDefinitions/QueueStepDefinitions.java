@@ -17,7 +17,7 @@ public class QueueStepDefinitions {
 
 	@Then("The user is on Queue Details page")
 	public void the_user_is_on_queue_details_page() {
-		qp.validateUserIsOnQueueDetailsPage();	
+		qp.validateUserIsOnQueueDetailsPage();
 	}
 
 	@When("The user clicks on Implementation of Queue python link")
@@ -72,7 +72,7 @@ public class QueueStepDefinitions {
 	public void the_user_click_on_implementation_using_array_link() {
 		qp.clickOnImplementationUsingArray();
 	}
-	
+
 	@Then("the user is navigated to Implementation using array page")
 	public void the_user_is_navigated_to_implementation_using_array_page() {
 		qp.validateUserIsOnImplementationUsingArrayPage();
@@ -83,5 +83,5 @@ public class QueueStepDefinitions {
 		qp.clickOnImplementationUsingArray();
 		qp.validateUserIsOnImplementationUsingArrayPage();
 	}
-	
+
 }

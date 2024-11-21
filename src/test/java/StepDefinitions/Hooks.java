@@ -1,16 +1,16 @@
 package StepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-
 import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import Utilities.ConfigReader;
+
 
 public class Hooks {
 
@@ -50,6 +50,7 @@ public class Hooks {
             threadDriver.remove();
         }
     }
+
 
     public static WebDriver getDriver() {
         return threadDriver.get();
