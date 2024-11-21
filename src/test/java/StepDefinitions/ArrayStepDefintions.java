@@ -1,23 +1,19 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.ArrayPage;
-import pageObjects.IntroductionPage;
+import PageObjects.ArrayPage;
+import PageObjects.IntroductionPage;
 
-public class ArrayDetails {
+public class ArrayStepDefintions {
 
-	public WebDriver driver = Hooks.driver;
-	public ArrayPage ap;
-	public IntroductionPage ip;
+	public ArrayPage ap = new ArrayPage();
+	public IntroductionPage ip =  new IntroductionPage();
 
 	@When("The user clicks on Get Started link for array")
 	public void the_user_clicks_on_get_started_link_for_array() {
-		ap = new ArrayPage(driver);
-		ip = new IntroductionPage(driver);
 		ip.clickOnGetStartedButtonOfArray();
 	}
 

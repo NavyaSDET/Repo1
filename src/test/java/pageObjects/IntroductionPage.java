@@ -1,17 +1,15 @@
-package pageObjects;
+package PageObjects;
 
+import org.testng.Assert;
+import StepDefinitions.Hooks;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class IntroductionPage {
-	public WebDriver driver;
+	WebDriver driver=Hooks.getDriver();
 
-	public IntroductionPage(WebDriver driver) {
-		this.driver = driver;
-		//PageFactory.initElements(driver, this);
-	}
 
 	By NumpyNinja =  By.cssSelector("a[href='/home']");
 	By Datastructure = By.cssSelector("a.dropdown-toggle");
@@ -38,10 +36,12 @@ public class IntroductionPage {
 	By runButton=By.cssSelector("button[type='button']");
 	By arrayGetStartedBtn= By.cssSelector("a[href='array']");
 	By queueGetStartedBtn= By.cssSelector("a[href='queue']");
+	By stackGetStartedBtn= By.cssSelector("a[href='stack']");
+	By graphGetStartedBtn= By.cssSelector("a[href='graph']");
 
 	public void validateUserIsOnIntroductionPage() {
 
-		Assert.assertEquals(driver.findElement(NumpyNinja).getText(), "NumpyNinja");
+		Assert.assertEquals(driver.findElement(NumpyNinja).getText(), "NumpyNinja"); 
 		Assert.assertTrue(driver.findElement(cardBody).isDisplayed());
 		Assert.assertTrue(driver.findElement(signInButton).isDisplayed());
 		Assert.assertTrue(driver.findElement(registerButton).isDisplayed());
@@ -74,6 +74,10 @@ public class IntroductionPage {
 
 	public void clickOnRegisterlink() {
 		driver.findElement(registerButton).click();
+	}
+	
+	public void clickOnSignInlink() {
+		driver.findElement(signInButton).click();	
 	}
 
 	public void validateUserNavigatedToRegisterPage() {
@@ -132,6 +136,7 @@ public class IntroductionPage {
 		Alert alert= driver.switchTo().alert();
 		String alertText=alert.getText();
 		Assert.assertEquals(alertText, expectedErrorMessage);
+		alert.accept();
 	}
 
 	public void clickOnGetStartedButtonOfArray() {
@@ -142,6 +147,14 @@ public class IntroductionPage {
 		driver.findElement(queueGetStartedBtn).click();
 	}
 
+	public void clickOnGetStartedButtonOfStack() {
+		driver.findElement(stackGetStartedBtn).click();			
+	}
+	
+	public void clickOnGetStartedButtonOfGraph() {
+		driver.findElement(graphGetStartedBtn).click();			
+	}
+	
 	public void validateConsoleOutput(String expectedOuputText) {
 		Assert.assertEquals(driver.findElement(consoleOutput).getText(), expectedOuputText);
 	}

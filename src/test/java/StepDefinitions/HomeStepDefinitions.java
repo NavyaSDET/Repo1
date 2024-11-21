@@ -1,21 +1,18 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.HomePage;
+import PageObjects.HomePage;
 
-public class Home {
+public class HomeStepDefinitions {
 
-	public WebDriver driver = Hooks.driver;
-	public HomePage hp;
+	public HomePage hp = new HomePage();
 
 
 	@When("The user enter the DS_Algo Portal <URL>")
 	public void the_user_enter_the_ds_algo_portal_url() {
-		driver.get("https://dsportalapp.herokuapp.com/");
-		hp = new HomePage(driver);
+		hp.openUrl();
 	}
 
 	@Then("The user should landed on the DS_Algo Get Started page with message You are at the right place")

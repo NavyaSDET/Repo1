@@ -1,11 +1,11 @@
 package StepDefinitions;
 import org.openqa.selenium.WebDriver;
 
+import PageObjects.RegistrationPage;
+import PageObjects.TreePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.RegistrationPage;
-import pageObjects.TreePage;
 
 public class Tree {
 

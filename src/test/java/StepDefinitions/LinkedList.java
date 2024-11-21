@@ -2,12 +2,12 @@ package StepDefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import PageObjects.LinkedListPage;
+import PageObjects.RegistrationPage;
+import PageObjects.TreePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.LinkedListPage;
-import pageObjects.RegistrationPage;
-import pageObjects.TreePage;
 
 public class LinkedList {
 
