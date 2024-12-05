@@ -15,7 +15,7 @@ import Utilities.ConfigReader;
 public class Hooks {
 
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
-    private static WebDriver driver;
+    public static WebDriver driver;
 	public static String browser;
 
 	@BeforeAll

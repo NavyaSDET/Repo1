@@ -95,8 +95,8 @@ public class Registration {
 		RGPage.compareActualAndExpectedBrowserErrorMsg();
 	}
 
-	@When("The user clicks Register button after entering a username with spacebar characters other than digits and @\\/.\\/+\\/-\\/_ on registration form from sheetname {string} and row {int}")
-	public void the_user_clicks_register_button_after_entering_a_username_with_spacebar_characters_other_than_digits_and_on_registration_form_from_sheetname(String string, Integer int1) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
+	@When("The user clicks Register button after entering a username with spacebar characters other than digits and symbols on registration form from sheetname {string} and row {int}")
+	public void the_user_clicks_register_button_after_entering_a_username_with_spacebar_characters_other_than_digits_and_symbols_on_registration_form_from_sheetname(String string, Integer int1) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
 
 
 		RGPage.fillRegistrationForm("Register", 3);
@@ -203,7 +203,7 @@ public class Registration {
 	@When("User clicks on SignIn button from registration page")
 	public void user_clicks_on_sign_in_button_from_registration_page() {
 
-	   RGPage.clickLoginBtn();
+	   RGPage.clickSignInBtn();
 	}
 
 

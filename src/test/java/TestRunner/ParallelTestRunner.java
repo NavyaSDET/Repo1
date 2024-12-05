@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+		plugin = { "pretty", 
 				"html:target/report/parallel.html" }, // reporting purpose
 		features = {"src/test/resources/Features"}, //location of feature files
 		glue= "StepDefinitions" //location of step definition files
