@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import java.time.Duration;
@@ -16,7 +16,7 @@ import Utilities.ConfigReader;
 public class Hooks {
 
 	private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-	public static String browser;
+public static String browser;
 	public static WebDriver driver = null;
 
 	@BeforeAll
@@ -24,35 +24,34 @@ public class Hooks {
 		//Get browser Type from config file
 		ConfigReader.loadConfig();
 		//browser = ConfigReader.getBrowserType();
-		//browser = "chrome";
+		browser = "chrome";
+		if (browser.equals("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equals("firefox")) {
+			driver = new FirefoxDriver();
+		} else if(browser.equals("edge")) {
+			driver = new EdgeDriver();
+		}
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
 
+		driverThreadLocal.set(driver);
 	}
 
 	@Before
 	public void deleteCookies() throws Exception {
-		if (driverThreadLocal.get() == null) {			String browser = "chrome";
-			if (browser.equals("chrome")) {
-				driver = new ChromeDriver();
-			} else if (browser.equals("firefox")) {
-				driver = new FirefoxDriver();
-			} else if(browser.equals("edge")) {
-				driver = new EdgeDriver();
-			}
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-			driver.manage().window().maximize();
-			driver.manage().deleteAllCookies();
-			driverThreadLocal.set(driver);
-		}
+		
+
+		driver.manage().deleteAllCookies();
 	}
 
-	@After
+
+	@AfterAll
 	public static void closeDriver() {
 		if (driverThreadLocal.get() != null) {
 			driverThreadLocal.get().quit();
 			driverThreadLocal.remove();
-		}
-	}
-
+		}	}
 	public static WebDriver getDriver() {
 		return driverThreadLocal.get();
 	}

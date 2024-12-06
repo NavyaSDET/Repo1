@@ -9,10 +9,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = { "src/test/resources/Features"}, // location of feature files
-glue= {"StepDefinitions"}) // location of step definition files
+glue= {"StepDefinitions"},
+plugin= {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}) // location of step definition files
 public class TestRunner extends AbstractTestNGCucumberTests {
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
