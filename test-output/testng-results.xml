@@ -374,12 +374,12 @@ at ✽.The user is on the DS Introduction page as signedIn(file:///C:/Projects/R
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate user can Try here link page from Basic operations in lists"]]>
+                <![CDATA["Validate user lands on default home page"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Array detail page"]]>
+                <![CDATA["DS Homepage"]]>
               </value>
             </param>
           </params>

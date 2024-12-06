@@ -56,6 +56,7 @@ public class DSIntroductionDetails {
 	@Then("The user should able to see an warning message You are not logged in")
 	public void the_user_should_able_to_see_an_warning_message_you_are_not_logged_in() {
 		ip.validateWarningMessageWhenNotLoggedIn();
+		
 	}
 
 	@When("The user clicks Register link on the DS Introduction page")
@@ -66,6 +67,7 @@ public class DSIntroductionDetails {
 	@Then("The user should navigate to register page")
 	public void the_user_should_navigate_to_register_page() {
 		ip.validateUserNavigatedToRegisterPage();
+		
 	}
 
 	@Given("The user is on the DS Introduction page as signedIn")
@@ -83,11 +85,13 @@ public class DSIntroductionDetails {
 	@Then("The user should navigate to DS Intoduction details page")
 	public void the_user_should_navigate_to_ds_intoduction_details_page() {
 		ip.validateUserisOnDSIntroduction();
+		
 	}
 
 	@Then("User should see the timeComplexity link")
 	public void user_should_see_the_time_complexity_link() {
 		ip.validateTimeComplexiButtonDisplayed();
+		
 	}
 
 	@When("The user clicks the Time Complexity button")

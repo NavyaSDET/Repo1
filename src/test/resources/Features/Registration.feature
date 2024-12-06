@@ -34,7 +34,7 @@ Scenario Outline: New user registration page
   Scenario Outline: New user registration page   
                                          
    
-    When The user clicks Register button after entering a username with spacebar characters other than digits and @/./+/-/_ on registration form from sheetname "<Sheetname>" and row <RowNumber>
+    When The user clicks Register button after entering a username with spacebar characters other than digits and symbols on registration form from sheetname "<Sheetname>" and row <RowNumber>
     Then The user is displayed with error msg after entering invalid data and redirects to empty username textbox
   
   Examples: 
@@ -81,7 +81,7 @@ Scenario Outline: New user registration page
     
      Examples: 
       | Sheetname | RowNumber |
-      | register  |         7 | # Placeholder for dynamic data
+      | register  |         7 | 
       
   Scenario Outline: New user registration page
 
