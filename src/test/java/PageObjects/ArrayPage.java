@@ -7,13 +7,10 @@ import StepDefinitions.Hooks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class ArrayPage {
 
-	WebDriver driver=Hooks.getDriver();
-
-
+	public WebDriver driver = Hooks.driver;
 	By arrayDetail=By.cssSelector("h4.bg-secondary");
 	By topicsCovered = By.cssSelector("p.bg-secondary");
 	By TopicsCoveredOptions =By.cssSelector("a.list-group-item");

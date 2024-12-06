@@ -3,17 +3,14 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import StepDefinitions.Hooks;
+
 public class LinkedListPage {
 
-	public WebDriver driver;
+	public WebDriver driver = Hooks.driver;
+
 	RegistrationPage RGPage;
-	//TreePage tree = new TreePage(driver);
-
-	public LinkedListPage(WebDriver Ldriver) {
-
-		this.driver = Ldriver;
-	}
-
+	
 	//LL Page general elements
 
 	private By LL_GetStartedBtn_HomePage = By.xpath("//div[3]/div/div/a");
@@ -124,7 +121,10 @@ public class LinkedListPage {
 		driver.findElement(LL_Details_Deletion).click();
 	}
 
-
+	public String getTitle()
+	{
+		return driver.getTitle();
+	}
 
 	//Linked List Details Page module elements-click events
 

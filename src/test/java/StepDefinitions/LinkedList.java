@@ -1,5 +1,4 @@
 package StepDefinitions;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import PageObjects.LinkedListPage;
@@ -12,18 +11,16 @@ import io.cucumber.java.en.When;
 
 public class LinkedList {
 
-	public WebDriver driver = Hooks.driver;
-	public LinkedListPage LLPage = new LinkedListPage(driver);
+	public LinkedListPage LLPage = new LinkedListPage();
 	public RegistrationPage RGPage;
-	TreePage treePage= new TreePage(driver);
+	TreePage treePage= new TreePage();
 
 
 
 	@Given("User clicks on Get Started button from Linked List panel")
 	public void user_clicks_on_get_started_button_from_linked_list_panel() {
 		//treePage = new TreePage(driver);
-		RGPage = new RegistrationPage(driver);
-		LLPage = new LinkedListPage(driver);
+		RGPage = new RegistrationPage();
 	   LLPage.click_LL_GetStartedBtn_HomePage();
 	}
 
@@ -44,7 +41,7 @@ public class LinkedList {
 	@Then("The user is redirected to Linked List page.")
 	public void the_user_is_redirected_to_linked_list_page() {
 
-	    Assert.assertEquals(driver.getTitle(),"Linked List");
+	    Assert.assertEquals(LLPage.getTitle(),"Linked List");
 	}
 
 	@When("The user clicks Introduction link")
@@ -56,7 +53,7 @@ public class LinkedList {
 	@Then("The user is redirected to Introduction page.")
 	public void the_user_is_redirected_to_introduction_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Introduction");
+		Assert.assertEquals(LLPage.getTitle(),"Introduction");
 	}
 
 
@@ -69,7 +66,7 @@ public class LinkedList {
 	@Then("The user is redirected to Creating Linked List page.")
 	public void the_user_is_redirected_to_creating_linked_list_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Creating Linked LIst");
+		Assert.assertEquals(LLPage.getTitle(),"Creating Linked LIst");
 	}
 
 	@Given("The user is on the Creating Linked LIst page")
@@ -87,7 +84,7 @@ public class LinkedList {
 	@Then("The user is directed to Types of Linked List page.")
 	public void the_user_is_directed_to_types_of_linked_list_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Types of Linked List");
+		Assert.assertEquals(LLPage.getTitle(),"Types of Linked List");
 	}
 
 	@Given("The user is on the Types of Linked List page")
@@ -105,7 +102,7 @@ public class LinkedList {
 	@Then("The user is redirected to Implement Linked List in Python page.")
 	public void the_user_is_redirected_to_implement_linked_list_in_python_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Implement Linked List in Python");
+		Assert.assertEquals(LLPage.getTitle(),"Implement Linked List in Python");
 	}
 
 	@Given("The user is on the Implement Linked List in Python page")
@@ -123,7 +120,7 @@ public class LinkedList {
 	@Then("The user is redirected to Traversal page.")
 	public void the_user_is_redirected_to_traversal_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Traversal");
+		Assert.assertEquals(LLPage.getTitle(),"Traversal");
 	}
 
 	@Given("The user is on the Traversal page")
@@ -142,7 +139,7 @@ public class LinkedList {
 	@Then("The user is redirected to Insertion page.")
 	public void the_user_is_redirected_to_insertion_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Insertion");
+		Assert.assertEquals(LLPage.getTitle(),"Insertion");
 	}
 
 	@Given("The user is on the Insertion page")
@@ -160,7 +157,7 @@ public class LinkedList {
 	@Then("The user is redirected to Deletion page.")
 	public void the_user_is_redirected_to_deletion_page() {
 
-		Assert.assertEquals(driver.getTitle(),"Deletion");
+		Assert.assertEquals(LLPage.getTitle(),"Deletion");
 	}
 
 	@Given("The user is on the Deletion page")
