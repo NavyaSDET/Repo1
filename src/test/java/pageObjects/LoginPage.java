@@ -8,7 +8,7 @@ import org.testng.Assert;
 import StepDefinitions.Hooks;
 
 public class LoginPage {
-	WebDriver driver=Hooks.getDriver();
+	public WebDriver driver = Hooks.driver;
 
 	By txt_username = By.id("id_username");
 	By txt_password = By.id("id_password");

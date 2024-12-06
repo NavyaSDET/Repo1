@@ -1,19 +1,14 @@
-package pageObjects;
+package PageObjects;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class TreePage {
+import StepDefinitions.Hooks;
 
-	public WebDriver driver;
-	RegistrationPage RGPage = new RegistrationPage(driver);
-
-	public TreePage(WebDriver rdriver) {
-
-		this.driver = rdriver;
-	}
+public class TreePage{
+	public WebDriver driver = Hooks.driver;
 
 	//Tree Page general elements
 

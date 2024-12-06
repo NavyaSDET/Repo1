@@ -1,5 +1,4 @@
 package StepDefinitions;
-import org.openqa.selenium.WebDriver;
 
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
@@ -9,32 +8,17 @@ import io.cucumber.java.en.When;
 
 public class Tree {
 
-	public WebDriver driver = Hooks.driver;
-	public RegistrationPage RGPage = new RegistrationPage(driver);
-	TreePage treePage = new TreePage(driver);
-
-
-
-	/*@Given("The user is on DS_algo home page")
-	public void the_user_is_on_ds_algo_home_page() {
-
-		RGPage.Land_On_RegistrationPage();
-		RGPage.enterUsernameAndPswdAndConfirmPswdAndClickRegisterBtn("tri0ck340", "dfghj1234", "dfghj1234");
-
-	}*/
-
+	RegistrationPage RGPage = new RegistrationPage();
+	TreePage treePage = new TreePage();
 
 	@When("User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
-		treePage = new TreePage(driver);
-		//RGPage = new RegistrationPage(driver);
 		treePage.clickTree_GetStartedBtn_HomePage();
 
 	}
 
 	@Then("The user is redirected to Tree page.")
 	public void the_user_is_redirected_to_tree_page() {
-
 		treePage.checkIfOn_TreesPage();
 	}
 
