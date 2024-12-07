@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 				"html:target/htmlReport/report.html" }, // reporting purpose
 
 		monochrome = false, // console output color
-		features = { "src/test/resources/Features/ArrayDetailsPage.feature" },   // location of feature files
+		features = { "src/test/resources/Features" },   // location of feature files
 		glue = "StepDefinitions"                        // location of step definition files
 
 		)

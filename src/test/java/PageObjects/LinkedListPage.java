@@ -3,16 +3,18 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import StepDefinitions.Hooks;
+
 public class LinkedListPage {
 
-	public WebDriver driver;
+	public WebDriver driver = Hooks.getDriver();
 	RegistrationPage RGPage;
 	//TreePage tree = new TreePage(driver);
 
-	public LinkedListPage(WebDriver Ldriver) {
+	/*public LinkedListPage(WebDriver Ldriver) {
 
 		this.driver = Ldriver;
-	}
+	}*/
 
 	//LL Page general elements
 

@@ -2,8 +2,9 @@ package StepDefinitions;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -15,9 +16,9 @@ import io.cucumber.java.en.When;
 
 public class Registration {
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
+	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
 	RegistrationPage RGPage= new RegistrationPage(driver); //constructor used
-	//ExcelReader excelReader = new ExcelReader("C:/Users/rakes/git/Repo1/src/test/resources/Excel/TestData.xlsx");
 
 	String actualErrorMsg;
 	String expectedErrorMsg;
@@ -59,9 +60,8 @@ public class Registration {
 	public void the_error_please_fill_out_this_field_appears_below_username_textbox() {
 
 		RGPage.compareActualAndExpectedBrowserErrorMsg();
-
-
-	}
+		logger.error(""); 
+		}
 
 	@When("The user clicks Register button after entering Username with other fields empty on registration form from sheetname {string} and row {int}")
 	public void the_user_clicks_register_button_after_entering_username_with_other_fields_empty_on_registration_form_from_sheetname(String string, Integer int1) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {

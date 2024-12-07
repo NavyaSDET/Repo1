@@ -7,21 +7,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Tree {
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 	public RegistrationPage RGPage = new RegistrationPage(driver);
 	TreePage treePage = new TreePage(driver);
-
-
-
-	/*@Given("The user is on DS_algo home page")
-	public void the_user_is_on_ds_algo_home_page() {
-
-		RGPage.Land_On_RegistrationPage();
-		RGPage.enterUsernameAndPswdAndConfirmPswdAndClickRegisterBtn("tri0ck340", "dfghj1234", "dfghj1234");
-
-	}*/
+	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
 
 
 	@When("User clicks on Get Started button from Tree panel")
