@@ -6,7 +6,7 @@ import org.testng.Assert;
 import StepDefinitions.Hooks;
 
 public class QueuePage {
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 	By queueGetStartedButton= By.cssSelector("a[href='queue']");
 	By queuepage=By.cssSelector("h4.bg-secondary");

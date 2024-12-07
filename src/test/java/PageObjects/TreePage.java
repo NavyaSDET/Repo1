@@ -8,7 +8,7 @@ import org.testng.Assert;
 import StepDefinitions.Hooks;
 
 public class TreePage{
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 	//Tree Page general elements
 

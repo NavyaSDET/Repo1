@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class IntroductionPage {
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 
 	By NumpyNinja =  By.cssSelector("a[href='/home']");

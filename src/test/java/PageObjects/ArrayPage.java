@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ArrayPage {
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 	By arrayDetail=By.cssSelector("h4.bg-secondary");
 	By topicsCovered = By.cssSelector("p.bg-secondary");
 	By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
