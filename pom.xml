@@ -17,11 +17,9 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
 					<configuration>
-						<parallel>classes</parallel>
-						<threadCount>4</threadCount>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
+           	 				<suiteXmlFile>testng.xml</suiteXmlFile>
+        				</suiteXmlFiles>
 						<properties>
 							<property>
 								<name>dataproviderthreadcount</name>
@@ -58,12 +56,6 @@
 		</pluginManagement>
 	</build>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>7.19.0</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -89,36 +81,11 @@
 			<artifactId>cucumber-html</artifactId>
 			<version>0.2.7</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>7.19.0</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.25.0</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.20.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-html</artifactId>
-			<version>0.2.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
