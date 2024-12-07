@@ -9,12 +9,6 @@ public class LinkedListPage {
 
 	public WebDriver driver = Hooks.getDriver();
 	RegistrationPage RGPage;
-	//TreePage tree = new TreePage(driver);
-
-	/*public LinkedListPage(WebDriver Ldriver) {
-
-		this.driver = Ldriver;
-	}*/
 
 	//LL Page general elements
 
@@ -126,7 +120,10 @@ public class LinkedListPage {
 		driver.findElement(LL_Details_Deletion).click();
 	}
 
-
+	public String getTitle()
+	{
+		return driver.getTitle();
+	}
 
 	//Linked List Details Page module elements-click events
 

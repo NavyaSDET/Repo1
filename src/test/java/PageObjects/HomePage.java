@@ -3,11 +3,13 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import StepDefinitions.Hooks;
 
 
 public class HomePage { 
-	WebDriver driver=Hooks.getDriver();
+
+	public WebDriver driver = Hooks.driver;
 
 	By getStartedButton = By.cssSelector("button.btn");
 	By contentHeader = By.cssSelector(".content h1");
@@ -37,7 +39,6 @@ public class HomePage {
 		Assert.assertEquals(driver.findElement(getStartedButton).getCssValue("font-size"),"18px");
 		Assert.assertEquals(driver.findElement(getStartedButton).getSize().height,51);
 		Assert.assertEquals(driver.findElement(getStartedButton).getSize().width,122);
-
 	}
 
 }

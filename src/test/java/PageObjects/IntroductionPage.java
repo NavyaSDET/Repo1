@@ -1,14 +1,16 @@
 package PageObjects;
 
 import org.testng.Assert;
+
 import StepDefinitions.Hooks;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class IntroductionPage {
-	WebDriver driver=Hooks.getDriver();
+	public WebDriver driver = Hooks.driver;
 
 
 	By NumpyNinja =  By.cssSelector("a[href='/home']");

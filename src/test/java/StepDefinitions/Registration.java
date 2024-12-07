@@ -18,7 +18,7 @@ public class Registration {
 
 	public WebDriver driver = Hooks.getDriver();
 	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
-	RegistrationPage RGPage= new RegistrationPage(driver); //constructor used
+	RegistrationPage RGPage= new RegistrationPage(); //constructor used
 
 	String actualErrorMsg;
 	String expectedErrorMsg;
@@ -47,13 +47,8 @@ public class Registration {
 
 	@When("The user clicks Register button with all fields empty on registration form from sheetname {string} and row {int}")
 	public void the_user_clicks_register_button_with_all_fields_empty_on_registration_form_from_sheetname(String string, Integer int1) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
-
-
 		RGPage.fillRegistrationForm("Register", 0);
 		RGPage.clickRegisterBtn_RegisterPage();
-
-
-
 	}
 
 	@Then("The error Please fill out this field appears below Username textbox")

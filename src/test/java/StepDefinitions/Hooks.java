@@ -15,6 +15,9 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
 import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -36,14 +39,11 @@ public class Hooks {
 	public static void before() throws Throwable {
 		//Get browser Type from config file
 		ConfigReader.loadConfig();
-		//browser = ConfigReader.getBrowserType();
-		browser = "chrome";
-		
+		browser = ConfigReader.getBrowserType();
 	}
 
     @Before
     public void deleteCookies() throws Exception {
-    	String browser = "chrome"; ////////////////CHECK THIS-NEED TO REMOVE for cross browser. value should come from config.reader
         if (browser.equals("chrome")) {
             driver = new ChromeDriver();
         } else if (browser.equals("firefox")) {

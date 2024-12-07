@@ -1,5 +1,4 @@
 package StepDefinitions;
-import org.openqa.selenium.WebDriver;
 
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
@@ -13,22 +12,19 @@ import org.apache.logging.log4j.Logger;
 public class Tree {
 
 	public WebDriver driver = Hooks.getDriver();
-	public RegistrationPage RGPage = new RegistrationPage(driver);
-	TreePage treePage = new TreePage(driver);
+	public RegistrationPage RGPage = new RegistrationPage();
+	TreePage treePage = new TreePage();
 	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
 
 
 	@When("User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
-		treePage = new TreePage(driver);
-		//RGPage = new RegistrationPage(driver);
 		treePage.clickTree_GetStartedBtn_HomePage();
 
 	}
 
 	@Then("The user is redirected to Tree page.")
 	public void the_user_is_redirected_to_tree_page() {
-
 		treePage.checkIfOn_TreesPage();
 	}
 

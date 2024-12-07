@@ -7,21 +7,15 @@ Feature: Registration
     Given The user is on the new user registration page
    
 Scenario Outline: New user registration page
-
-    
     When The user clicks Register button with all fields empty on registration form from sheetname "<Sheetname>" and row <RowNumber>
     Then The error Please fill out this field appears below Username textbox
-    
     Examples: 
       | Sheetname | RowNumber |
       | register  |         0 | 
     
   Scenario Outline: New user registration page
-
-    
     When The user clicks Register button after entering Username with other fields empty on registration form from sheetname "<Sheetname>" and row <RowNumber>
     Then The error message Please fill out this field. appears below Password textbox
-    
     Examples: 
       | Sheetname | RowNumber |
       | register  |         1 | 
@@ -103,4 +97,3 @@ Scenario Outline: New user registration page
     When User clicks on SignIn button from registration page
     Then user lands on login page
     
-   

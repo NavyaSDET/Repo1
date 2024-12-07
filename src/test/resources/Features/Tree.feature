@@ -12,7 +12,6 @@ Scenario: Tree home page
 When The user clicks Overview of Trees link
 Then The user is redirected to Overview of Trees page.
 
-
 Scenario: Overview of Trees
 Given The user is on the Overview of Trees page
 When The user clicks Try Here button
@@ -44,8 +43,6 @@ And The user clicks Try Here button
 And The user writes the invalid python code and clicks on Run button
 When The user clicks the ok button in the alert window
 Then Alert message window is dismissed and user stays on Editor page
-
-#########################################################################
 
 Scenario: Overview of Trees
 
