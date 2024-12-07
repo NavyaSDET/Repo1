@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 public class GraphPage{
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 
 	By GraphDetail=By.cssSelector("h4.bg-secondary");

@@ -7,7 +7,7 @@ import StepDefinitions.Hooks;
 
 public class LinkedListPage {
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 	RegistrationPage RGPage;
 	

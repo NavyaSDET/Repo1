@@ -9,7 +9,7 @@ import StepDefinitions.Hooks;
 
 public class HomePage { 
 
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 	By getStartedButton = By.cssSelector("button.btn");
 	By contentHeader = By.cssSelector(".content h1");

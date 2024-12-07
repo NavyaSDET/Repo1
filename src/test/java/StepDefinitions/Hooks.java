@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.TestInstance;
 
 import Utilities.ConfigReader;
 
@@ -17,13 +18,17 @@ public class Hooks {
 
 	private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 public static String browser;
-	public static WebDriver driver = null;
+	public WebDriver driver;
 
 	@BeforeAll
 	public static void before() throws Throwable {
 		//Get browser Type from config file
 		ConfigReader.loadConfig();
 		//browser = ConfigReader.getBrowserType();
+	}
+
+	@Before
+	public void deleteCookies() throws Exception {
 		browser = "chrome";
 		if (browser.equals("chrome")) {
 			driver = new ChromeDriver();
@@ -36,11 +41,6 @@ public static String browser;
 		driver.manage().window().maximize();
 
 		driverThreadLocal.set(driver);
-	}
-
-	@Before
-	public void deleteCookies() throws Exception {
-		
 
 		driver.manage().deleteAllCookies();
 	}
@@ -52,7 +52,8 @@ public static String browser;
 			driverThreadLocal.get().quit();
 			driverThreadLocal.remove();
 		}	}
-	public static WebDriver getDriver() {
+	
+	public static synchronized WebDriver getDriver() {
 		return driverThreadLocal.get();
 	}
 

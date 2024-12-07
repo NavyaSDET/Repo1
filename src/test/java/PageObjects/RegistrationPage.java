@@ -16,7 +16,7 @@ import Utilities.ExcelReader;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 public class RegistrationPage  {
-	public WebDriver driver = Hooks.driver;
+	public WebDriver driver = Hooks.getDriver();
 
 	String actualErrorMsgText1;
 	String InvalidUser_errorMsg;
