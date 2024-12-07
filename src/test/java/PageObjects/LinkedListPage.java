@@ -7,10 +7,9 @@ import StepDefinitions.Hooks;
 
 public class LinkedListPage {
 
-	public WebDriver driver = Hooks.driver;
-
+	public WebDriver driver = Hooks.getDriver();
 	RegistrationPage RGPage;
-	
+
 	//LL Page general elements
 
 	private By LL_GetStartedBtn_HomePage = By.xpath("//div[3]/div/div/a");

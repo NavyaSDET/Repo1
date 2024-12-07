@@ -9,18 +9,24 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class LinkedList {
 
+	public WebDriver driver = Hooks.getDriver();
 	public LinkedListPage LLPage = new LinkedListPage();
 	public RegistrationPage RGPage;
 	TreePage treePage= new TreePage();
-
+	
+	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
 
 
 	@Given("User clicks on Get Started button from Linked List panel")
 	public void user_clicks_on_get_started_button_from_linked_list_panel() {
 		//treePage = new TreePage(driver);
 		RGPage = new RegistrationPage();
+		LLPage = new LinkedListPage();
 	   LLPage.click_LL_GetStartedBtn_HomePage();
 	}
 

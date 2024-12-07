@@ -6,10 +6,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Tree {
 
-	RegistrationPage RGPage = new RegistrationPage();
+	public WebDriver driver = Hooks.getDriver();
+	public RegistrationPage RGPage = new RegistrationPage();
 	TreePage treePage = new TreePage();
+	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
+
 
 	@When("User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
