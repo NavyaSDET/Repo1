@@ -17,19 +17,6 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
 					<configuration>
-						<suiteXmlFiles>
-           	 				<suiteXmlFile>testng.xml</suiteXmlFile>
-        				</suiteXmlFiles>
-						<properties>
-							<property>
-								<name>dataproviderthreadcount</name>
-								<value>3</value>
-							</property>
-						</properties>
-						<argLine>
-					-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-					-Dcucumber.options="--plugin io.qmeta.allure.cucumber7jvm.AllureCucumber7Jvm"
-					</argLine>
 						<source>1.8</source>
 						<target>1.8</target>
 					</configuration>
@@ -50,6 +37,12 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
+						<properties>
+							<property>
+								<name>dataproviderthreadcount</name>
+								<value>3</value>
+							</property>
+						</properties>
 					</configuration>
 				</plugin>
 			</plugins>
