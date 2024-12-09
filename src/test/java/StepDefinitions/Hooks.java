@@ -15,9 +15,6 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
 import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -40,6 +37,7 @@ public class Hooks {
 		//Get browser Type from config file
 		ConfigReader.loadConfig();
 		browser = ConfigReader.getBrowserType();
+		//browser = "chrome";
 	}
 
     @Before

@@ -31,6 +31,7 @@ public class IntroductionPage {
 	By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
 	By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
 	By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
+	By practiceQuestionButton=By.cssSelector("a[href='/data-structures-introduction/practice']");
 	By tryHereButton=By.cssSelector("a[href='/tryEditor']");
 	By codeEditorPage=By.cssSelector("pre.codeMirror-line");
 	By codeInputField = By.cssSelector(".CodeMirror textarea");
@@ -98,6 +99,13 @@ public class IntroductionPage {
 		driver.findElements(getStartedButtonOnCard).get(0).click();
 	}
 
+	public void validateUserisOnDSIntroductionAsSigneIn() {
+		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+		Assert.assertTrue(driver.findElement(displayQaChamps).isDisplayed());
+	}
+	
 	public void validateUserisOnDSIntroduction() {
 		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
 		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
@@ -115,6 +123,13 @@ public class IntroductionPage {
 	public void validateTimeComplexitypage() {
 		Assert.assertTrue(driver.findElement(timeComplexityPage).isDisplayed());
 		Assert.assertEquals(driver.findElement(timeComplexityPage).getText(), "Time Complexity");
+	}
+	
+	public void validateTryHereAndPracticeQuestionLinkDisplayed() {
+		Assert.assertTrue(driver.findElement(tryHereButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(tryHereButton).getText(), "Try here>>>");
+		Assert.assertTrue(driver.findElement(practiceQuestionButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(practiceQuestionButton).getText(), "Practice Questions");
 	}
 
 	public void clickOnTryHerebutton () {

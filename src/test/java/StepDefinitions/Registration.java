@@ -28,15 +28,6 @@ public class Registration {
 
 	@Given("The user is on the new user registration page")
 	public void the_user_is_on_the_new_user_registration_page() {
-
-		//Traditional structure(without POM) --
-		/* System.setProperty("webdriver.chrome.driver", "/Users/rakes/eclipse-workspace/Hello-Selenium/src/test/resources/driver/chromedriver-win64/chromedriver.exe");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://dsportalapp.herokuapp.com/");
-		driver.findElement(By.className("btn")).click();
-		driver.findElement(By.xpath("//div[2]/ul/a[2]")).click();*/
-
 		//POM Structure --
 		RGPage.openDSAlgoURL();
 		RGPage.clickGetStartedBtn();

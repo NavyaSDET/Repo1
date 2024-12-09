@@ -1,4 +1,4 @@
-Feature: Geetha AUtomation Scenarios
+Feature: DS Introduction Page
 
   Scenario: Validate the DS dropdown without signIN
     Given The user should open the DS Algo Portal URL in any supported browser
@@ -7,11 +7,13 @@ Feature: Geetha AUtomation Scenarios
     Then The user should able to see siz options Arrays Linked,List,Stack,Queue,Tree,Graph in dropdown menu
 
   Scenario: Verify warning message when user navigate to DS details page without signIn
+    Given The user should open the DS Algo Portal URL in any supported browser
     Given The user is on the DS Introduction page
     When The user clicks any Get Started buttons of data structures on the DS Introduction page
     Then The user should able to see an warning message You are not logged in
 
   Scenario: Validate user lands on register page when clicked on register
+    Given The user should open the DS Algo Portal URL in any supported browser
     Given The user is on the DS Introduction page
     When The user clicks Register link on the DS Introduction page
     Then The user should navigate to register page
