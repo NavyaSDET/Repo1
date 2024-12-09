@@ -31,7 +31,7 @@ public class HomePage {
 	public void clickOnHomePageGetStartedButton() {
 		driver.findElement(getStartedButton).click();
 	}
-
+	
 	public void validateHomePageGetStratedButton() {
 		Assert.assertEquals(driver.findElement(getStartedButton).getText(), "Get Started");
 		Assert.assertEquals(driver.findElement(getStartedButton).getCssValue("background-color"), "rgba(0, 0, 255, 1)");
