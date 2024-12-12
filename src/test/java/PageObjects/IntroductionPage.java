@@ -7,8 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class IntroductionPage {
 	public WebDriver driver = Hooks.getDriver();
 
-
-	public By NumpyNinja =  By.cssSelector("a[href='/home']");
+	public By NumpyNinja = By.cssSelector("a[href='/home']");
 	public By Datastructure = By.cssSelector("a.dropdown-toggle");
 	public By DsDropdown = By.cssSelector("a.dropdown-item");
 
@@ -16,26 +15,26 @@ public class IntroductionPage {
 	public By cardTitle = By.cssSelector("h5.card-title");
 	public By cardText = By.cssSelector("p.card-text");
 	public By getStartedButtonOnCard = By.cssSelector("a.btn-primary");
-	public By signInButton=By.cssSelector("a[href='/login']");
-	public By registerButton=By.cssSelector("a[href='/register']");
+	public By signInButton = By.cssSelector("a[href='/login']");
+	public By registerButton = By.cssSelector("a[href='/register']");
 	public By warningMessage = By.cssSelector(".alert.alert-primary");
-	public By userNameInputfield=By.cssSelector("input[name='username']");
-	public By passWordNameInputField=By.cssSelector("input[name='password']");
-	public By loginButton=By.cssSelector("input[type='submit']");
-	public By displayQaChamps=By.cssSelector(".navbar-nav ul a:nth-child(2)");
-	public By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
-	public By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
-	public By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
-	public By practiceQuestionButton=By.cssSelector("a[href='/data-structures-introduction/practice']");
-	public By tryHereButton=By.cssSelector("a[href='/tryEditor']");
-	public By codeEditorPage=By.cssSelector("pre.codeMirror-line");
+	public By userNameInputfield = By.cssSelector("input[name='username']");
+	public By passWordNameInputField = By.cssSelector("input[name='password']");
+	public By loginButton = By.cssSelector("input[type='submit']");
+	public By displayQaChamps = By.cssSelector(".navbar-nav ul a:nth-child(2)");
+	public By dataStructurePageHeader = By.cssSelector("h4.bg-secondary");
+	public By dispalyTimeComplexity = By.cssSelector("a[href='time-complexity']");
+	public By timeComplexityPage = By.cssSelector("strong .bg-secondary.text-white");
+	public By practiceQuestionButton = By.cssSelector("a[href='/data-structures-introduction/practice']");
+	public By tryHereButton = By.cssSelector("a[href='/tryEditor']");
+	public By codeEditorPage = By.cssSelector("pre.codeMirror-line");
 	public By codeInputField = By.cssSelector(".CodeMirror textarea");
 	public By consoleOutput = By.cssSelector("#output");
-	public By runButton=By.cssSelector("button[type='button']");
-	public By arrayGetStartedBtn= By.cssSelector("a[href='array']");
-	public By queueGetStartedBtn= By.cssSelector("a[href='queue']");
-	public By stackGetStartedBtn= By.cssSelector("a[href='stack']");
-	public By graphGetStartedBtn= By.cssSelector("a[href='graph']");
+	public By runButton = By.cssSelector("button[type='button']");
+	public By arrayGetStartedBtn = By.cssSelector("a[href='array']");
+	public By queueGetStartedBtn = By.cssSelector("a[href='queue']");
+	public By stackGetStartedBtn = By.cssSelector("a[href='stack']");
+	public By graphGetStartedBtn = By.cssSelector("a[href='graph']");
 
 	public void clickOnDataStructureDropdown() {
 		driver.findElement(Datastructure).click();
@@ -48,9 +47,9 @@ public class IntroductionPage {
 	public void clickOnRegisterlink() {
 		driver.findElement(registerButton).click();
 	}
-	
+
 	public void clickOnSignInlink() {
-		driver.findElement(signInButton).click();	
+		driver.findElement(signInButton).click();
 	}
 
 	public void completeTheLOgin() {
@@ -68,11 +67,11 @@ public class IntroductionPage {
 		driver.findElement(dispalyTimeComplexity).click();
 	}
 
-	public void clickOnTryHerebutton () {
+	public void clickOnTryHerebutton() {
 		driver.findElement(tryHereButton).click();
 	}
 
-	public void enterCodeInEditor(String codeText  )  {
+	public void enterCodeInEditor(String codeText) {
 		driver.findElement(codeInputField).sendKeys(codeText);
 	}
 
@@ -89,11 +88,11 @@ public class IntroductionPage {
 	}
 
 	public void clickOnGetStartedButtonOfStack() {
-		driver.findElement(stackGetStartedBtn).click();			
+		driver.findElement(stackGetStartedBtn).click();
 	}
-	
+
 	public void clickOnGetStartedButtonOfGraph() {
-		driver.findElement(graphGetStartedBtn).click();			
+		driver.findElement(graphGetStartedBtn).click();
 	}
 
 }

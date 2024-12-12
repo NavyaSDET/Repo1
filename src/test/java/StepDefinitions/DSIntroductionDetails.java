@@ -17,7 +17,7 @@ public class DSIntroductionDetails {
 	public WebDriver driver = Hooks.getDriver();
 
 	public HomePage hp = new HomePage();
-	public IntroductionPage ip =  new IntroductionPage();
+	public IntroductionPage ip = new IntroductionPage();
 
 	@Given("The user should open the DS Algo Portal URL in any supported browser")
 	public void the_user_should_open_the_ds_algo_portal_url_in_any_supported_browser() {
@@ -26,7 +26,7 @@ public class DSIntroductionDetails {
 
 	@Then("The user should land in Data Structure Introduction Page with register and Sign in links")
 	public void the_user_should_land_in_data_structure_introduction_page_with_register_and_sign_in_links() {
-		Assert.assertEquals(driver.findElement(ip.NumpyNinja).getText(), "NumpyNinja"); 
+		Assert.assertEquals(driver.findElement(ip.NumpyNinja).getText(), "NumpyNinja");
 		Assert.assertTrue(driver.findElement(ip.cardBody).isDisplayed());
 		Assert.assertTrue(driver.findElement(ip.signInButton).isDisplayed());
 		Assert.assertTrue(driver.findElement(ip.registerButton).isDisplayed());
@@ -56,7 +56,7 @@ public class DSIntroductionDetails {
 
 	@Given("The user is on the DS Introduction page")
 	public void the_user_is_on_the_ds_introduction_page() {
-		hp.clickOnHomePageGetStartedButton();	
+		hp.clickOnHomePageGetStartedButton();
 
 	}
 
@@ -70,7 +70,7 @@ public class DSIntroductionDetails {
 		Assert.assertTrue(driver.findElement(ip.warningMessage).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.warningMessage).getText(), "You are not logged in");
 		Assert.assertEquals(driver.findElements(ip.warningMessage).size(), 1);
-		
+
 	}
 
 	@When("The user clicks Register link on the DS Introduction page")
@@ -81,14 +81,16 @@ public class DSIntroductionDetails {
 	@Then("The user should navigate to register page")
 	public void the_user_should_navigate_to_register_page() {
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/register");
-		
+
 	}
 
 	@Given("The user is on the DS Introduction page as signedIn")
 	public void the_user_is_on_the_ds_introduction_page_as_signed_in() {
 		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
-		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());	}
+		ip.completeTheLOgin();
+		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
+	}
 
 	@Then("user lands on the DS Introduction page as signedIn")
 	public void user_lands_on_the_ds_introduction_page_as_signed_in() {
@@ -97,7 +99,7 @@ public class DSIntroductionDetails {
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
 		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
 	}
-	
+
 	@When("The user clicks the Get Started button of DS Introduction")
 	public void the_user_clicks_the_get_started_button_of_ds_introduction() {
 		ip.clickOnGetStartedButtonOfDSIntroduction();
@@ -127,7 +129,7 @@ public class DSIntroductionDetails {
 	}
 
 	@Then(" User clicks on Get Started button from Tree panel")
-	public void  user_clicks_on_get_started_button_from_tree_panel() {
+	public void user_clicks_on_get_started_button_from_tree_panel() {
 		Assert.assertTrue(driver.findElement(ip.timeComplexityPage).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.timeComplexityPage).getText(), "Time Complexity");
 	}
@@ -151,7 +153,7 @@ public class DSIntroductionDetails {
 
 	@Then("User should see Practice Question link and try here")
 	public void user_should_see_practice_question_link_and_try_here() {
-	    Assert.assertTrue(driver.findElement(ip.tryHereButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(ip.tryHereButton).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.tryHereButton).getText(), "Try here>>>");
 		Assert.assertTrue(driver.findElement(ip.practiceQuestionButton).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.practiceQuestionButton).getText(), "Practice Questions");
@@ -169,9 +171,10 @@ public class DSIntroductionDetails {
 
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-		Alert alert= driver.switchTo().alert();
-		String alertText=alert.getText();
-		Assert.assertEquals(alertText, "dsportalapp.herokuapp.com says", "NameError: name 'ABC' is not defined on line 1");
+		Alert alert = driver.switchTo().alert();
+		String alertText = alert.getText();
+		Assert.assertEquals(alertText, "dsportalapp.herokuapp.com says",
+				"NameError: name 'ABC' is not defined on line 1");
 		alert.accept();
 	}
 
