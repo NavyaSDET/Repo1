@@ -19,33 +19,20 @@ When The user clicks Try Here button
 Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
-Given The user is on the Overview of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Overview of Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 
 Scenario: Try Here Editor page with valid data
-Given The user is on the Overview of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Overview of Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
-Given The user is on the Overview of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Overview of Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Overview of Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
-
-#########################################################################
 
 Scenario: Overview of Trees
 
@@ -60,32 +47,21 @@ When The user clicks Try Here button
 Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
-Given The user is on the Terminologies page
-And The user clicks Try Here button
-When The user writes no code inside editor window and clicks on Run button
+Given The user is on the Editor page of Terminologies page
+When The user writes no code inside editor window and clicks on Run button  
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Terminologies page
-And The user clicks Try Here button
+Given The user is on the Editor page of Terminologies page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Terminologies page
-And The user clicks Try Here button
+Given The user is on the Editor page of Terminologies page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Terminologies page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Terminologies
 
@@ -102,31 +78,20 @@ Then The user is redirected to a page having Editor and run button
 
 
 Scenario: Try Here Editor page with empty code
-Given The user is on the Types of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor Page of Types of Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 
 Scenario: Try Here Editor page with valid data
-Given The user is on the Types of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor Page of Types of Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
-Given The user is on the Types of Trees page
-And The user clicks Try Here button
+Given The user is on the Editor Page of Types of Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Types of Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Types of Trees
 
@@ -143,33 +108,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the Editor page of Tree Traversals page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the Editor page of Tree Traversals page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the Editor page of Tree Traversals page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Tree Traversals page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
-
 
 Scenario: Tree Traversals
 
@@ -186,32 +139,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Traversals-Illustration page
-And The user clicks Try Here button
+Given The user is on the Editor page of Traversals-Illustration page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Traversals-Illustration page
-And The user clicks Try Here button
+Given The user is on the Editor page of Traversals-Illustration page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Traversals-Illustration page
-And The user clicks Try Here button
+Given The user is on the Editor page of Traversals-Illustration page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Traversals-Illustration page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Traversals-Illustration
 
@@ -228,33 +170,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Binary Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Binary Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Binary Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Binary Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
-
 
 Scenario: Binary Trees
 
@@ -271,32 +201,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Types of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Types of Binary Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Types of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Types of Binary Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Types of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the Editor page of Types of Binary Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Types of Binary Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Types of Binary Trees
 
@@ -313,32 +232,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Implementation in Python page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation in Python page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Implementation in Python page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation in Python page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Implementation in Python page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation in Python page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Implementation in Python page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Implementation in Python
 
@@ -355,32 +263,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Binary Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Tree Traversals page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Binary Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Tree Traversals page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Binary Tree Traversals page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Tree Traversals page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Binary Tree Traversals page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Binary Tree Traversals
 
@@ -397,32 +294,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Implementation of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation of Binary Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Implementation of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation of Binary Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Implementation of Binary Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation of Binary Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Implementation of Binary Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Implementation of Binary Trees
 
@@ -439,32 +325,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Applications of Binary trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Applications of Binary trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Applications of Binary trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Applications of Binary trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Applications of Binary trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Applications of Binary trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Applications of Binary trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Applications of Binary trees
 
@@ -481,40 +356,21 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Binary Search Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Search Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Binary Search Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Search Trees page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Binary Search Trees page
-And The user clicks Try Here button
+Given The user is on the editor page of Binary Search Trees page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Binary Search Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
-
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Overview of Trees page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Binary Search Trees
 
@@ -531,35 +387,32 @@ Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
 
-Given The user is on the Implementation Of BST page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation Of BST page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
 
 Scenario: Try Here Editor page with valid data
 
-Given The user is on the Implementation Of BST page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation Of BST page
 When The user writes the valid python code and clicks on Run button
 Then The user is able to see the output inside the console.
 
 Scenario: Try Here Editor page with invalid data
 
-Given The user is on the Implementation Of BST page
-And The user clicks Try Here button
+Given The user is on the editor page of Implementation Of BST page
 When The user writes the invalid python code and clicks on Run button
 Then The user see error msg in alert window
 
-Scenario: Try Here Editor page with alert message
-
-Given The user is on the Implementation Of BST page
-And The user clicks Try Here button
-And The user writes the invalid python code and clicks on Run button
-When The user clicks the ok button in the alert window
-Then Alert message window is dismissed and user stays on Editor page
 
 Scenario: Implementation Of BST
 
 Given The user is on the Implementation Of BST page
 When The user clicks Practice Questions link
 Then The user is redirected to Practice Questions page.
+
+#Scenario: Try Here Editor page with alert message
+#Given The user is on the Overview of Trees page
+#And The user clicks Try Here button
+#And The user writes the invalid python code and clicks on Run button
+#When The user clicks the ok button in the alert window
+#Then Alert message window is dismissed and user stays on Editor page

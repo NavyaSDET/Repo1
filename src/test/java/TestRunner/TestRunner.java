@@ -1,8 +1,11 @@
 package TestRunner;
 
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 
+import Utilities.ConfigReader;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
@@ -14,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 				"html:target/htmlReport/report.html" }, // reporting purpose
 
 		monochrome = false, // console output color
-		features = { "src/test/resources/Features/ArrayDetailsPage.feature" },   // location of feature files
+		features = { "src/test/resources/Features/LinkedList.feature" },   // location of feature files
 		glue = "StepDefinitions"                        // location of step definition files
 
 		)
@@ -28,6 +31,14 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 				
 		return super.scenarios();	
     }
+	
+	@BeforeTest
+	@Parameters({"browser"})
+	public void defineBrowser(String browser) throws Throwable {
+		ConfigReader.loadConfig();
+		ConfigReader.setBrowserType(browser);
+		System.out.println(" in runner " + browser);
+	}
 
 }
 

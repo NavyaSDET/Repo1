@@ -21,20 +21,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Introduction page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Introduction page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-   Given The user is on the Introduction page
-    And The user clicks Try Here button
+   Given The user is on the editor page of Introduction page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Introduction page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Introduction page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -49,20 +46,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Creating Linked LIst page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Creating Linked LIst page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Creating Linked LIst page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Creating Linked LIst page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Creating Linked LIst page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Creating Linked LIst page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -77,20 +71,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Types of Linked List page
-    When The user clicks Try Here button
+    Given The user is on the editor page of Types of Linked List page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Types of Linked List page
-    When The user clicks Try Here button
+    Given The user is on the editor page of Types of Linked List page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Types of Linked List page
-    When The user clicks Try Here button
+    Given The user is on the editor page of Types of Linked List page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -105,20 +96,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Implement Linked List in Python page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Implement Linked List in Python page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Implement Linked List in Python page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Implement Linked List in Python page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Implement Linked List in Python page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Implement Linked List in Python page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -133,20 +121,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Traversal page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Traversal page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Traversal page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Traversal page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Traversal page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Traversal page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -161,20 +146,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Insertion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Insertion page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Insertion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Insertion page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Insertion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Insertion page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
@@ -189,20 +171,17 @@ Feature: Linked List
     Then The user is redirected to a page having Editor and run button
 
   Scenario: LL_Try Here Editor page with empty data
-    Given The user is on the Deletion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Deletion page
     When The user writes no code inside editor window and clicks on Run button
     Then Nothing happens to the Editor page and no error message is displayed
 
   Scenario: LL_Try Here Editor page with valid data
-    Given The user is on the Deletion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Deletion page
     When The user writes the valid python code and clicks on Run button
     Then The user is able to see the output inside the console.
 
   Scenario: LL_Try Here Editor page with invalid data
-    Given The user is on the Deletion page
-    And The user clicks Try Here button
+    Given The user is on the editor page of Deletion page
     When The user writes the invalid python code and clicks on Run button
     Then The user see error msg in alert window
 
