@@ -20,22 +20,17 @@ Feature: Title of your feature
 
   Scenario: Error message displayed for invalid code on try Editor for graphs page
     Given The user is on the graphs page under graph detials
-    When User clicks Try here link
-    When The user write the invalid code in Editor
-    When Click the Run button
+    When User writes invalid code and clicks run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for graphs page
     Given The user is on the graphs page under graph detials
-    When User clicks Try here link
-    When Click the Run button
+    When User clicks on run button with empty code
     Then The user should not see any error message or alert
 
   Scenario: Valid code on try editor for graphs runs successfully
     Given The user is on the graphs page under graph detials
-    When User clicks Try here link
-    When The user write the valid code in Editor
-    When Click the Run button
+    When User writes valid code and clicks run button
     Then The user should able to see output in the console
 
   Scenario: Validate user can navigate to Graph Representations page
@@ -50,20 +45,15 @@ Feature: Title of your feature
 
   Scenario: Error message displayed for invalid code on try Editor for graph representations page
     Given The user is on the graphs representations page
-    When User clicks Try here link
-    When The user write the invalid code in Editor
-    When Click the Run button
+    When User writes invalid code and clicks run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for graph representations page
     Given The user is on the graphs representations page
-    When User clicks Try here link
-    When Click the Run button
+    When User clicks on run button with empty code
     Then The user should not see any error message or alert
 
   Scenario: Valid code on try editor for graph representations runs successfully
     Given The user is on the graphs representations page
-    When User clicks Try here link
-    When The user write the valid code in Editor
-    When Click the Run button
+    When User writes valid code and clicks run button
     Then The user should able to see output in the console

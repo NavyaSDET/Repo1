@@ -56,8 +56,7 @@ Feature: Array detail page
 
   Scenario: No error message displayed for empty code on try editor for Array using list
     Given The user is on the Array using list
-    When User clicks Try here link
-    When Click the Run button
+    When User clicks on run button with empty code
     Then The user should not see any error message or alert
 
   Scenario: Valid code on try editor for Array using list runs successfully

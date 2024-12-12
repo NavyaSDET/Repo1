@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import PageObjects.HomePage;
 import PageObjects.IntroductionPage;
@@ -14,8 +16,10 @@ import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidForma
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class LoginStepDefinitions {
+	public WebDriver driver = Hooks.getDriver();
 	public LoginPage login = new LoginPage();
 	public HomePage hp = new HomePage();
 	public IntroductionPage ip =  new IntroductionPage();
@@ -39,8 +43,10 @@ public class LoginStepDefinitions {
 	}
 
 	@Then("The error message {string} appears below Username textbox")
-	public void the_error_message_appears_below_username_textbox(String string) throws InterruptedException {
-		login.validateAlertMessage(string);
+	public void the_error_message_appears_below_username_textbox(String expectedAlertMessage) throws InterruptedException {
+		WebElement activeElement = driver.switchTo().activeElement();
+    	String messageStr = activeElement.getAttribute("validationMessage");
+		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
 
 	@When("The user clicks login button after entering the username and leaving password textbox blank from sheetname {string} and row {int}")
@@ -54,8 +60,10 @@ public class LoginStepDefinitions {
 	}
 
 	@Then("The error message {string} appears below Pwd textbox")
-	public void the_error_message_appears_below_pwd_textbox(String string) throws InterruptedException {
-		login.validateAlertMessage(string);
+	public void the_error_message_appears_below_pwd_textbox(String expectedAlertMessage) throws InterruptedException {
+		WebElement activeElement = driver.switchTo().activeElement();
+    	String messageStr = activeElement.getAttribute("validationMessage");
+		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
 
 	@When("The user clicks login button after entering only username from sheetname {string} and row {int}")
@@ -91,8 +99,8 @@ public class LoginStepDefinitions {
 	}
 
 	@Then("The user should able to see an error message {string}.")
-	public void the_user_should_able_to_see_an_error_message(String string) {
-		login.validaterrormessage(string);
+	public void the_user_should_able_to_see_an_error_message(String expectedWarningMessage) {
+		Assert.assertEquals(driver.findElement(login.warningMessage).getText(),expectedWarningMessage);
 	}
 
 	@When("The user clicks login button after entering valid userName and invalid password from sheetname {string} and row {int}")

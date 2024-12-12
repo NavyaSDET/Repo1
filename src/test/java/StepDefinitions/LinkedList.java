@@ -4,7 +4,6 @@ import org.testng.Assert;
 import PageObjects.LinkedListPage;
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
-import StepDefinitions.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
