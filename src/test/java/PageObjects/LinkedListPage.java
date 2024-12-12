@@ -120,6 +120,7 @@ public class LinkedListPage {
 		driver.findElement(LL_Details_Deletion).click();
 	}
 
+
 	public String getTitle()
 	{
 		return driver.getTitle();
@@ -135,7 +136,5 @@ public class LinkedListPage {
 
 
 	// DROPDOWN ELEMENT METHODS
-
-
 
 }

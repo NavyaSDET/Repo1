@@ -18,6 +18,7 @@ public class LinkedList {
 	public WebDriver driver = Hooks.getDriver();
 	public LinkedListPage LLPage = new LinkedListPage();
 	public RegistrationPage RGPage;
+
 	TreePage treePage= new TreePage();
 	
 	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
@@ -26,6 +27,7 @@ public class LinkedList {
 	@Given("User clicks on Get Started button from Linked List panel")
 	public void user_clicks_on_get_started_button_from_linked_list_panel() {
 		//treePage = new TreePage(driver);
+
 		RGPage = new RegistrationPage();
 		LLPage = new LinkedListPage();
 	   LLPage.click_LL_GetStartedBtn_HomePage();
@@ -35,6 +37,13 @@ public class LinkedList {
 	public void the_user_is_on_the_introduction_page() {
 
 		LLPage.click_LL_IntroductionPage();
+	}
+	
+	@Given("The user is on the editor page of Introduction page")
+	public void the_user_is_on_the_editor_page_of_introduction_page() {
+
+		LLPage.click_LL_IntroductionPage();
+		treePage.click_TryHereBtn_TreePage();
 	}
 
 	@When("The user clicks on Linked List from the Data Structure dropdown menu.")
@@ -82,6 +91,13 @@ public class LinkedList {
 	    LLPage.click_LL_Creating_LinkedList();
 	}
 
+	@Given("The user is on the editor page of Creating Linked LIst page")
+	public void the_user_is_on_the_editor_page_of_creating_linked_l_ist_page() {
+
+	    LLPage.click_LL_Creating_LinkedList();
+	    treePage.click_TryHereBtn_TreePage();
+	}
+	
 	@When("The user clicks Types of Linked List link")
 	public void the_user_clicks_types_of_linked_list_link() {
 
@@ -99,6 +115,14 @@ public class LinkedList {
 
 	    LLPage.click_LL_Types_Of_LinkedList();
 	}
+	
+	@Given("The user is on the editor page of Types of Linked List page")
+	public void the_user_is_on_the_editor_page_of_types_of_linked_list_page() {
+
+	    LLPage.click_LL_Types_Of_LinkedList();
+	    treePage.click_TryHereBtn_TreePage();
+	}
+	
 
 	@When("The user clicks Implement Linked List in Python link")
 	public void the_user_clicks_implement_linked_list_in_python_link() {
@@ -118,6 +142,13 @@ public class LinkedList {
 	    LLPage.click_LL_Implement_Linked_List_In_Python();
 	}
 
+	@Given("The user is on the editor page of Implement Linked List in Python page")
+	public void the_user_is_on_the_editor_page_of_implement_linked_list_in_python_page() {
+
+	    LLPage.click_LL_Implement_Linked_List_In_Python();
+	    treePage.click_TryHereBtn_TreePage();
+	}
+	
 	@When("The user clicks Traversal link")
 	public void the_user_clicks_traversal_link() {
 
@@ -136,6 +167,15 @@ public class LinkedList {
 		LLPage.click_LL_Traversal();
 
 	}
+	
+	@Given("The user is on the editor page of Traversal page")
+	public void the_user_is_on_the_editor_page_of_traversal_page() {
+
+		LLPage.click_LL_Traversal();
+		treePage.click_TryHereBtn_TreePage();
+
+	}
+	
 
 	@When("The user clicks Insertion link")
 	public void the_user_clicks_insertion_link() {
@@ -155,6 +195,14 @@ public class LinkedList {
 	    LLPage.click_LL_Insertion();
 	}
 
+	@Given("The user is on the editor page of Insertion page")
+	public void the_user_is_on_the_editor_page_of_insertion_page() {
+
+	    LLPage.click_LL_Insertion();
+	    treePage.click_TryHereBtn_TreePage();
+	}
+
+	
 	@When("The user clicks Deletion link")
 	public void the_user_clicks_deletion_link() {
 
@@ -174,19 +222,12 @@ public class LinkedList {
 	}
 
 
-	/*
-	@When("User clicks on Get Started button from Linked List panel.")
-	public void user_clicks_on_get_started_button_from_linked_list_panel() {
+	@Given("The user is on the editor page of Deletion page")
+	public void the_user_is_on_the_editor_page_of_deletion_page() {
 
-
+	    LLPage.click_LL_Deletion();
+	    treePage.click_TryHereBtn_TreePage();
 	}
-
-	@Then("The user is on the same Editor page with Run button")
-	public void the_user_is_on_the_same_editor_page_with_run_button() {
-
-
-	}*/
-
 
 
 }

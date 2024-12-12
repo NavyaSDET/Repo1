@@ -4,8 +4,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import StepDefinitions.Hooks;
+
 
 public class TreePage{
 	public WebDriver driver = Hooks.getDriver();
@@ -261,90 +261,6 @@ public class TreePage{
 		driver.findElement(treeDetails_PracticeQuestions).click();
 	}
 
-	////////////////////////////////////////////////////////////////////// 'Check if on expected Page' METHODS
-
-	public void checkIfOn_TreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Tree");
-	}
-
-	public void checkIfOn_OverviewOfTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Overview of Trees");
-	}
-
-	public void checkIfOn_TerminologiesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Terminologies");
-	}
-
-	public void checkIfOn_Traversals_IllustrationPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Traversals-Illustration");
-
-	}
-
-	public void checkIfOn_TypesOfTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Types of Trees");
-
-	}
-
-	public void checkIfOn_TreeTraversals()
-	{
-		Assert.assertEquals(driver.getTitle(),"Tree Traversals");
-	}
-
-	public void checkIfOn_BinaryTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Binary Trees");
-	}
-
-	public void checkIfOn_TypesOfBinaryTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Types of Binary Trees");
-	}
-
-	public void checkIfOn_TreeDetails_TypesOfBinaryTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Types of Binary Trees");
-	}
-
-	public void checkIfOn_ImplementationInPythonPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Implementation in Python");
-	}
-
-	public void checkIfOn_BinaryTreeTraversalsPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Binary Tree Traversals");
-	}
-
-	public void checkIfOn_ImplementationOfBinaryTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Implementation of Binary Trees");
-	}
-
-	public void checkIfOn_ApplicationsOfBinaryTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Applications of Binary trees");
-	}
-
-	public void checkIfOn_BinarySearchTreesPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Binary Search Trees");
-	}
-
-	public void checkIfOn_ImplementationOfBSTPage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Implementation Of BST");
-	}
-
-	public void checkIfOn_PracticePage()
-	{
-		Assert.assertEquals(driver.getTitle(),"Practice Questions");
-	}
-
 	///////////////////////////////////////////////////////////////////// TRY HERE EDITOR METHODS
 
 	public void checkIf_RunBtn_TryEditorPageIsDisplayed()
@@ -367,8 +283,8 @@ public class TreePage{
 
 
 
-	public void checkIfOn_TryHereEditorPage() {
-		Assert.assertEquals(driver.getTitle(),"Assessment");
+	public void checkIfRunButtonIsClicked() {
+		
 		driver.findElement(runButton).isDisplayed();
 	}
 
@@ -390,7 +306,7 @@ public class TreePage{
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
 		Assert.assertEquals(alertText, expectedErrorMessage);
-	}
+	} 
 
 
 
