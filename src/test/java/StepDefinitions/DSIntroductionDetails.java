@@ -169,6 +169,26 @@ public class DSIntroductionDetails {
 		ip.clickOnRunButton();
 	}
 
+	@When("User writes invalid code and clicks run button")
+	public void user_writes_invalid_code_and_clicks_run_button() {
+		ip.clickOnTryHerebutton();
+		ip.enterCodeInEditor("ABC");
+		ip.clickOnRunButton();
+	}
+
+	@When("User clicks on run button with empty code")
+	public void user_clicks_on_run_button_with_empty_code () {
+		ip.clickOnTryHerebutton();
+		ip.clickOnRunButton();
+	}
+
+	@When("User writes valid code and clicks run button")
+	public void user_writes_valid_code_and_clicks_run_button() {
+		ip.clickOnTryHerebutton();
+		ip.enterCodeInEditor("print(\"hello\")");
+		ip.clickOnRunButton();
+	}
+
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 		Alert alert = driver.switchTo().alert();

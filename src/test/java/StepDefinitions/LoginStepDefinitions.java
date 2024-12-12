@@ -20,6 +20,7 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefinitions {
 	WebDriver driver = Hooks.getDriver();
+	
 	public LoginPage login = new LoginPage();
 	public HomePage hp = new HomePage();
 	public IntroductionPage ip = new IntroductionPage();
