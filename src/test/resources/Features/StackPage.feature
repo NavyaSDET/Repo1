@@ -33,9 +33,9 @@ Feature: Stack page
 
   Scenario: Valid code on try editor for Operations in Stack runs successfully
     Given The user is on the Operations in Stack page
-    When  User clicks Try here link
+    When User clicks Try here link
     When The user write the valid code in Editor
-    When  Click the Run button
+    When Click the Run button
     Then The user should able to see output in the console
 
   Scenario: Validate user can navigate to Implementation page
@@ -52,12 +52,12 @@ Feature: Stack page
     Given The user is on the Implementation page
     When User clicks Try here link
     When The user write the invalid code in Editor
-    When  Click the Run button
+    When Click the Run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for Implementation page
     Given The user is on the Implementation page
-    When  User clicks Try here link
+    When User clicks Try here link
     When Click the Run button
     Then The user should not see any error message or alert
 
@@ -65,7 +65,7 @@ Feature: Stack page
     Given The user is on the Implementation page
     When User clicks Try here link
     When The user write the valid code in Editor
-    When  Click the Run button
+    When Click the Run button
     Then The user should able to see output in the console
     
     Scenario: Validate user can navigate to Applications page

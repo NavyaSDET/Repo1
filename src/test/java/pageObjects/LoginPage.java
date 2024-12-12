@@ -8,12 +8,12 @@ import org.testng.Assert;
 import StepDefinitions.Hooks;
 
 public class LoginPage {
-	public WebDriver driver = Hooks.getDriver();
+	WebDriver driver=Hooks.getDriver();
 
-	public By txt_username = By.id("id_username");
-	public By txt_password = By.id("id_password");
-	public By btn_login =   By.xpath("//input[@value='Login']");
-	public By warningMessage = By.cssSelector(".alert.alert-primary");
+	By txt_username = By.id("id_username");
+	By txt_password = By.id("id_password");
+	By btn_login =   By.xpath("//input[@value='Login']");
+	By warningMessage = By.cssSelector(".alert.alert-primary");
 	
 	public void enterUsername(String username) {
 		driver.findElement(txt_username).sendKeys(username);

@@ -22,7 +22,7 @@ Feature: Title of your feature
     Given The user is on the graphs page under graph detials
     When User clicks Try here link
     When The user write the invalid code in Editor
-    When  Click the Run button
+    When Click the Run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for graphs page
@@ -33,7 +33,7 @@ Feature: Title of your feature
 
   Scenario: Valid code on try editor for graphs runs successfully
     Given The user is on the graphs page under graph detials
-    When  User clicks Try here link
+    When User clicks Try here link
     When The user write the valid code in Editor
     When Click the Run button
     Then The user should able to see output in the console
@@ -52,7 +52,7 @@ Feature: Title of your feature
     Given The user is on the graphs representations page
     When User clicks Try here link
     When The user write the invalid code in Editor
-    When  Click the Run button
+    When Click the Run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for graph representations page

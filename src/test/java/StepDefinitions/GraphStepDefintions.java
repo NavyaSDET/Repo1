@@ -8,9 +8,11 @@ import PageObjects.IntroductionPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class GraphStepDefintions {
-		public WebDriver driver = Hooks.getDriver();
+	WebDriver driver=Hooks.getDriver();
 
 	public GraphPage gp = new GraphPage();
 	public IntroductionPage ip =  new IntroductionPage();
@@ -22,7 +24,12 @@ public class GraphStepDefintions {
 	
 	@Then("The user is on the graph details page")
 	public void the_user_is_on_the_graph_details_page() {
-		gp.validateUserIsOnGraphDetailPage();
+		Assert.assertEquals(driver.findElement(gp.GraphDetail).getText(), "Graph"); 
+		Assert.assertTrue(driver.findElement(gp.GraphDetail).isDisplayed());
+		Assert.assertEquals(driver.getCurrentUrl(),"https://dsportalapp.herokuapp.com/graph/");
+		Assert.assertEquals(driver.findElement(gp.topicsCovered).getText(),"Topics Covered");	
+		Assert.assertTrue(driver.findElement(gp.topicsCovered).isDisplayed());
+		Assert.assertTrue(driver.findElement(gp.TopicsCoveredOptions).isDisplayed());
 	}
 	
 	@When("The user click on graph link in graph details page")
