@@ -7,40 +7,39 @@ import StepDefinitions.Hooks;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class IntroductionPage {
 	public WebDriver driver = Hooks.getDriver();
 
 
-	By NumpyNinja =  By.cssSelector("a[href='/home']");
-	By Datastructure = By.cssSelector("a.dropdown-toggle");
-	By DsDropdown = By.cssSelector("a.dropdown-item");
+	public By NumpyNinja =  By.cssSelector("a[href='/home']");
+	public By Datastructure = By.cssSelector("a.dropdown-toggle");
+	public By DsDropdown = By.cssSelector("a.dropdown-item");
 
-	By cardBody = By.cssSelector("div.card-body");
-	By cardTitle = By.cssSelector("h5.card-title");
-	By cardText = By.cssSelector("p.card-text");
-	By getStartedButtonOnCard = By.cssSelector("a.btn-primary");
-	By signInButton=By.cssSelector("a[href='/login']");
-	By registerButton=By.cssSelector("a[href='/register']");
-	By warningMessage = By.cssSelector(".alert.alert-primary");
-	By userNameInputfield=By.cssSelector("input[name='username']");
-	By passWordNameInputField=By.cssSelector("input[name='password']");
-	By loginButton=By.cssSelector("input[type='submit']");
-	By displayQaChamps=By.cssSelector(".navbar-nav ul a:nth-child(2)");
-	By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
-	By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
-	By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
-	By practiceQuestionButton=By.cssSelector("a[href='/data-structures-introduction/practice']");
-	By tryHereButton=By.cssSelector("a[href='/tryEditor']");
-	By codeEditorPage=By.cssSelector("pre.codeMirror-line");
-	By codeInputField = By.cssSelector(".CodeMirror textarea");
-	By consoleOutput = By.cssSelector("#output");
-	By runButton=By.cssSelector("button[type='button']");
-	By arrayGetStartedBtn= By.cssSelector("a[href='array']");
-	By queueGetStartedBtn= By.cssSelector("a[href='queue']");
-	By stackGetStartedBtn= By.cssSelector("a[href='stack']");
-	By graphGetStartedBtn= By.cssSelector("a[href='graph']");
+	public By cardBody = By.cssSelector("div.card-body");
+	public By cardTitle = By.cssSelector("h5.card-title");
+	public By cardText = By.cssSelector("p.card-text");
+	public By getStartedButtonOnCard = By.cssSelector("a.btn-primary");
+	public By signInButton=By.cssSelector("a[href='/login']");
+	public By registerButton=By.cssSelector("a[href='/register']");
+	public By warningMessage = By.cssSelector(".alert.alert-primary");
+	public By userNameInputfield=By.cssSelector("input[name='username']");
+	public By passWordNameInputField=By.cssSelector("input[name='password']");
+	public By loginButton=By.cssSelector("input[type='submit']");
+	public By displayQaChamps=By.cssSelector(".navbar-nav ul a:nth-child(2)");
+	public By dataStructurePageHeader=By.cssSelector("h4.bg-secondary");
+	public By dispalyTimeComplexity=By.cssSelector("a[href='time-complexity']");
+	public By timeComplexityPage=By.cssSelector("strong .bg-secondary.text-white");
+	public By practiceQuestionButton=By.cssSelector("a[href='/data-structures-introduction/practice']");
+	public By tryHereButton=By.cssSelector("a[href='/tryEditor']");
+	public By codeEditorPage=By.cssSelector("pre.codeMirror-line");
+	public By codeInputField = By.cssSelector(".CodeMirror textarea");
+	public By consoleOutput = By.cssSelector("#output");
+	public By runButton=By.cssSelector("button[type='button']");
+	public By arrayGetStartedBtn= By.cssSelector("a[href='array']");
+	public By queueGetStartedBtn= By.cssSelector("a[href='queue']");
+	public By stackGetStartedBtn= By.cssSelector("a[href='stack']");
+	public By graphGetStartedBtn= By.cssSelector("a[href='graph']");
 
 	public void validateUserIsOnIntroductionPage() {
 
@@ -99,7 +98,7 @@ public class IntroductionPage {
 		driver.findElements(getStartedButtonOnCard).get(0).click();
 	}
 
-	public void validateUserisOnDSIntroductionAsSigneIn() {
+	public void InvalidateUserisOnDSIntroductionAsSigne() {
 		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
 		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
@@ -109,7 +108,6 @@ public class IntroductionPage {
 	public void validateUserisOnDSIntroduction() {
 		Assert.assertTrue(driver.findElement(dataStructurePageHeader).isDisplayed());
 		Assert.assertEquals(driver.findElement(dataStructurePageHeader).getText(), "Data Structures-Introduction");
-
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
 	}
 	public void validateTimeComplexiButtonDisplayed() {

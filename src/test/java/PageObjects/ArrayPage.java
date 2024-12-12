@@ -11,21 +11,33 @@ import org.openqa.selenium.WebDriver;
 public class ArrayPage {
 
 	public WebDriver driver = Hooks.getDriver();
-	By arrayDetail=By.cssSelector("h4.bg-secondary");
-	By topicsCovered = By.cssSelector("p.bg-secondary");
-	By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
-	By arrayInPythonLink=By.cssSelector("a[href='arrays-in-python']");
-	By arraysInPythonText=By.cssSelector("strong .bg-secondary");
+	public By arrayDetail=By.cssSelector("h4.bg-secondary");
+	public By topicsCovered = By.cssSelector("p.bg-secondary");
+	public By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
+	public By arrayInPythonLink=By.cssSelector("a[href='arrays-in-python']");
+	public By arraysInPythonText=By.cssSelector("strong .bg-secondary");
 
-	By arraysUsingListLink = By.cssSelector("a[href='arrays-using-list']");
-	By arraysUsingListText=By.cssSelector("strong .bg-secondary");
-	By basicOperationsInListLink = By.cssSelector("a[href=basic-operations-in-lists]");
-	By basicOperationsInListText=By.cssSelector("strong .bg-secondary");
-	By applicationsOfArrayLink = By.cssSelector("a[href='applications-of-array']");
-	By applicationsOfArrayText=By.cssSelector("strong .bg-secondary");
-	By practiceQuestionsLink=By.cssSelector("a[href='/array/practice']");
-	By practiceQuestion1 = By.cssSelector("a[href='/question/1']");
+	public By arraysUsingListLink = By.cssSelector("a[href='arrays-using-list']");
+	public By arraysUsingListText=By.cssSelector("strong .bg-secondary");
+	public By basicOperationsInListLink = By.cssSelector("a[href=basic-operations-in-lists]");
+	public By basicOperationsInListText=By.cssSelector("strong .bg-secondary");
+	public By applicationsOfArrayLink = By.cssSelector("a[href='applications-of-array']");
+	public By applicationsOfArrayText=By.cssSelector("strong .bg-secondary");
+	public By practiceQuestionsLink=By.cssSelector("a[href='/array/practice']");
+	public By practiceQuestion = By.cssSelector("a[href='/question/1']");
 
+
+	  public By practiceQuestion1 = By.cssSelector("a[href='/question/1']"); 
+	  public By practiceQuestion2 = By.cssSelector("a[href='/question/2']"); 
+	  public By practiceQuestion3 = By.cssSelector("a[href='/question/3']"); 
+	  public By practiceQuestion4 = By.cssSelector("a[href='/question/4']"); 
+	  
+	  public By practiceQuestionpage=By.cssSelector("div.container");
+	  public By practiceQuestionSearchPage=By.cssSelector("div.CodeMirror-scroll");
+	  public By practiceQuestionRunButton=By.cssSelector("button[type='button']");
+	  public By practiceQuestionSubmitButton=By.cssSelector("input[type='submit']");
+	  
+	  
 	public void validateUserIsOnArrayDetailPage(){
 		Assert.assertEquals(driver.findElement(arrayDetail).getText(), "Array");
 		Assert.assertTrue(driver.findElement(arrayDetail).isDisplayed());
@@ -70,8 +82,6 @@ public class ArrayPage {
 	public void clickOnPracticeQuestionsLink() {
 		driver.findElement(practiceQuestionsLink).click();
 	}
-	public void validateUserIsOnPracticeQuestionsPage() {
-		Assert.assertEquals(driver.getCurrentUrl() ,"https://dsportalapp.herokuapp.com/array/practice");
-		Assert.assertTrue(driver.findElement(practiceQuestion1).isDisplayed());
-	}
+	
+
 }

@@ -11,17 +11,16 @@ public class GraphPage{
 
 	public WebDriver driver = Hooks.getDriver();
 
+	public By GraphDetail=By.cssSelector("h4.bg-secondary");
+	public By topicsCovered = By.cssSelector("p.bg-secondary");
+	public By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
 
-	By GraphDetail=By.cssSelector("h4.bg-secondary");
-	By topicsCovered = By.cssSelector("p.bg-secondary");
-	By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
+	public By graphLink=By.cssSelector("a[href='graph']");
+	public By graphText=By.cssSelector("strong .bg-secondary");
 
-	By graphLink=By.cssSelector("a[href='graph']");
-	By graphText=By.cssSelector("strong .bg-secondary");
-
-	By graphRepresentationsLink= By.cssSelector("a[href='graph-representations']");
-	By graphRepresentationsText=By.cssSelector("strong .bg-secondary");
-	By practiceQuestionsLink=By.cssSelector("a[href='/graph/practice']");
+	public By graphRepresentationsLink= By.cssSelector("a[href='graph-representations']");
+	public By graphRepresentationsText=By.cssSelector("strong .bg-secondary");
+	public By practiceQuestionsLink=By.cssSelector("a[href='/graph/practice']");
 
 	public void validateUserIsOnGraphDetailPage(){
 		Assert.assertEquals(driver.findElement(GraphDetail).getText(), "Graph"); 

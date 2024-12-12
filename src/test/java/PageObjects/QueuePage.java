@@ -8,19 +8,19 @@ import StepDefinitions.Hooks;
 public class QueuePage {
 	public WebDriver driver = Hooks.getDriver();
 
-	By queueGetStartedButton= By.cssSelector("a[href='queue']");
-	By queuepage=By.cssSelector("h4.bg-secondary");
-	By implementationOfQueueInPythonLink=By.cssSelector("a[href='implementation-lists']");
-	By implementationOfQueueInPythonPage=By.cssSelector("strong .bg-secondary");
-	By implementationUsingCollectionsDequeLink=By.cssSelector("a[href='implementation-collections']");
-	By implementaionUsingCollectionDequePage=By.cssSelector("strong .bg-secondary");
-	By topicsCovered = By.cssSelector("p.bg-secondary");
-	By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
-	By implementationUsingArrayLink=By.cssSelector("a[href='Implementation-array']");
+	public By queueGetStartedButton= By.cssSelector("a[href='queue']");
+	public By queuepage=By.cssSelector("h4.bg-secondary");
+	public By implementationOfQueueInPythonLink=By.cssSelector("a[href='implementation-lists']");
+	public By implementationOfQueueInPythonPage=By.cssSelector("strong .bg-secondary");
+	public By implementationUsingCollectionsDequeLink=By.cssSelector("a[href='implementation-collections']");
+	public By implementaionUsingCollectionDequePage=By.cssSelector("strong .bg-secondary");
+	public By topicsCovered = By.cssSelector("p.bg-secondary");
+	public By TopicsCoveredOptions =By.cssSelector("a.list-group-item");
+	public By implementationUsingArrayLink=By.cssSelector("a[href='Implementation-array']");
 
-	By implementationUsingCollectionsArrayPage=By.cssSelector("strong .bg-secondary");
-	By queueOperationsLink=By.cssSelector("a[href='QueueOp']");
-	By queueOperationsPage=By.cssSelector("strong .bg-secondary");
+	public By implementationUsingCollectionsArrayPage=By.cssSelector("strong .bg-secondary");
+	public By queueOperationsLink=By.cssSelector("a[href='QueueOp']");
+	public By queueOperationsPage=By.cssSelector("strong .bg-secondary");
 
 	public void validateUserIsOnQueueDetailsPage(){
 		Assert.assertEquals(driver.findElement(queuepage).getText(), "Queue");

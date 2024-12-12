@@ -11,9 +11,9 @@ public class HomePage {
 
 	public WebDriver driver = Hooks.getDriver();
 
-	By getStartedButton = By.cssSelector("button.btn");
-	By contentHeader = By.cssSelector(".content h1");
-	By contentText =By.cssSelector("div.content p");
+	public By getStartedButton = By.cssSelector("button.btn");
+	public By contentHeader = By.cssSelector(".content h1");
+	public By contentText =By.cssSelector("div.content p");
 	
 	public void openUrl() {
 		driver.get("https://dsportalapp.herokuapp.com/");

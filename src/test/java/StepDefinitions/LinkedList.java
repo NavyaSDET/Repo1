@@ -4,7 +4,6 @@ import org.testng.Assert;
 import PageObjects.LinkedListPage;
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
-import StepDefinitions.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -59,20 +58,17 @@ public class LinkedList {
 
 	@Then("The user is redirected to Introduction page.")
 	public void the_user_is_redirected_to_introduction_page() {
-
 		Assert.assertEquals(LLPage.getTitle(),"Introduction");
 	}
 
 
 	@When("The user clicks Creating Linked LIst link")
 	public void the_user_clicks_creating_linked_l_ist_link() {
-
 	    LLPage.click_LL_Details_Creating_LinkedList();
 	}
 
 	@Then("The user is redirected to Creating Linked List page.")
 	public void the_user_is_redirected_to_creating_linked_list_page() {
-
 		Assert.assertEquals(LLPage.getTitle(),"Creating Linked LIst");
 	}
 
