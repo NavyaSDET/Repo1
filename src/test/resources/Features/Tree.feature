@@ -12,7 +12,6 @@ Scenario: Tree home page
 When The user clicks Overview of Trees link
 Then The user is redirected to Overview of Trees page.
 
-
 Scenario: Overview of Trees
 Given The user is on the Overview of Trees page
 When The user clicks Try Here button

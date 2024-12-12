@@ -1,6 +1,5 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -44,7 +43,6 @@ public class DSIntroductionDetails {
 
 	@Given("The user is on the DS Introduction page")
 	public void the_user_is_on_the_ds_introduction_page() {
-
 		hp.clickOnHomePageGetStartedButton();	
 
 	}
@@ -78,6 +76,11 @@ public class DSIntroductionDetails {
 		ip.completeTheLOgin();
 	}
 
+	@Then("user lands on the DS Introduction page as signedIn")
+	public void user_lands_on_the_ds_introduction_page_as_signed_in() {
+		ip.validateUserisOnDSIntroductionAsSigneIn();
+	}
+	
 	@When("The user clicks the Get Started button of DS Introduction")
 	public void the_user_clicks_the_get_started_button_of_ds_introduction() {
 		ip.clickOnGetStartedButtonOfDSIntroduction();
@@ -123,6 +126,11 @@ public class DSIntroductionDetails {
 	@Given("User is on Try Here page for time complexity")
 	public void user_is_on_try_here_page_for_time_complexity() {
 		ip.codeTryEditorPage();
+	}
+
+	@Then("User should see Practice Question link and try here")
+	public void user_should_see_practice_question_link_and_try_here() {
+	    ip.validateTryHereAndPracticeQuestionLinkDisplayed();
 	}
 
 	@When("The user write the invalid code in Editor")

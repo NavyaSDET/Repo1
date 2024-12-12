@@ -1,0 +1,1556 @@
+<html>
+<head>
+<title>TestNG:  Testfirefox</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Testfirefox</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>201/15/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Dec 09 22:04:28 CST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>873 seconds (873571 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td><div><pre>java.lang.AssertionError: expected [hello] but found []
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:89)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1382483846", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1382483846'><pre>java.lang.AssertionError: expected [hello] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:89)
+</pre></div></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with username entered with a space inbetween", "Registration"</td>
+<td><div><pre>java.lang.AssertionError: expected [NumpyNinja] but found [Registration]
+	at PageObjects.RegistrationPage.checkRegistrationPageURL(RegistrationPage.java:171)
+	at StepDefinitions.Registration.the_user_is_displayed_with_error_msg_after_entering_invalid_data_and_redirects_to_empty_username_textbox(Registration.java:96)
+	at ✽.The user is displayed with error msg after entering invalid data and redirects to empty username textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:32)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1934743346", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1934743346'><pre>java.lang.AssertionError: expected [NumpyNinja] but found [Registration]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.RegistrationPage.checkRegistrationPageURL(RegistrationPage.java:171)
+	at StepDefinitions.Registration.the_user_is_displayed_with_error_msg_after_entering_invalid_data_and_redirects_to_empty_username_textbox(Registration.java:96)
+	at ✽.The user is displayed with error msg after entering invalid data and redirects to empty username textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:32)
+</pre></div></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with valid username but password and confirm password fields has less than eight characters", "Registration"</td>
+<td><div><pre>java.lang.AssertionError: expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at StepDefinitions.Registration.the_user_is_displayed_the_appropriate_error_msg_after_entering_invalid_data_and_redirects_to_empty_password_confirm_textbox(Registration.java:133)
+	at ✽.The user is displayed the appropriate error msg after entering invalid data and  redirects to empty password confirm textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:47)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace930519731", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace930519731'><pre>java.lang.AssertionError: expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at StepDefinitions.Registration.the_user_is_displayed_the_appropriate_error_msg_after_entering_invalid_data_and_redirects_to_empty_password_confirm_textbox(Registration.java:133)
+	at ✽.The user is displayed the appropriate error msg after entering invalid data and  redirects to empty password confirm textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:47)
+</pre></div></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with all valid credentials entered", "Registration"</td>
+<td><div><pre>java.lang.AssertionError: expected [New Account Created. You are logged in as 11111dddfrtfg] but found [password_mismatch:The two password fields didn’t match.]
+	at StepDefinitions.Registration.the_user_is_redirected_to_home_page_of_ds_algo_with_success_message_new_account_created_you_are_logged_in_as_username_on_the_ds_algo_home_page(Registration.java:171)
+	at ✽.The user is redirected to Home Page of DS Algo with success message - New Account Created. You are logged in as username on the DS Algo Home Page(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:62)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2113657661", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2113657661'><pre>java.lang.AssertionError: expected [New Account Created. You are logged in as 11111dddfrtfg] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at StepDefinitions.Registration.the_user_is_redirected_to_home_page_of_ds_algo_with_success_message_new_account_created_you_are_logged_in_as_username_on_the_ds_algo_home_page(Registration.java:171)
+	at ✽.The user is redirected to Home Page of DS Algo with success message - New Account Created. You are logged in as username on the DS Algo Home Page(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:62)
+</pre></div></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Implementation page", "Stack page"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a9576baf-c096-4a32-a13e-0bce779eaf9c, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:21284, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 28412, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:21284/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: a9576baf-c096-4a32-a13e-0bce779eaf9c
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.IntroductionPage.validateErrorMessageDisplayedOnAlert(IntroductionPage.java:153)
+	at StepDefinitions.DSIntroductionDetails.the_user_should_able_to_see_an_error_message_in_alert_window(DSIntroductionDetails.java:148)
+	at ✽.The user should able to see an error message in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/StackPage.feature:56)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace569181162", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace569181162'><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a9576baf-c096-4a32-a13e-0bce779eaf9c, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:21284, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 28412, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:21284/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: a9576baf-c096-4a32-a13e-0bce779eaf9c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.IntroductionPage.validateErrorMessageDisplayedOnAlert(IntroductionPage.java:153)
+	at StepDefinitions.DSIntroductionDetails.the_user_should_able_to_see_an_error_message_in_alert_window(DSIntroductionDetails.java:148)
+	at ✽.The user should able to see an error message in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/StackPage.feature:56)
+</pre></div></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with valid username but only numeric password and confirm password", "Registration"</td>
+<td><div><pre>java.lang.AssertionError: expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at StepDefinitions.Registration.the_user_is_displayed_the_appropriate_error_msg_after_entering_invalid_data_and_redirects_to_empty_confirm_password_textbox(Registration.java:112)
+	at ✽.The user is displayed the appropriate error msg after entering invalid data and redirects to empty confirm password textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:39)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1765846092", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1765846092'><pre>java.lang.AssertionError: expected [Invalid password] but found [password_mismatch:The two password fields didn’t match.]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at StepDefinitions.Registration.the_user_is_displayed_the_appropriate_error_msg_after_entering_invalid_data_and_redirects_to_empty_confirm_password_textbox(Registration.java:112)
+	at ✽.The user is displayed the appropriate error msg after entering invalid data and redirects to empty confirm password textbox(file:///C:/Projects/Repo1/src/test/resources/Features/Registration.feature:39)
+</pre></div></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td><div><pre>java.lang.AssertionError: expected [hello] but found []
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:365)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace965080329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace965080329'><pre>java.lang.AssertionError: expected [hello] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:365)
+</pre></div></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td><div><pre>java.lang.AssertionError: expected [hello] but found []
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:117)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1921733766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1921733766'><pre>java.lang.AssertionError: expected [hello] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:117)
+</pre></div></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9e6cbcfb-ab80-4703-a983-fbe19981ec73, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:25533, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 6792, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:25533/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9e6cbcfb-ab80-4703-a983-fbe19981ec73
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:207)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2146839483", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2146839483'><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9e6cbcfb-ab80-4703-a983-fbe19981ec73, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:25533, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 6792, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:25533/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9e6cbcfb-ab80-4703-a983-fbe19981ec73
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:207)
+</pre></div></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td><div><pre>java.lang.AssertionError: expected [hello] but found []
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:449)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace104830737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace104830737'><pre>java.lang.AssertionError: expected [hello] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.TreePage.check_When_ValidCode_In_Editor(TreePage.java:384)
+	at StepDefinitions.Tree.the_user_is_able_to_see_the_output_inside_the_console(Tree.java:91)
+	at ✽.The user is able to see the output inside the console.(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:449)
+</pre></div></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [7a2a4ca4-34a2-4a3a-ae63-e27b4b24953b, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:23672, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 34372, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:23672/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 7a2a4ca4-34a2-4a3a-ae63-e27b4b24953b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:498)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1155959703", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1155959703'><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [7a2a4ca4-34a2-4a3a-ae63-e27b4b24953b, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:23672, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 34372, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:23672/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 7a2a4ca4-34a2-4a3a-ae63-e27b4b24953b
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/Tree.feature:498)
+</pre></div></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Queue operations", "Array detail page"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e3c1dff4-fb10-46bc-a6ae-4cdf78449e27, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:2002, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 38096, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:2002/devtool..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: e3c1dff4-fb10-46bc-a6ae-4cdf78449e27
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.IntroductionPage.validateErrorMessageDisplayedOnAlert(IntroductionPage.java:153)
+	at StepDefinitions.DSIntroductionDetails.the_user_should_able_to_see_an_error_message_in_alert_window(DSIntroductionDetails.java:148)
+	at ✽.The user should able to see an error message in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/ArrayDetailsPage.feature:25)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2145442546", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2145442546'><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e3c1dff4-fb10-46bc-a6ae-4cdf78449e27, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:2002, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 38096, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:2002/devtool..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: e3c1dff4-fb10-46bc-a6ae-4cdf78449e27
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.IntroductionPage.validateErrorMessageDisplayedOnAlert(IntroductionPage.java:153)
+	at StepDefinitions.DSIntroductionDetails.the_user_should_able_to_see_an_error_message_in_alert_window(DSIntroductionDetails.java:148)
+	at ✽.The user should able to see an error message in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/ArrayDetailsPage.feature:25)
+</pre></div></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user lands on default home page", "DS Homepage"</td>
+<td><div><pre>java.lang.AssertionError: expected [rgba(0, 0, 255, 1)] but found [rgb(0, 0, 255)]
+	at PageObjects.HomePage.validateHomePageGetStratedButton(HomePage.java:37)
+	at StepDefinitions.HomeStepDefinitions.the_user_should_landed_on_the_ds_algo_get_started_page_with_message_you_are_at_the_right_place(HomeStepDefinitions.java:21)
+	at ✽.The user should landed on the DS_Algo Get Started page with message You are at the right place(file:///C:/Projects/Repo1/src/test/resources/Features/HomePage.feature:5)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2032735165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2032735165'><pre>java.lang.AssertionError: expected [rgba(0, 0, 255, 1)] but found [rgb(0, 0, 255)]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at PageObjects.HomePage.validateHomePageGetStratedButton(HomePage.java:37)
+	at StepDefinitions.HomeStepDefinitions.the_user_should_landed_on_the_ds_algo_get_started_page_with_message_you_are_at_the_right_place(HomeStepDefinitions.java:21)
+	at ✽.The user should landed on the DS_Algo Get Started page with message You are at the right place(file:///C:/Projects/Repo1/src/test/resources/Features/HomePage.feature:5)
+</pre></div></td>
+<td>8</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page  with valid username and Valid password", "Login Feature"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: h4.bg-secondary
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [0bc73a38-9619-4124-8f52-0cee3327e7d2, findElement {value=h4.bg-secondary, using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:26910, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24360, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:26910/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 0bc73a38-9619-4124-8f52-0cee3327e7d2
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at PageObjects.IntroductionPage.validateUserisOnDSIntroductionAsSigneIn(IntroductionPage.java:103)
+	at StepDefinitions.DSIntroductionDetails.user_lands_on_the_ds_introduction_page_as_signed_in(DSIntroductionDetails.java:81)
+	at ✽.user lands on the DS Introduction page as signedIn(file:///C:/Projects/Repo1/src/test/resources/Features/LoginTestNav.feature:47)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1390302566", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1390302566'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: h4.bg-secondary
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [0bc73a38-9619-4124-8f52-0cee3327e7d2, findElement {value=h4.bg-secondary, using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:26910, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24360, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:26910/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 0bc73a38-9619-4124-8f52-0cee3327e7d2
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at PageObjects.IntroductionPage.validateUserisOnDSIntroductionAsSigneIn(IntroductionPage.java:103)
+	at StepDefinitions.DSIntroductionDetails.user_lands_on_the_ds_introduction_page_as_signed_in(DSIntroductionDetails.java:81)
+	at ✽.user lands on the DS Introduction page as signedIn(file:///C:/Projects/Repo1/src/test/resources/Features/LoginTestNav.feature:47)
+</pre></div></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [234e40cc-e488-4e5e-b68e-7ad4f9fd0f99, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:46192, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24664, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:46192/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 234e40cc-e488-4e5e-b68e-7ad4f9fd0f99
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:95)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace20030223", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20030223'><pre>org.openqa.selenium.NoAlertPresentException: Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [234e40cc-e488-4e5e-b68e-7ad4f9fd0f99, getAlertText {}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 133.0, moz:accessibilityChecks: false, moz:buildID: 20241121140525, moz:debuggerAddress: 127.0.0.1:46192, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 24664, moz:profile: C:\Users\vamsh\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:46192/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 234e40cc-e488-4e5e-b68e-7ad4f9fd0f99
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1190)
+	at PageObjects.TreePage.check_When_InvalidCode_In_Editor(TreePage.java:390)
+	at StepDefinitions.Tree.the_user_see_error_msg_in_alert_window(Tree.java:102)
+	at ✽.The user see error msg in alert window(file:///C:/Projects/Repo1/src/test/resources/Features/LinkedList.feature:95)
+</pre></div></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page on registration with different passwords entered in password and confirm password fields", "Registration"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for graph representations runs successfully", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page where SignIn button is clicked", "Registration"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can click on Try here link from Applications page", "Stack page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Applications page", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page  with blank username", "Login Feature"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from Array using list", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to applications of array", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation Of BST", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation in Python", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user navigated to array details page when clicked on get started", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from graphs", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for applications of array runs successfully", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Arrays in python", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from Arrays in python", "Array detail page"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implement Linked List in Python", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Types of Linked List", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Applications of Binary trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page with blank info", "Login Feature"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page where login button is clicked", "Registration"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Terminologies", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Array using list", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Applications of Binary trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate user can click on practicequestions", "Array detail page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Types of Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Implementation of Queue in python", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page with invalid username and password", "Login Feature"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Applications page", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation of Binary Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Trees", "Tree"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Operations in Stack page", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try editor for Implementation of Queue in python", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Implementation using collections.deque runs successfully", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Deletion", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for graphs page", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Linked LIst", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Graph in Graph page", "Title of your feature"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can open try editor page from Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Time Complexity runs successfully", "DS Introduction Page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page with blank password", "Login Feature"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Operations in Stack page", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Time Complexity", "DS Introduction Page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Traversal", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Types of Binary Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Terminologies", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Clicking on Try Here on time complexity opens python editor", "DS Introduction Page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Tree home page", "Tree"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with only username and password fields entered", "Registration"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can click on Try here link from Implementation page", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for basic operations in lists", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation Of BST", "Tree"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Implementation runs successfully", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to basic opertaions in lists", "Array detail page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can click on Try here link from graph representations page", "Title of your feature"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Tree Traversals", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Tree Traversals", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can open try editor page from Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Search Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user navigated to graph details page when clicked on get started", "Title of your feature"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from applications of array", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation in Python", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for applications of array", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS Algo Sign in Page with valid username and invalid password", "Login Feature"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the DS dropdown without signIN", "DS Introduction Page"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Implementation of Queue in python runs successfully", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Applications runs successfully", "Stack page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from Operations in Stack", "Stack page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try editor for Time Complexity", "DS Introduction Page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Introduction page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with only username entered", "Registration"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for basic operations in lists runs successfully", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Array using list", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Search Trees", "Tree"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Traversals-Illustration", "Tree"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Traversals-Illustration", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS_algo Home page", "Tree"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Clicking on time complexity navigate to the page", "DS Introduction Page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Applications page", "Stack page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Overview of Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Overview of Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Types of Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Binary Tree Traversals", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Clicking on get started for data structers lands on Data Structers details page", "DS Introduction Page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Graph Representations page", "Title of your feature"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for Basic operations in lists", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with invalid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user navigate to DS Intro Page", "DS Homepage"</td>
+<td></td>
+<td>8</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Implementations of Queue in Python", "Queue Details page"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Implementation of Binary Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Types of Binary Trees", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Array using list runs successfully", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can Try here link page from Basic operations in lists", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify warning message when user navigate to DS details page without signIn", "DS Introduction Page"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Implementation using collections.deque runs successfully", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with valid data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can open try editor page from Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Operations in Stack runs successfully", "Stack page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for array in python", "Array detail page"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for Implementation page", "Stack page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for Implementation using collections.deque runs successfully", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Operations in Stack page", "Stack page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Implementation page", "Stack page"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try editor for Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Arrays using list", "Array detail page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user navigated to queue details page when clicked on get started", "Queue Details page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for graph representations page", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New user registration page with all fields empty and Register button is clicked", "Registration"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for arrays in python runs successfully", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can open try editor page from Implementation of Queue in python", "Queue Details page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user lands on register page when clicked on register", "DS Introduction Page"</td>
+<td></td>
+<td>8</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Tree Traversals", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user navigated to stack details page when clicked on get started", "Stack page"</td>
+<td></td>
+<td>10</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate user can navigate to Implementation using collections.deque", "Queue Details page"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for applications of array", "Array detail page"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with invalid data", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "LL_Try Here Editor page with empty data", "Linked List"</td>
+<td></td>
+<td>13</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with alert message", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DS_algo Home page", "Linked List"</td>
+<td></td>
+<td>9</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "No error message displayed for empty code on try editor for graph representations page", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with valid data", "Tree"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Try Here Editor page with empty code", "Tree"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Linked List home page", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Insertion", "Linked List"</td>
+<td></td>
+<td>11</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid code on try editor for graphs runs successfully", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+<tr>
+<td title='TestRunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Error message displayed for invalid code on try Editor for graphs page", "Title of your feature"</td>
+<td></td>
+<td>12</td>
+<td>TestRunners.TestRunner@1c1bbc4e</td></tr>
+</table><p>
+</body>
+</html>

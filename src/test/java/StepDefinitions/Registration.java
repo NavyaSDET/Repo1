@@ -19,7 +19,7 @@ public class Registration {
 
 	public WebDriver driver = Hooks.getDriver();
 	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
-	RegistrationPage RGPage= new RegistrationPage(driver); //constructor used
+	RegistrationPage RGPage= new RegistrationPage(); //constructor used
 
 	String actualErrorMsg;
 	String expectedErrorMsg;
@@ -29,15 +29,6 @@ public class Registration {
 
 	@Given("The user is on the new user registration page")
 	public void the_user_is_on_the_new_user_registration_page() {
-
-		//Traditional structure(without POM) --
-		/* System.setProperty("webdriver.chrome.driver", "/Users/rakes/eclipse-workspace/Hello-Selenium/src/test/resources/driver/chromedriver-win64/chromedriver.exe");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://dsportalapp.herokuapp.com/");
-		driver.findElement(By.className("btn")).click();
-		driver.findElement(By.xpath("//div[2]/ul/a[2]")).click();*/
-
 		//POM Structure --
 		RGPage.openDSAlgoURL();
 		RGPage.clickGetStartedBtn();
@@ -48,13 +39,8 @@ public class Registration {
 
 	@When("The user clicks Register button with all fields empty on registration form from sheetname {string} and row {int}")
 	public void the_user_clicks_register_button_with_all_fields_empty_on_registration_form_from_sheetname(String string, Integer int1) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
-
-
 		RGPage.fillRegistrationForm("Register", 0);
 		RGPage.clickRegisterBtn_RegisterPage();
-
-
-
 	}
 
 	@Then("The error Please fill out this field appears below Username textbox")
@@ -64,7 +50,7 @@ public class Registration {
 		String msgBrowserValidation = activeElement.getAttribute("validationMessage");
 		String expectedErrorMsg = "Please fill out this field.";
 		Assert.assertEquals(msgBrowserValidation, expectedErrorMsg);
-		
+	
 		}
 
 	@When("The user clicks Register button after entering Username with other fields empty on registration form from sheetname {string} and row {int}")

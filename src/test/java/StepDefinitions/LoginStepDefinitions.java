@@ -1,8 +1,16 @@
 package StepDefinitions;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
+
 import PageObjects.HomePage;
 import PageObjects.IntroductionPage;
 import PageObjects.LoginPage;
+import Utilities.ExcelReader;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,9 +28,14 @@ public class LoginStepDefinitions {
 		ip.clickOnSignInlink();
 	}
 
-	@When("The user clicks login button after leaving the {string} textbox and {string} textbox blank")
-	public void the_user_clicks_login_button_after_leaving_the_textbox_and_textbox_blank(String userName, String password) throws InterruptedException {
-		login.loginValiduser(userName, password);
+	@When("The user clicks login button after leaving the username textbox and paswword textbox blank from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_leaving_the_textbox_and_textbox_blank(String sheetName, Integer rowNumber) throws InterruptedException, InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		String password = testdata.get(rowNumber).get("password");
+		login.loginValiduser(username, password);
 	}
 
 	@Then("The error message {string} appears below Username textbox")
@@ -30,9 +43,14 @@ public class LoginStepDefinitions {
 		login.validateAlertMessage(string);
 	}
 
-	@When("The user clicks login button after entering the {string} and leaves {string} textbox blank")
-	public void the_user_clicks_login_button_after_entering_the_and_leaves_textbox_blank(String userName, String password) throws InterruptedException {
-		login.loginValiduser(userName, password);
+	@When("The user clicks login button after entering the username and leaving password textbox blank from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_entering_the_and_leaves_textbox_blank(String sheetName, Integer rowNumber) throws InterruptedException, InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		String password = testdata.get(rowNumber).get("password");
+		login.loginValiduser(username, password);
 	}
 
 	@Then("The error message {string} appears below Pwd textbox")
@@ -40,15 +58,36 @@ public class LoginStepDefinitions {
 		login.validateAlertMessage(string);
 	}
 
-	@When("The user clicks login button after entering the {string} only")
-	public void the_user_clicks_login_button_after_entering_the_only(String string) {
-		login.enterUsername(string);
+	@When("The user clicks login button after entering only username from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_enteringusername_only(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		login.enterUsername(username);
+		login.clicklogin();
+	}
+	
+	@When("The user clicks login button after entering only password from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_entering_password_only(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String password = testdata.get(rowNumber).get("password");
+		login.enterPassword(password);
 		login.clicklogin();
 	}
 
-	@When("The user clicks login button after entering invalid {string} and invalid {string}")
-	public void the_user_clicks_login_button_after_entering_invalid_and_invalid(String string, String string2) throws InterruptedException {
-		login.loginValiduser(string, string2);
+
+	@When("The user clicks login button after entering invalid username and invalid password from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_entering_invalid_and_invalid(String sheetName, Integer rowNumber) throws InterruptedException, InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		String password = testdata.get(rowNumber).get("password");
+
+		login.loginValiduser(username, password);
 	}
 
 	@Then("The user should able to see an error message {string}.")
@@ -56,19 +95,24 @@ public class LoginStepDefinitions {
 		login.validaterrormessage(string);
 	}
 
-	@When("The user clicks login button after entering valid {string} and invalid {string}")
-	public void the_user_clicks_login_button_after_entering_valid_and_invalid(String userName, String password) throws InterruptedException {
-		login.loginValiduser(userName, password);
+	@When("The user clicks login button after entering valid userName and invalid password from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_entering_valid_and_invalid(String sheetName, Integer rowNumber) throws InterruptedException, InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		String password = testdata.get(rowNumber).get("password");
+		login.loginValiduser(username, password);
 	}
 
-	@When("The user clicks login button after entering valid {string} and valid {string}")
-	public void the_user_clicks_login_button_after_entering_valid_and_valid(String userName, String password) throws InterruptedException {
-		login.loginValiduser(userName, password);
+	@When("The user clicks login button after entering valid userName and password from sheetname {string} and row {int}")
+	public void the_user_clicks_login_button_after_entering_valid_and_valid(String sheetName, int rowNumber) throws InterruptedException, InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+		String username = testdata.get(rowNumber).get("username");
+		String password = testdata.get(rowNumber).get("password");
+		login.loginValiduser(username, password);
 	}
 
-	@Then("The user should land in Data Structure Home Page")
-	public void the_user_should_land_in_data_structure_home_page() {
-		System.out.println("User lands on data structure homepage ");
-
-	}
 }

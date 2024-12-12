@@ -1,4 +1,5 @@
 package StepDefinitions;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -9,27 +10,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+
 public class Tree {
 
-	public WebDriver driver = Hooks.driver;
-	public RegistrationPage RGPage = new RegistrationPage(driver);
-	TreePage treePage = new TreePage(driver);
-
-
-
-	/*@Given("The user is on DS_algo home page")
-	public void the_user_is_on_ds_algo_home_page() {
-
-		RGPage.Land_On_RegistrationPage();
-		RGPage.enterUsernameAndPswdAndConfirmPswdAndClickRegisterBtn("tri0ck340", "dfghj1234", "dfghj1234");
-
-	}*/
+	public WebDriver driver = Hooks.getDriver();
+	public RegistrationPage RGPage = new RegistrationPage();
+	TreePage treePage = new TreePage();
+	private static Logger logger = LogManager.getLogger();  //Log4j library class for logging purpose
 
 
 	@When("User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
-		treePage = new TreePage(driver);
-		//RGPage = new RegistrationPage(driver);
 		treePage.clickTree_GetStartedBtn_HomePage();
 
 	}
@@ -38,6 +32,7 @@ public class Tree {
 	public void the_user_is_redirected_to_tree_page() {
 
 		Assert.assertEquals(driver.getTitle(),"Tree");
+
 	}
 
 	@When("The user select Tree from the Data Structure dropdown menu")

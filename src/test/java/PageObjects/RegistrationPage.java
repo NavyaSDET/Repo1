@@ -9,27 +9,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import StepDefinitions.Hooks;
 import Utilities.ExcelReader;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
-public class RegistrationPage {
-
-
-	public WebDriver driver;
-
-	//1. Constructor -- a method in the class having same name as class --encapsulation concept
-	public RegistrationPage(WebDriver rdriver) {
-
-		this.driver = rdriver;
-	}
-
-
-	/*		public RegistrationPage()
-			{
-				this.driver=driver;
-				if(!driver.getTitle().equals("Registration"))
-			      throw new IllegalStateException("THIS IS NOT REGISTRATION PAGE. THE CURRENT PAGE IS :"+driver.getCurrentUrl());
-			}   */
+public class RegistrationPage  {
+	public WebDriver driver = Hooks.getDriver();
 
 	String actualErrorMsgText1;
 	String InvalidUser_errorMsg;

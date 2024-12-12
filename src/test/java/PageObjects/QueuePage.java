@@ -2,11 +2,11 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import StepDefinitions.Hooks;
 
 public class QueuePage {
-	WebDriver driver=Hooks.getDriver();
-
+	public WebDriver driver = Hooks.getDriver();
 
 	By queueGetStartedButton= By.cssSelector("a[href='queue']");
 	By queuepage=By.cssSelector("h4.bg-secondary");

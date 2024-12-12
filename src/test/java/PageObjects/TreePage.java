@@ -4,17 +4,11 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import StepDefinitions.Hooks;
 
 
-public class TreePage {
-
-	public WebDriver driver;
-	RegistrationPage RGPage = new RegistrationPage(driver);
-
-	public TreePage(WebDriver rdriver) {
-
-		this.driver = rdriver;
-	}
+public class TreePage{
+	public WebDriver driver = Hooks.getDriver();
 
 	//Tree Page general elements
 
