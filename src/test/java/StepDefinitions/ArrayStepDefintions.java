@@ -1,9 +1,14 @@
 package StepDefinitions;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -13,6 +18,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import PageObjects.ArrayPage;
 import PageObjects.IntroductionPage;
+import Utilities.ExcelReader;
 
 public class ArrayStepDefintions {
 	public WebDriver driver = Hooks.getDriver();
@@ -100,8 +106,9 @@ public class ArrayStepDefintions {
 		Assert.assertEquals(driver.findElement(ap.applicationsOfArrayText).getText(), "Applications of Array");
 	}
 
-	@When("the user click on the practice questions link")
+	@When("The user is on the practice questions page")
 	public void the_user_click_on_the_practice_questions_link() {
+		ap.clickOnArrayInPythonLink();
 		ap.clickOnPracticeQuestionsLink();
 	}
 
@@ -111,6 +118,16 @@ public class ArrayStepDefintions {
 		Assert.assertTrue(driver.findElement(ap.searchTheArrayQuestion).isDisplayed());
 	}
 
+	@Then("the user should be redirected to practice question page for search the array")
+	public void the_user_should_be_redirected_to_practice_question_page_for_search_the_array() {
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/question/1");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionPageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionPageHeader).getText(), "QUESTION");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionSubmitButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionRunButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionFirstLine).getText(), "Write a Python Program to check if an element is present in the input array.");
+	}
+
 	@Given("The user is on the Practice Questions page of Search array page")
 	public void the_user_is_on_the_practice_questions_page_of_search_array_page() {
 		ap.clickOnArrayInPythonLink();
@@ -118,9 +135,16 @@ public class ArrayStepDefintions {
 		ap.clickOnSearchArrayQuestionLink();
 	}
 
-	@When("The user enter valid python code in tryEditor page sheet {string} and {int} for the Question")
-	public void the_user_enter_valid_python_code_in_try_editor_page_sheet_and_for_the_question(String sheetName, int rowNumber) throws InvalidFormatException, IOException, OpenXML4JException {
+	@When("The user enter python code in tryEditor page sheet {string} and row {int} for the Question and click on run button")
+	public void the_user_enter_valid_python_code_in_try_editor_page_sheet_and_for_the_question_run_button(String sheetName, int rowNumber) throws InvalidFormatException, IOException, OpenXML4JException {
 		ap.enterPythonCode(sheetName, rowNumber);
+		ap.clickOnRunButton();
+	}
+
+	@When("The user enter python code in tryEditor page sheet {string} and row {int} for the Question and click on submit button")
+	public void the_user_enter_valid_python_code_in_try_editor_page_sheet_and_for_the_question_submit_button(String sheetName, int rowNumber) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
+		ap.enterPythonCode(sheetName, rowNumber);
+		ap.clickOnSubmitButton();
 	}
 
 	@When("the user click on run button")
@@ -128,68 +152,89 @@ public class ArrayStepDefintions {
 		ap.clickOnRunButton();
 	}
 
-	@Then("the user should be presented with the Run result {string}")
-	public void the_user_should_be_presented_with_the_run_result(String expectedOutput) {
+	@Then("the user should be presented with the Run result from sheet {string} and row {int}")
+	public void the_user_should_be_presented_with_the_run_result(String sheetName, int rowNumber) throws InterruptedException, io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException, IOException, OpenXML4JException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetName);
+
+		String expectedOutput = testdata.get(rowNumber).get("Result");
 		Assert.assertEquals(driver.findElement(ap.practiceQuestionOutPut).getText(), expectedOutput);
 	}
 
-	@When("the user click on submit button")
-	public void the_user_click_on_submit_button() {
-		System.out.println("the user click on submit button");
+	@When("the user click on The Search the array link")
+	public void the_user_click_on_the_search_the_array_link() {
+		ap.clickOnSearchArrayQuestionLink();
 	}
 
-	@Then("the user should be presented with successful submission message")
-	public void the_user_should_be_presented_with_successful_submission_message() {
-		System.out.println("the user should be presented with successful submission message");
-
-	}
-
-	@Then("the user should be presented with error message as syntaxError: bad input on line {int}")
-	public void the_user_should_be_presented_with_error_message_as_syntax_error_bad_input_on_line(Integer int1) {
-		System.out.println("the user should be presented with error message as syntaxError: bad input on line {int}");
-	}
-
-	@Given("The user is on Practice Question page")
-	public void the_user_is_on_practice_question_page() {
-		System.out.println("The user is on Practice Question page");
-	}
 
 	@When("the user click on The Max Consecutive Ones link")
 	public void the_user_click_on_the_max_consecutive_ones_link() {
 		ap.clickOnMaxConsecutiveQuestionLink();
 	}
 
-	@Then("the user should be redirected to  practice question page contains an tryEditor with Run and Submit buttons")
-	public void the_user_should_be_redirected_to_practice_question_page_contains_an_try_editor_with_run_and_submit_buttons() {
-		System.out.println(
-				"the user should be redirected to  practice question page contains an tryEditor with Run and Submit buttons");
-	}
-
-	@Given("The user is on the Practice Questions page of Max Consecutive Ones")
-	public void the_user_is_on_the_practice_questions_page_of_max_consecutive_ones() {
-		System.out.println("The user is on the Practice Questions page of Max Consecutive Ones");
-	}
-
-	@When("the user click on The Find Numbers with Even Number of Digits link")
-	public void the_user_click_on_the_find_numbers_with_even_number_of_digits_link() {
+	@When("the user click on the even number question link")
+	public void the_user_click_on_the_even_numbers_link() {
 		ap.clickOnEvenNumbersQuestionLink();
 	}
 
+	@When("the user click on the sorted array link")
+	public void the_user_click_on_the_sort_array_link() {
+		ap.clickOnSortedArrayQuestionLink();
+	}
+
+
+	@Given("The user is on the Practice Questions page of Max Consecutive Ones")
+	public void the_user_is_on_the_practice_questions_page_of_max_consecutive_ones() {
+		ap.clickOnArrayInPythonLink();
+		ap.clickOnPracticeQuestionsLink();
+		ap.clickOnMaxConsecutiveQuestionLink();
+	}
+
+
 	@Given("The user is on the Practice Questions page of Find Numbers with Even Number of Digits")
 	public void the_user_is_on_the_practice_questions_page_of_find_numbers_with_even_number_of_digits() {
-		System.out.println("The user is on the Practice Questions page of Find Numbers with Even Number of Digits");
+		ap.clickOnArrayInPythonLink();
+		ap.clickOnPracticeQuestionsLink();
+		ap.clickOnEvenNumbersQuestionLink();	
 	}
 
-	@Given("The user is on Practice Question page Squares of a Sorted Array")
-	public void the_user_is_on_practice_question_page_squares_of_a_sorted_array() {
-		System.out.println("The user is on Practice Question page Squares of a Sorted Array");
-
-	}
 
 	@Given("The user is on the Practice Questions page of Squares of a Sorted Array")
 	public void the_user_is_on_the_practice_questions_page_of_squares_of_a_sorted_array() {
-		System.out.println("The user is on the Practice Questions page of Squares of a Sorted Array");
-
+		ap.clickOnArrayInPythonLink();
+		ap.clickOnPracticeQuestionsLink();
+		ap.clickOnSortedArrayQuestionLink();
+	}
+	
+	@Then("the user should be redirected to practice question page for max consecutive ones")
+	public void the_user_should_be_redirected_to_practice_question_page_for_max_consecutive_ones() {
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/question/2");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionPageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionPageHeader).getText(), "QUESTION");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionSubmitButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionRunButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionFirstLine).getText(), "Given a binary array nums, return the maximum number of consecutive 1's");
+	}
+	
+	@Then("the user should be redirected to practice question page for even number of digits")
+	public void the_user_should_be_redirected_to_practice_question_page_for_even_number_of_digits() {
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/question/3");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionPageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionPageHeader).getText(), "QUESTION");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionSubmitButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionRunButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionFirstLine).getText(), "Given an array nums of integers, return how many of them contain");
+	}
+	
+	@Then("the user should be redirected to practice question page for sorted array")
+	public void the_user_should_be_redirected_to_practice_question_page_for_sorted_array() {
+		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/question/4");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionPageHeader).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionPageHeader).getText(), "QUESTION");
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionSubmitButton).isDisplayed());
+		Assert.assertTrue(driver.findElement(ap.practiceQuestionRunButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ap.practiceQuestionFirstLine).getText(), "Given an integer array nums sorted in non-decreasing order,");
 	}
 
 }

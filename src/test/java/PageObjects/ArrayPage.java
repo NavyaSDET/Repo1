@@ -9,7 +9,11 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
@@ -37,6 +41,8 @@ public class ArrayPage {
 	public By sortedArrayQuestion4 = By.cssSelector("a[href='/question/4']");
 
 	public By practiceQuestionpage = By.cssSelector("div.container");
+	public By practiceQuestionPageHeader = By.cssSelector(".question h2");
+	public By practiceQuestionFirstLine = By.cssSelector("#questionText p:nth-child(1)");
 	public By practiceQuestionInput = By.cssSelector(".code-area textarea[tabindex=\"0\"]");
 	public By practiceQuestionSearchPage = By.cssSelector("div.CodeMirror-scroll");
 	public By practiceQuestionRunButton = By.cssSelector("button[type='button']");
@@ -70,31 +76,48 @@ public class ArrayPage {
 	public void clickOnMaxConsecutiveQuestionLink() {
 		driver.findElement(maxConsecutiveOneQuestion).click();
 	}
-	
+
 	public void clickOnEvenNumbersQuestionLink() {
 		driver.findElement(evenNumberQuestion).click();
 	}
-	
+
 	public void clickOnSortedArrayQuestionLink() {
 		driver.findElement(sortedArrayQuestion4).click();
 	}
-	
-	public void clickOnSubmitButton() {
+
+	public void clickOnSubmitButton() throws InterruptedException {
 		driver.findElement(practiceQuestionSubmitButton).click();
+		Thread.sleep(1000);
 	}
-	
+
 	public void clickOnRunButton() {
 		driver.findElement(practiceQuestionRunButton).click();
 	}
-	
+
 	public void enterPythonCode(String sheetname, int rownumber) throws InvalidFormatException, IOException, OpenXML4JException {
 		ExcelReader reader = new ExcelReader();
 
 		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetname);
 
-		String code = testdata.get(rownumber).get("pythonCode");
-		driver.findElement(practiceQuestionInput).sendKeys(code);
+		driver.findElement(practiceQuestionInput);
+		// Focus on the input field, select all text, and clear it
+		new Actions(driver).keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
 
+		Actions actions = new Actions(driver);
+
+		String code = testdata.get(rownumber).get("pythonCode");
+		code = code.replaceAll("\t", "");
+		String[] splittedCode = code.split("\n");
+		for (int i =0; i<splittedCode.length; i++) {
+			if(splittedCode[i].equalsIgnoreCase("\\xc")) {
+				actions.sendKeys(Keys.BACK_SPACE);
+			}
+			else {
+				System.out.println(splittedCode[i]);
+				actions.sendKeys(splittedCode[i]).perform();
+				actions.sendKeys("\n").perform();
+			}
+		}
 	}
-	
+
 }

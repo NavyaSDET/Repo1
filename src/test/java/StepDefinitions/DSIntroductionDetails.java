@@ -39,6 +39,7 @@ public class DSIntroductionDetails {
 
 	@When("The user clicks the data structure dropdown arrow")
 	public void the_user_clicks_the_data_structure_dropdown_arrow() {
+		hp.clickOnHomePageGetStartedButton();
 		driver.findElement(ip.Datastructure).click();
 		Assert.assertTrue(driver.findElement(ip.DsDropdown).isDisplayed());
 	}
@@ -56,8 +57,8 @@ public class DSIntroductionDetails {
 
 	@Given("The user is on the DS Introduction page")
 	public void the_user_is_on_the_ds_introduction_page() {
+		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
-
 	}
 
 	@When("The user clicks any Get Started buttons of data structures on the DS Introduction page")
@@ -110,6 +111,7 @@ public class DSIntroductionDetails {
 		Assert.assertTrue(driver.findElement(ip.dataStructurePageHeader).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.dataStructurePageHeader).getText(), "Data Structures-Introduction");
 		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+		Assert.assertTrue(driver.findElement(ip.dispalyTimeComplexity).isDisplayed());
 	}
 
 	@Then("User should see the timeComplexity link")
@@ -119,6 +121,7 @@ public class DSIntroductionDetails {
 
 	@When("The user clicks the Time Complexity button")
 	public void the_user_clicks_the_time_complexity_button() {
+		ip.clickOnGetStartedButtonOfDSIntroduction();
 		ip.clickOnTimeComplexiButton();
 	}
 
@@ -126,6 +129,10 @@ public class DSIntroductionDetails {
 	public void user_should_navigate_to_time_complexity_page() {
 		Assert.assertTrue(driver.findElement(ip.timeComplexityPage).isDisplayed());
 		Assert.assertEquals(driver.findElement(ip.timeComplexityPage).getText(), "Time Complexity");
+		Assert.assertTrue(driver.findElement(ip.tryHereButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ip.tryHereButton).getText(), "Try here>>>");
+		Assert.assertTrue(driver.findElement(ip.practiceQuestionButton).isDisplayed());
+		Assert.assertEquals(driver.findElement(ip.practiceQuestionButton).getText(), "Practice Questions");
 	}
 
 	@Then(" User clicks on Get Started button from Tree panel")
@@ -137,6 +144,23 @@ public class DSIntroductionDetails {
 	@When("User clicks Try here link")
 	public void user_clicks_try_here_link() {
 		ip.clickOnTryHerebutton();
+	}
+
+	@When("User clicks Try here link of time complexity page")
+	public void user_clicks_try_here_link_of_time_complexity_page() {
+		ip.clickOnGetStartedButtonOfDSIntroduction();
+		ip.clickOnTimeComplexiButton();
+		ip.clickOnTryHerebutton();
+	}
+
+	@When("User is on try here page of time complexity as signedIn")
+	public void user_is_on_try_here_page_of_time_complexity_as_signedIn() {
+		hp.openUrl();
+		hp.clickOnHomePageGetStartedButton();
+		ip.completeTheLOgin();
+		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
+		ip.clickOnGetStartedButtonOfDSIntroduction();
+		ip.clickOnTimeComplexiButton();
 	}
 
 	@Then("User should navigate to tryEditor page")
@@ -193,8 +217,17 @@ public class DSIntroductionDetails {
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 		Alert alert = driver.switchTo().alert();
 		String alertText = alert.getText();
-		Assert.assertEquals(alertText, "dsportalapp.herokuapp.com says",
-				"NameError: name 'ABC' is not defined on line 1");
+		System.out.println(alertText);
+		Assert.assertEquals(alertText, "NameError: name 'ABC' is not defined on line 1");
+		alert.accept();
+	}
+	
+	@Then("The user should see an alert error message as {string}")
+	public void the_user_should_see_an_alert_error_message(String expectedAlertMessage) {
+		Alert alert = driver.switchTo().alert();
+		String alertText = alert.getText();
+		System.out.println(alertText);
+		Assert.assertEquals(alertText, expectedAlertMessage);
 		alert.accept();
 	}
 

@@ -2,18 +2,15 @@ Feature: DS Introduction Page
 
   Scenario: Validate the DS dropdown without signIN
     Given The user should open the DS Algo Portal URL in any supported browser
-    When The user clicks the Get Started button
     When The user clicks the data structure dropdown arrow
     Then The user should able to see siz options Arrays Linked,List,Stack,Queue,Tree,Graph in dropdown menu
 
   Scenario: Verify warning message when user navigate to DS details page without signIn
-    Given The user should open the DS Algo Portal URL in any supported browser
     Given The user is on the DS Introduction page
     When The user clicks any Get Started buttons of data structures on the DS Introduction page
     Then The user should able to see an warning message You are not logged in
 
   Scenario: Validate user lands on register page when clicked on register
-    Given The user should open the DS Algo Portal URL in any supported browser
     Given The user is on the DS Introduction page
     When The user clicks Register link on the DS Introduction page
     Then The user should navigate to register page
@@ -22,47 +19,28 @@ Feature: DS Introduction Page
     Given The user is on the DS Introduction page as signedIn
     When The user clicks the Get Started button of DS Introduction
     Then The user should navigate to DS Intoduction details page
-    When User should see the timeComplexity link
 
   Scenario: Clicking on time complexity navigate to the page
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of DS Introduction
     When The user clicks the Time Complexity button
     Then User should navigate to Time Complexity page
-    When User should see Practice Question link and try here
 
   Scenario: Clicking on Try Here on time complexity opens python editor
     Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of DS Introduction
-    When The user clicks the Time Complexity button
-    When User clicks Try here link
+    When User clicks Try here link of time complexity page
     Then User should navigate to tryEditor page
 
   Scenario: Error message displayed for invalid code on try editor for Time Complexity
-    Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of DS Introduction
-    When The user clicks the Time Complexity button
-    When User clicks Try here link
-    When User is on Try Here page for time complexity
-    When The user write the invalid code in Editor
-    When Click the Run button
+    Given User is on try here page of time complexity as signedIn
+    When User writes invalid code and clicks run button
     Then The user should able to see an error message in alert window
 
   Scenario: No error message displayed for empty code on try editor for Time Complexity
-    Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of DS Introduction
-    When The user clicks the Time Complexity button
-    When User clicks Try here link
-    When User is on Try Here page for time complexity
-    When Click the Run button
+    Given User is on try here page of time complexity as signedIn
+    When User clicks on run button with empty code
     Then The user should not see any error message or alert
 
   Scenario: Valid code on try editor for Time Complexity runs successfully
-    Given The user is on the DS Introduction page as signedIn
-    When The user clicks the Get Started button of DS Introduction
-    When The user clicks the Time Complexity button
-    When User clicks Try here link
-    When User is on Try Here page for time complexity
-    When The user write the valid code in Editor
-    When Click the Run button
+    Given User is on try here page of time complexity as signedIn
+    When User writes valid code and clicks run button
     Then The user should able to see output in the console
