@@ -1,10 +1,17 @@
 package PageObjects;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import StepDefinitions.Hooks;
+import Utilities.ExcelReader;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 
 public class TreePage{
@@ -66,8 +73,8 @@ public class TreePage{
 
 	By codeEditorPage=By.cssSelector("pre.codeMirror-line");
 	By codeInputField = By.cssSelector(".CodeMirror textarea");
-	By consoleOutput = By.cssSelector("#output");
-	By runButton=By.cssSelector("button[type='button']");
+	public By consoleOutput = By.cssSelector("#output");
+	public By runButton=By.cssSelector("button[type='button']");
 	By okBtn_EditorAlert = By.xpath("");
 
 	/////////////////////////////////////////////////////////////////////// GENERAL ELEMENT METHODS
@@ -281,23 +288,36 @@ public class TreePage{
 
 	}
 
+	public void enterInput(String input)
+	{
+		driver.findElement(codeEditorPage).sendKeys(input);
+	}
+	
+	public void fillTryHereEditor(String sheetname, int row) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetname);
 
 
-	public void checkIfRunButtonIsClicked() {
-		
-		driver.findElement(runButton).isDisplayed();
+			String pythonInput = testdata.get(row).get("pythonInput");
+			enterInput(pythonInput);
+
 	}
 
-	public void check_When_EmptyCode_In_Editor()
-	{
-		Assert.assertFalse(driver.findElement(consoleOutput).isDisplayed()); //Geetha code line
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 
+	public boolean check_When_EmptyCode_In_Editor()
+	{
+		boolean x = (driver.findElement(consoleOutput).isDisplayed()); //Geetha code line
+		return x;
 
 	}
 
-	public void check_When_ValidCode_In_Editor(String expectedOutputText)
+	public String check_When_ValidCode_In_Editor(String expectedOutputText)
 	{
-		Assert.assertEquals(driver.findElement(consoleOutput).getText(), expectedOutputText);
+		 String expectedOutput = expectedOutputText;
+		 return expectedOutput;
 	}
 
 	public void check_When_InvalidCode_In_Editor(String expectedErrorHeader, String expectedErrorMessage)

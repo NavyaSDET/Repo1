@@ -18,10 +18,9 @@ When The user clicks Try Here button
 Then The user is redirected to a page having Editor and run button
 
 Scenario: Try Here Editor page with empty code
-Given The user is on the Editor page of Overview of Trees page
+Given The user is on the editor page of Overview of Trees page
 When The user writes no code inside editor window and clicks on Run button
 Then Nothing happens to the Editor page and no error message is displayed
-
 
 Scenario: Try Here Editor page with valid data
 Given The user is on the Editor page of Overview of Trees page
@@ -409,9 +408,3 @@ Given The user is on the Implementation Of BST page
 When The user clicks Practice Questions link
 Then The user is redirected to Practice Questions page.
 
-#Scenario: Try Here Editor page with alert message
-#Given The user is on the Overview of Trees page
-#And The user clicks Try Here button
-#And The user writes the invalid python code and clicks on Run button
-#When The user clicks the ok button in the alert window
-#Then Alert message window is dismissed and user stays on Editor page

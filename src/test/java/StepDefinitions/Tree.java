@@ -54,18 +54,20 @@ public class Tree {
 		Assert.assertEquals(driver.getTitle(),"Overview of Trees");
 	}
 
-	@Given("The user is on the Overview of Trees page") //////////////////////////  DUPLICATE
+	@Given("The user is on the Overview of Trees page") 
 	public void the_user_is_on_the_overview_of_trees_page() {
 		treePage.clickOverviewOfTrees();
 	}
 	
-	@Given("The user is on the Editor page of Overview of Trees page") //////////////////////////  DUPLICATE
-	public void the_user_is_on_the_Editor_page_of_overview_of_trees_page() {
+	@Given("The user is on the editor page of Overview of Trees page")
+	public void the_user_is_on_the_editor_page_of_overview_of_trees_page() {
+		
 		treePage.clickOverviewOfTrees();
 		treePage.click_TryHereBtn_TreePage();
+		
 	}
 
-	@When("The user clicks Try Here button")  //////////////////////////  DUPLICATE
+	@When("The user clicks Try Here button")  
 	public void the_user_clicks_try_here_button() {
 
 	    treePage.click_TryHereBtn_TreePage();
@@ -75,8 +77,8 @@ public class Tree {
 	public void the_user_is_redirected_to_a_page_having_editor_and_run_button() {
 
 		Assert.assertEquals(driver.getTitle(),"Assessment");
-		treePage.checkIfRunButtonIsClicked();
-
+		Assert.assertTrue(driver.findElement(treePage.runButton).isDisplayed());
+		
 	}
 //////////////////////////////////////////////////////////////  EDITOR ACTION- NO CODE, VALID CODE, INVALID CODE
 
@@ -87,13 +89,13 @@ public class Tree {
 	}
 	
 
-	/*@Then("Nothing happens to the Editor page and no error message is displayed")
+	@Then("Nothing happens to the Editor page and no error message is displayed")
 	public void nothing_happens_to_the_editor_page_and_no_error_message_is_displayed() {
 
-		treePage.check_When_ValidCode_In_Editor();
+		Assert.assertEquals((driver.findElement(treePage.consoleOutput).getText()), "");
 	    
-	    Assert.assertFalse(treePage.check_When_ValidCode_In_Editor(null, ));
-	}*/
+	   
+	}
 
 	@When("The user writes the valid python code and clicks on Run button")
 	public void the_user_writes_the_valid_python_code_and_clicks_on_run_button() {
@@ -104,13 +106,24 @@ public class Tree {
 	@Then("The user is able to see the output inside the console.")
 	public void the_user_is_able_to_see_the_output_inside_the_console() {
 
-	    treePage.check_When_ValidCode_In_Editor("hello");
+	  // treePage.check_When_ValidCode_In_Editor("hello");
+		Assert.assertEquals((driver.findElement(treePage.consoleOutput).getText()), "hello");
 	}
 	@When("The user writes the invalid python code and clicks on Run button")
 	public void the_user_writes_the_invalid_python_code_and_clicks_on_run_button() {
 
 		treePage.writeInTryEditorWindow("printf(hello)");
 	}
+	
+	 @Then("The user see error msg in alert window")
+	 public void the_user_see_error_msg_in_alert_window() {
+
+		//treePage.check_When_InvalidCode_In_Editor("dsportalapp.herokuapp.com says", "NameError: name 'printf' is not defined on line 1");
+		Alert alert = driver.switchTo().alert();
+		String alertText = alert.getText();
+		String expectedErrorMessage = "NameError: name 'printf' is not defined on line 1";
+		Assert.assertEquals(alertText, expectedErrorMessage);
+	 }
 
 	@When("The user clicks Terminologies link")
 	public void the_user_clicks_terminologies_link() {
@@ -477,21 +490,16 @@ public class Tree {
 	public void the_user_clicks_the_ok_button_in_the_alert_window() {
 
 		treePage.clickOnOKBtnFromEditorErrorAlert();
+		Assert.assertTrue(treePage.consoleOutput.equals(true));
 	}
 
-    @Then("Alert message window is dismissed and user stays on Editor page")
+	
+	 @Then("Alert message window is dismissed and user stays on Editor page")
     public void Alert_message_window_is_dismissed_and_user_stays_on_Editor_page()
     {
-    	treePage.check_When_EmptyCode_In_Editor();
+		 Assert.assertTrue(treePage.check_When_EmptyCode_In_Editor());
     }
-    
-    /*@Then("The user see error msg in alert window")
-	public void the_user_see_error_msg_in_alert_window(String expectedErrorHeader, String expectedErrorMessage) {
-
-	    treePage.check_When_InvalidCode_In_Editor("dsportalapp.herokuapp.com says", "NameError: name 'printf' is not defined on line 1");
-	    Alert alert = driver.switchTo().alert();
-		String alertText = alert.getText();
-		Assert.assertEquals(alertText, expectedErrorMessage);
-	}*/
+	
+   
 
 }
