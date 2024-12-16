@@ -45,8 +45,7 @@ public class LoginStepDefinitions {
 	@Then("The error message {string} appears below Username textbox")
 	public void the_error_message_appears_below_username_textbox(String expectedAlertMessage)
 			throws InterruptedException {
-		WebElement activeElement = Hooks.getDriver().switchTo().activeElement();
-		String messageStr = activeElement.getAttribute("validationMessage");
+		String messageStr = ip.switchToElementAndGetValidationMessage();
 		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
 
@@ -63,8 +62,7 @@ public class LoginStepDefinitions {
 
 	@Then("The error message {string} appears below Pwd textbox")
 	public void the_error_message_appears_below_pwd_textbox(String expectedAlertMessage) throws InterruptedException {
-		WebElement activeElement = Hooks.getDriver().switchTo().activeElement();
-		String messageStr = activeElement.getAttribute("validationMessage");
+		String messageStr = ip.switchToElementAndGetValidationMessage();
 		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
 

@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import PageObjects.IntroductionPage;
 import PageObjects.RegistrationPage;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import io.cucumber.java.en.Given;
@@ -17,9 +17,9 @@ import io.cucumber.java.en.When;
 
 public class Registration {
 
-	public WebDriver driver = Hooks.getDriver();
 	private static Logger logger = LogManager.getLogger(); // Log4j library class for logging purpose
 	RegistrationPage RGPage = new RegistrationPage(); // constructor used
+	public IntroductionPage ip = new IntroductionPage();
 
 	String actualErrorMsg;
 	String expectedErrorMsg;
@@ -44,9 +44,7 @@ public class Registration {
 
 	@Then("The error Please fill out this field appears below Username textbox")
 	public void the_error_please_fill_out_this_field_appears_below_username_textbox() {
-
-		WebElement activeElement = driver.switchTo().activeElement(); // 'Please fill out this field' error message
-		String msgBrowserValidation = activeElement.getAttribute("validationMessage");
+		String msgBrowserValidation = ip.switchToElementAndGetValidationMessage();
 		String expectedErrorMsg = "Please fill out this field.";
 		Assert.assertEquals(msgBrowserValidation, expectedErrorMsg);
 
@@ -64,9 +62,7 @@ public class Registration {
 
 	@Then("The error message Please fill out this field. appears below Password textbox")
 	public void the_error_message_please_fill_out_this_field_appears_below_password_textbox() {
-
-		WebElement activeElement = driver.switchTo().activeElement(); // 'Please fill out this field' error message
-		String msgBrowserValidation = activeElement.getAttribute("validationMessage");
+		String msgBrowserValidation = ip.switchToElementAndGetValidationMessage();
 		String expectedErrorMsg = "Please fill out this field.";
 		Assert.assertEquals(msgBrowserValidation, expectedErrorMsg);
 	}
@@ -83,9 +79,7 @@ public class Registration {
 
 	@Then("The error message Please fill out this field. appears below Password Confirmation textbox")
 	public void then_the_error_message_please_fill_out_this_field_appears_below_password_confirmation_textbox() {
-
-		WebElement activeElement = driver.switchTo().activeElement(); // 'Please fill out this field' error message
-		String msgBrowserValidation = activeElement.getAttribute("validationMessage");
+		String msgBrowserValidation = ip.switchToElementAndGetValidationMessage();
 		String expectedErrorMsg = "Please fill out this field.";
 		Assert.assertEquals(msgBrowserValidation, expectedErrorMsg);
 	}
@@ -103,7 +97,7 @@ public class Registration {
 	@Then("The user is displayed with error msg after entering invalid data and redirects to empty username textbox")
 	public void the_user_is_displayed_with_error_msg_after_entering_invalid_data_and_redirects_to_empty_username_textbox() {
 
-		Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+		Assert.assertEquals(ip.getPageTitle(), "NumpyNinja");
 
 	}
 
@@ -183,14 +177,14 @@ public class Registration {
 	@When("User clicks on login button from registration page")
 	public void user_clicks_on_login_button_from_registration_page() {
 
-		RGPage.clickLoginBtn();
+		RGPage.clickLoginBtn(); 
 
 	}
 
 	@Then("user lands on login page")
 	public void user_lands_on_login_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Login");
+		Assert.assertEquals(ip.getPageTitle(), "Login");
 	}
 
 	@When("User clicks on SignIn button from registration page")

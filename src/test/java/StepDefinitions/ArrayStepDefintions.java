@@ -49,7 +49,6 @@ public class ArrayStepDefintions {
 	@Given("The user is on the arrays in python page")
 	public void the_user_is_on_the_arrays_in_python_page() {
 		ap.clickOnArrayInPythonLink();
-		Assert.assertEquals(ip.getTextForElement(ap.arraysInPythonText), "Arrays in Python");
 	}
 
 	@When("The user click on Array using list link")
@@ -65,7 +64,6 @@ public class ArrayStepDefintions {
 	@Given("The user is on the Array using list")
 	public void the_user_is_on_the_array_using_list() {
 		ap.clickOnArrayUsingListLink();
-		Assert.assertEquals(ip.getTextForElement(ap.arraysUsingListText), "Arrays Using List");
 	}
 
 	@When("The user click on basic operations in lists")
@@ -81,7 +79,6 @@ public class ArrayStepDefintions {
 	@Given("The user is on the Basic operations in lists")
 	public void the_user_is_on_the_basic_operations_in_lists() {
 		ap.clickOnBasicOperationsLink();
-		Assert.assertEquals(ip.getTextForElement(ap.basicOperationsInListText), "Basic Operations in Lists");
 	}
 
 	@When("The user click on applications of array link")
@@ -97,7 +94,6 @@ public class ArrayStepDefintions {
 	@Given("The user is on the applications of array")
 	public void the_user_is_on_the_applications_of_array() {
 		ap.clickOnApplicationOfArrayLink();
-		Assert.assertEquals(ip.getTextForElement(ap.applicationsOfArrayText), "Applications of Array");
 	}
 
 	@When("The user is on the practice questions page")

@@ -2,15 +2,12 @@ package StepDefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import PageObjects.HomePage;
 import PageObjects.IntroductionPage;
 
 public class HomeStepDefinitions {
-	public WebDriver driver = Hooks.getDriver();
 
 	public HomePage hp = new HomePage();
 	public IntroductionPage ip = new IntroductionPage();

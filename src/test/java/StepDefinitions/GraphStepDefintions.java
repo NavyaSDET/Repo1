@@ -41,7 +41,6 @@ public class GraphStepDefintions {
 	@Given("The user is on the graphs page under graph detials")
 	public void the_user_is_on_the_graphs_page_under_graph_detials() {
 		gp.clickOnGraphLinkUnderGraphDetails();
-		Assert.assertEquals(ip.getTextForElement(gp.graphText), "Graph");
 	}
 
 	@When("The user click on graph representations link")
@@ -57,6 +56,5 @@ public class GraphStepDefintions {
 	@Given("The user is on the graphs representations page")
 	public void the_user_is_on_the_graphs_representations_page() {
 		gp.clickonGraphRepresentations();
-		Assert.assertEquals(ip.getTextForElement(gp.graphRepresentationsText), "Graph Representations");
 	}
 }

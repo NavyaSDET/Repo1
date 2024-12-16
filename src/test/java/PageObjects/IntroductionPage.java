@@ -112,6 +112,10 @@ public class IntroductionPage {
 		return elementText;
 	}
 
+	public String getPageTitle() {
+		String elementText = driver.getTitle();
+		return elementText;
+	}
 	public Boolean validateElementDisplayed(By locator) {
 		return driver.findElement(locator).isDisplayed();
 	}
@@ -136,5 +140,11 @@ public class IntroductionPage {
 
 	public WebElement getElement(By locator) {
 		return driver.findElement(locator);
+	}
+
+	public String switchToElementAndGetValidationMessage() {
+		WebElement activeElement = driver.switchTo().activeElement();
+		String msgBrowserValidation = activeElement.getAttribute("validationMessage");
+		return msgBrowserValidation;
 	}
 }

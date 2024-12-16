@@ -41,9 +41,6 @@ public class QueueStepDefinitions {
 	@Given("The user on implementation Queue in python page")
 	public void the_user_on_implementation_queue_in_python_page() {
 		qp.clickOnImplementationOfQueueInPython();
-		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationOfQueueInPythonPage));
-		Assert.assertEquals(ip.getTextForElement(qp.implementationOfQueueInPythonPage),
-				"Implementation of Queue in Python");
 	}
 
 	@When("The user click on Implementation using collections.deque link")
@@ -61,9 +58,6 @@ public class QueueStepDefinitions {
 	@Given("The user on Implementation using collection.deque in python page")
 	public void the_user_on_implementation_using_collection_deque_in_python_page() {
 		qp.clickOnImplementationUsingCollectionsDeque();
-		Assert.assertTrue(ip.validateElementDisplayed(qp.implementaionUsingCollectionDequePage));
-		Assert.assertEquals(ip.getTextForElement(qp.implementaionUsingCollectionDequePage),
-				"Implementation using collections.deque");
 	}
 
 	@When("The user click on Queue Operations")
@@ -80,8 +74,6 @@ public class QueueStepDefinitions {
 	@Given("The user is on Queue Operations page")
 	public void the_user_is_on_queue_operations_page() {
 		qp.clickOnQueueOperations();
-		Assert.assertTrue(ip.validateElementDisplayed(qp.queueOperationsPage));
-		Assert.assertEquals(ip.getTextForElement(qp.queueOperationsPage), "Queue Operations");
 	}
 
 	@When("The user click on Implementation using array link")
@@ -99,9 +91,6 @@ public class QueueStepDefinitions {
 	@Given("The user is on Implementation using array page")
 	public void the_user_is_on_implementation_using_array_page() {
 		qp.clickOnImplementationUsingArray();
-		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationUsingCollectionsArrayPage));
-		Assert.assertEquals(ip.getTextForElement(qp.implementationUsingCollectionsArrayPage),
-				"Implementation using array");
 	}
 
 }

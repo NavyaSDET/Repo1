@@ -1,8 +1,6 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import PageObjects.IntroductionPage;
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
@@ -14,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 
 public class Tree {
 
-	public WebDriver driver = Hooks.getDriver();
 	public RegistrationPage RGPage = new RegistrationPage();
 	public IntroductionPage ip = new IntroductionPage();
 	TreePage treePage = new TreePage();
@@ -29,7 +26,7 @@ public class Tree {
 	@Then("The user is redirected to Tree page.")
 	public void the_user_is_redirected_to_tree_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Tree");
+		Assert.assertEquals(ip.getPageTitle(), "Tree");
 
 	}
 
@@ -49,7 +46,7 @@ public class Tree {
 	@Then("The user is redirected to Overview of Trees page.")
 	public void the_user_is_redirected_to_overview_of_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Overview of Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Overview of Trees");
 	}
 
 	@Given("The user is on the Overview of Trees page")
@@ -72,7 +69,7 @@ public class Tree {
 	@Then("The user is redirected to a page having Editor and run button")
 	public void the_user_is_redirected_to_a_page_having_editor_and_run_button() {
 
-		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertEquals(ip.getPageTitle(), "Assessment");
 		Assert.assertTrue(ip.validateElementDisplayed(treePage.runButton));
 
 	}
@@ -89,21 +86,22 @@ public class Tree {
 	@Then("Nothing happens to the Editor page and no error message is displayed")
 	public void nothing_happens_to_the_editor_page_and_no_error_message_is_displayed() {
 
-		Assert.assertEquals((driver.findElement(treePage.consoleOutput)), "");
+		Assert.assertEquals(ip.getTextForElement(treePage.consoleOutput), "");
 
 	}
 
 	@When("The user writes the valid python code and clicks on Run button")
-	public void the_user_writes_the_valid_python_code_and_clicks_on_run_button() {
+	public void the_user_writes_the_valid_python_code_and_clicks_on_run_button() throws InterruptedException {
 
 		treePage.writeInTryEditorWindow("print('hello')");
+		Thread.sleep(30000);
 	}
 
 	@Then("The user is able to see the output inside the console.")
 	public void the_user_is_able_to_see_the_output_inside_the_console() {
 
 		// treePage.check_When_ValidCode_In_Editor("hello");
-		Assert.assertEquals((driver.findElement(treePage.consoleOutput)), "hello");
+		Assert.assertEquals(ip.getTextForElement(treePage.consoleOutput), "hello");
 	}
 
 	@When("The user writes the invalid python code and clicks on Run button")
@@ -128,7 +126,7 @@ public class Tree {
 	@Then("The user is redirected to Terminologies page")
 	public void the_user_is_redirected_to_terminologies_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Terminologies");
+		Assert.assertEquals(ip.getPageTitle(), "Terminologies");
 	}
 
 	@Given("The user is on the Terminologies page")
@@ -161,7 +159,7 @@ public class Tree {
 	@Then("The user is redirected to Types of Trees page.")
 	public void the_user_is_redirected_to_types_of_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Types of Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Types of Trees");
 	}
 
 	@Given("The user is on the Types of Trees page")
@@ -187,7 +185,7 @@ public class Tree {
 	@Then("The user is redirected to Tree Traversals page")
 	public void the_user_is_redirected_to_tree_traversals_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Tree Traversals");
+		Assert.assertEquals(ip.getPageTitle(), "Tree Traversals");
 	}
 
 	@Given("The user is on the Tree Traversals page")
@@ -214,7 +212,7 @@ public class Tree {
 	@Then("The user is redirected to Traversals-Illustration page")
 	public void the_user_is_redirected_to_traversals_illustration_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Traversals-Illustration");
+		Assert.assertEquals(ip.getPageTitle(), "Traversals-Illustration");
 	}
 
 	@Given("The user is on the Traversals-Illustration page")
@@ -239,7 +237,7 @@ public class Tree {
 	@Then("The user is redirected to Binary Trees page.")
 	public void the_user_is_redirected_to_binary_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Binary Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Binary Trees");
 	}
 
 	@Given("The user is on the Binary Trees page")
@@ -265,7 +263,7 @@ public class Tree {
 	@Then("The user is redirected to Types of Binary Trees page.")
 	public void the_user_is_redirected_to_types_of_binary_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Types of Binary Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Types of Binary Trees");
 	}
 
 	@Given("The user is on the Types of Binary Trees page")
@@ -292,7 +290,7 @@ public class Tree {
 	@Then("The user is redirected to Implementation in Python page.")
 	public void the_user_is_redirected_to_implementation_in_python_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Implementation in Python");
+		Assert.assertEquals(ip.getPageTitle(), "Implementation in Python");
 	}
 
 	@Given("The user is on the Implementation in Python page")
@@ -317,7 +315,7 @@ public class Tree {
 	@Then("The user is redirected to Binary Tree Traversals page.")
 	public void the_user_is_redirected_to_binary_tree_traversals_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Binary Tree Traversals");
+		Assert.assertEquals(ip.getPageTitle(), "Binary Tree Traversals");
 	}
 
 	@Given("The user is on the Binary Tree Traversals page")
@@ -344,7 +342,7 @@ public class Tree {
 	@Then("The user is redirected to Implementation of Binary Trees page.")
 	public void the_user_is_redirected_to_implementation_of_binary_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Implementation of Binary Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Implementation of Binary Trees");
 	}
 
 	@Given("The user is on the Implementation of Binary Trees page")
@@ -369,7 +367,7 @@ public class Tree {
 	@Then("The user is redirected to Applications of Binary trees page.")
 	public void the_user_is_redirected_to_applications_of_binary_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Applications of Binary trees");
+		Assert.assertEquals(ip.getPageTitle(), "Applications of Binary trees");
 	}
 
 	@Given("The user is on the Applications of Binary trees page")
@@ -394,7 +392,7 @@ public class Tree {
 	@Then("The user is redirected to Binary Search Trees page.")
 	public void the_user_is_redirected_to_binary_search_trees_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Binary Search Trees");
+		Assert.assertEquals(ip.getPageTitle(), "Binary Search Trees");
 	}
 
 	@Given("The user is on the Binary Search Trees page")
@@ -419,7 +417,7 @@ public class Tree {
 	@Then("The user is redirected to Implementation Of BST page.")
 	public void the_user_is_redirected_to_implementation_of_bst_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Implementation Of BST");
+		Assert.assertEquals(ip.getPageTitle(), "Implementation Of BST");
 	}
 
 	@Given("The user is on the Implementation Of BST page")
@@ -444,7 +442,7 @@ public class Tree {
 	@Then("The user is redirected to Practice Questions page.")
 	public void the_user_is_redirected_to_practice_questions_page() {
 
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
+		Assert.assertEquals(ip.getPageTitle(), "Practice Questions");
 	}
 
 	@When("The user clicks the ok button in the alert window")
