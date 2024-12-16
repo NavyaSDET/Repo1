@@ -3,6 +3,7 @@ package StepDefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import PageObjects.IntroductionPage;
 import PageObjects.RegistrationPage;
 import PageObjects.TreePage;
 import io.cucumber.java.en.Given;
@@ -10,12 +11,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Alert;
 
 public class Tree {
 
 	public WebDriver driver = Hooks.getDriver();
 	public RegistrationPage RGPage = new RegistrationPage();
+	public IntroductionPage ip = new IntroductionPage();
 	TreePage treePage = new TreePage();
 	private static Logger logger = LogManager.getLogger(); // Log4j library class for logging purpose
 
@@ -51,11 +52,10 @@ public class Tree {
 		Assert.assertEquals(driver.getTitle(), "Overview of Trees");
 	}
 
-	@Given("The user is on the Overview of Trees page") 
+	@Given("The user is on the Overview of Trees page")
 	public void the_user_is_on_the_overview_of_trees_page() {
 		treePage.clickOverviewOfTrees();
 	}
-
 
 	@Given("The user is on the Editor page of Overview of Trees page")
 	public void the_user_is_on_the_editor_page_of_overview_of_trees_page() {
@@ -63,7 +63,7 @@ public class Tree {
 		treePage.click_TryHereBtn_TreePage();
 	}
 
-	@When("The user clicks Try Here button")  
+	@When("The user clicks Try Here button")
 	public void the_user_clicks_try_here_button() {
 
 		treePage.click_TryHereBtn_TreePage();
@@ -72,8 +72,8 @@ public class Tree {
 	@Then("The user is redirected to a page having Editor and run button")
 	public void the_user_is_redirected_to_a_page_having_editor_and_run_button() {
 
-		Assert.assertEquals(driver.getTitle(),"Assessment");
-		Assert.assertTrue(driver.findElement(treePage.runButton).isDisplayed());
+		Assert.assertEquals(driver.getTitle(), "Assessment");
+		Assert.assertTrue(ip.validateElementDisplayed(treePage.runButton));
 
 	}
 	////////////////////////////////////////////////////////////// EDITOR ACTION- NO
@@ -89,11 +89,9 @@ public class Tree {
 	@Then("Nothing happens to the Editor page and no error message is displayed")
 	public void nothing_happens_to_the_editor_page_and_no_error_message_is_displayed() {
 
-		Assert.assertEquals((driver.findElement(treePage.consoleOutput).getText()), "");
-
+		Assert.assertEquals((driver.findElement(treePage.consoleOutput)), "");
 
 	}
-
 
 	@When("The user writes the valid python code and clicks on Run button")
 	public void the_user_writes_the_valid_python_code_and_clicks_on_run_button() {
@@ -105,7 +103,7 @@ public class Tree {
 	public void the_user_is_able_to_see_the_output_inside_the_console() {
 
 		// treePage.check_When_ValidCode_In_Editor("hello");
-		Assert.assertEquals((driver.findElement(treePage.consoleOutput).getText()), "hello");
+		Assert.assertEquals((driver.findElement(treePage.consoleOutput)), "hello");
 	}
 
 	@When("The user writes the invalid python code and clicks on Run button")
@@ -117,11 +115,8 @@ public class Tree {
 	@Then("The user see error msg in alert window")
 	public void the_user_see_error_msg_in_alert_window() {
 
-		//treePage.check_When_InvalidCode_In_Editor("dsportalapp.herokuapp.com says", "NameError: name 'printf' is not defined on line 1");
-		Alert alert = driver.switchTo().alert();
-		String alertText = alert.getText();
 		String expectedErrorMessage = "NameError: name 'printf' is not defined on line 1";
-		Assert.assertEquals(alertText, expectedErrorMessage);
+		Assert.assertEquals(ip.getAlertText(), expectedErrorMessage);
 	}
 
 	@When("The user clicks Terminologies link")

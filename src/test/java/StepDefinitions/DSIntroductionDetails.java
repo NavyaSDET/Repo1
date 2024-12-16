@@ -3,18 +3,12 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import PageObjects.HomePage;
 import PageObjects.IntroductionPage;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class DSIntroductionDetails {
-	public WebDriver driver = Hooks.getDriver();
 
 	public HomePage hp = new HomePage();
 	public IntroductionPage ip = new IntroductionPage();
@@ -26,10 +20,10 @@ public class DSIntroductionDetails {
 
 	@Then("The user should land in Data Structure Introduction Page with register and Sign in links")
 	public void the_user_should_land_in_data_structure_introduction_page_with_register_and_sign_in_links() {
-		Assert.assertEquals(driver.findElement(ip.NumpyNinja).getText(), "NumpyNinja");
-		Assert.assertTrue(driver.findElement(ip.cardBody).isDisplayed());
-		Assert.assertTrue(driver.findElement(ip.signInButton).isDisplayed());
-		Assert.assertTrue(driver.findElement(ip.registerButton).isDisplayed());
+		Assert.assertEquals(ip.getTextForElement(ip.NumpyNinja), "NumpyNinja");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.cardBody));
+		Assert.assertTrue(ip.validateElementDisplayed(ip.signInButton));
+		Assert.assertTrue(ip.validateElementDisplayed(ip.registerButton));
 	}
 
 	@When("The user clicks the Get Started button")
@@ -40,19 +34,18 @@ public class DSIntroductionDetails {
 	@When("The user clicks the data structure dropdown arrow")
 	public void the_user_clicks_the_data_structure_dropdown_arrow() {
 		hp.clickOnHomePageGetStartedButton();
-		driver.findElement(ip.Datastructure).click();
-		Assert.assertTrue(driver.findElement(ip.DsDropdown).isDisplayed());
+		ip.clickOnDataStructureDropDown();
 	}
 
 	@Then("The user should able to see siz options Arrays Linked,List,Stack,Queue,Tree,Graph in dropdown menu")
 	public void the_user_should_able_to_see_siz_options_arrays_linked_list_stack_queue_tree_graph_in_dropdown_menu() {
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).size(), 6);
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(0).getText(), "Arrays");
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(1).getText(), "Linked List");
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(2).getText(), "Stack");
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(3).getText(), "Queue");
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(4).getText(), "Tree");
-		Assert.assertEquals(driver.findElements(ip.DsDropdown).get(5).getText(), "Graph");
+		Assert.assertEquals(ip.getElementSize(ip.DsDropdown), 6);
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,0), "Arrays");
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,1), "Linked List");
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,2), "Stack");
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,3), "Queue");
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,4), "Tree");
+		Assert.assertEquals(ip.getTextForArrayElements(ip.DsDropdown,5), "Graph");
 	}
 
 	@Given("The user is on the DS Introduction page")
@@ -68,9 +61,9 @@ public class DSIntroductionDetails {
 
 	@Then("The user should able to see an warning message You are not logged in")
 	public void the_user_should_able_to_see_an_warning_message_you_are_not_logged_in() {
-		Assert.assertTrue(driver.findElement(ip.warningMessage).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.warningMessage).getText(), "You are not logged in");
-		Assert.assertEquals(driver.findElements(ip.warningMessage).size(), 1);
+		Assert.assertTrue(ip.validateElementDisplayed(ip.warningMessage));
+		Assert.assertEquals(ip.getTextForElement(ip.warningMessage), "You are not logged in");
+		Assert.assertEquals(ip.getElementSize(ip.warningMessage), 1);
 
 	}
 
@@ -81,7 +74,7 @@ public class DSIntroductionDetails {
 
 	@Then("The user should navigate to register page")
 	public void the_user_should_navigate_to_register_page() {
-		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/register");
+		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/register");
 
 	}
 
@@ -90,15 +83,15 @@ public class DSIntroductionDetails {
 		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
 		ip.completeTheLOgin();
-		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.displayQaChamps));
 	}
 
 	@Then("user lands on the DS Introduction page as signedIn")
 	public void user_lands_on_the_ds_introduction_page_as_signed_in() {
-		Assert.assertTrue(driver.findElement(ip.dataStructurePageHeader).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.dataStructurePageHeader).getText(), "Data Structures-Introduction");
-		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
-		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.dataStructurePageHeader));
+		Assert.assertEquals(ip.getTextForElement(ip.dataStructurePageHeader), "Data Structures-Introduction");
+		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.displayQaChamps));
 	}
 
 	@When("The user clicks the Get Started button of DS Introduction")
@@ -108,15 +101,15 @@ public class DSIntroductionDetails {
 
 	@Then("The user should navigate to DS Intoduction details page")
 	public void the_user_should_navigate_to_ds_intoduction_details_page() {
-		Assert.assertTrue(driver.findElement(ip.dataStructurePageHeader).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.dataStructurePageHeader).getText(), "Data Structures-Introduction");
-		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
-		Assert.assertTrue(driver.findElement(ip.dispalyTimeComplexity).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.dataStructurePageHeader));
+		Assert.assertEquals(ip.getTextForElement(ip.dataStructurePageHeader), "Data Structures-Introduction");
+		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.dispalyTimeComplexity));
 	}
 
 	@Then("User should see the timeComplexity link")
 	public void user_should_see_the_time_complexity_link() {
-		Assert.assertTrue(driver.findElement(ip.dispalyTimeComplexity).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.dispalyTimeComplexity));
 	}
 
 	@When("The user clicks the Time Complexity button")
@@ -127,18 +120,18 @@ public class DSIntroductionDetails {
 
 	@Then("User should navigate to Time Complexity page")
 	public void user_should_navigate_to_time_complexity_page() {
-		Assert.assertTrue(driver.findElement(ip.timeComplexityPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.timeComplexityPage).getText(), "Time Complexity");
-		Assert.assertTrue(driver.findElement(ip.tryHereButton).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.tryHereButton).getText(), "Try here>>>");
-		Assert.assertTrue(driver.findElement(ip.practiceQuestionButton).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.practiceQuestionButton).getText(), "Practice Questions");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.timeComplexityPage));
+		Assert.assertEquals(ip.getTextForElement(ip.timeComplexityPage), "Time Complexity");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.tryHereButton));
+		Assert.assertEquals(ip.getTextForElement(ip.tryHereButton), "Try here>>>");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.practiceQuestionButton));
+		Assert.assertEquals(ip.getTextForElement(ip.practiceQuestionButton), "Practice Questions");
 	}
 
 	@Then(" User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
-		Assert.assertTrue(driver.findElement(ip.timeComplexityPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.timeComplexityPage).getText(), "Time Complexity");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.timeComplexityPage));
+		Assert.assertEquals(ip.getTextForElement(ip.timeComplexityPage), "Time Complexity");
 	}
 
 	@When("User clicks Try here link")
@@ -158,29 +151,28 @@ public class DSIntroductionDetails {
 		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
 		ip.completeTheLOgin();
-		Assert.assertTrue(driver.findElement(ip.displayQaChamps).isDisplayed());
 		ip.clickOnGetStartedButtonOfDSIntroduction();
 		ip.clickOnTimeComplexiButton();
 	}
 
 	@Then("User should navigate to tryEditor page")
 	public void user_should_navigate_to_try_editor_page() {
-		Assert.assertTrue(driver.findElement(ip.codeEditorPage).isDisplayed());
-		Assert.assertTrue(driver.findElement(ip.runButton).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.codeEditorPage));
+		Assert.assertTrue(ip.validateElementDisplayed(ip.runButton));
 	}
 
 	@Given("User is on Try Here page for time complexity")
 	public void user_is_on_try_here_page_for_time_complexity() {
-		Assert.assertTrue(driver.findElement(ip.codeEditorPage).isDisplayed());
-		Assert.assertTrue(driver.findElement(ip.runButton).isDisplayed());
+		Assert.assertTrue(ip.validateElementDisplayed(ip.codeEditorPage));
+		Assert.assertTrue(ip.validateElementDisplayed(ip.runButton));
 	}
 
 	@Then("User should see Practice Question link and try here")
 	public void user_should_see_practice_question_link_and_try_here() {
-		Assert.assertTrue(driver.findElement(ip.tryHereButton).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.tryHereButton).getText(), "Try here>>>");
-		Assert.assertTrue(driver.findElement(ip.practiceQuestionButton).isDisplayed());
-		Assert.assertEquals(driver.findElement(ip.practiceQuestionButton).getText(), "Practice Questions");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.tryHereButton));
+		Assert.assertEquals(ip.getTextForElement(ip.tryHereButton), "Try here>>>");
+		Assert.assertTrue(ip.validateElementDisplayed(ip.practiceQuestionButton));
+		Assert.assertEquals(ip.getTextForElement(ip.practiceQuestionButton), "Practice Questions");
 	}
 
 	@When("The user write the invalid code in Editor")
@@ -215,25 +207,17 @@ public class DSIntroductionDetails {
 
 	@Then("The user should able to see an error message in alert window")
 	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-		Alert alert = driver.switchTo().alert();
-		String alertText = alert.getText();
-		System.out.println(alertText);
-		Assert.assertEquals(alertText, "NameError: name 'ABC' is not defined on line 1");
-		alert.accept();
+		Assert.assertEquals(ip.getAlertText(), "NameError: name 'ABC' is not defined on line 1");
 	}
 	
 	@Then("The user should see an alert error message as {string}")
 	public void the_user_should_see_an_alert_error_message(String expectedAlertMessage) {
-		Alert alert = driver.switchTo().alert();
-		String alertText = alert.getText();
-		System.out.println(alertText);
-		Assert.assertEquals(alertText, expectedAlertMessage);
-		alert.accept();
+		Assert.assertEquals(ip.getAlertText(), expectedAlertMessage);
 	}
 
 	@Then("The user should not see any error message or alert")
 	public void the_user_should_not_see_any_error_message_or_alert() {
-		Assert.assertFalse(driver.findElement(ip.consoleOutput).isDisplayed());
+		Assert.assertFalse(ip.validateElementDisplayed(ip.consoleOutput));
 	}
 
 	@When("The user write the valid code in Editor")
@@ -243,7 +227,7 @@ public class DSIntroductionDetails {
 
 	@Then("The user should able to see output in the console")
 	public void the_user_should_able_to_see_output_in_the_console() {
-		Assert.assertEquals(driver.findElement(ip.consoleOutput).getText(), "hello");
+		Assert.assertEquals(ip.getTextForElement(ip.consoleOutput), "hello");
 	}
 
 }
