@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -19,7 +18,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginStepDefinitions {
-	WebDriver driver = Hooks.getDriver();
 	
 	public LoginPage login = new LoginPage();
 	public HomePage hp = new HomePage();
@@ -47,7 +45,7 @@ public class LoginStepDefinitions {
 	@Then("The error message {string} appears below Username textbox")
 	public void the_error_message_appears_below_username_textbox(String expectedAlertMessage)
 			throws InterruptedException {
-		WebElement activeElement = driver.switchTo().activeElement();
+		WebElement activeElement = Hooks.getDriver().switchTo().activeElement();
 		String messageStr = activeElement.getAttribute("validationMessage");
 		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
@@ -65,7 +63,7 @@ public class LoginStepDefinitions {
 
 	@Then("The error message {string} appears below Pwd textbox")
 	public void the_error_message_appears_below_pwd_textbox(String expectedAlertMessage) throws InterruptedException {
-		WebElement activeElement = driver.switchTo().activeElement();
+		WebElement activeElement = Hooks.getDriver().switchTo().activeElement();
 		String messageStr = activeElement.getAttribute("validationMessage");
 		Assert.assertEquals(messageStr, expectedAlertMessage);
 	}
@@ -106,7 +104,7 @@ public class LoginStepDefinitions {
 
 	@Then("The user should able to see an error message {string}.")
 	public void the_user_should_able_to_see_an_error_message(String expectedWarningMessage) {
-		Assert.assertEquals(driver.findElement(login.warningMessage).getText(), expectedWarningMessage);
+		Assert.assertEquals(ip.getTextForElement(login.warningMessage), expectedWarningMessage);
 	}
 
 	@When("The user clicks login button after entering valid userName and invalid password from sheetname {string} and row {int}")

@@ -33,12 +33,11 @@ public class Hooks {
     public static void before() throws Throwable {
         // Get browser Type from config file
         ConfigReader.loadConfig();
-        // browser = ConfigReader.getBrowserType();
-        browser = "chrome";
+        browser = ConfigReader.getBrowserType();
     }
 
     @Before
-    public void deleteCookies() throws Exception {
+    public void intializeBrowser() throws Exception {
     	
         if (browser.equals("chrome")) {
             driver = new ChromeDriver();

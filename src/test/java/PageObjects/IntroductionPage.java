@@ -1,8 +1,11 @@
 package PageObjects;
 
 import StepDefinitions.Hooks;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class IntroductionPage {
 	public WebDriver driver = Hooks.getDriver();
@@ -66,6 +69,10 @@ public class IntroductionPage {
 	public void clickOnTimeComplexiButton() {
 		driver.findElement(dispalyTimeComplexity).click();
 	}
+	
+	public void clickOnDataStructureDropDown() {
+		driver.findElement(Datastructure).click();
+	}
 
 	public void clickOnTryHerebutton() {
 		driver.findElement(tryHereButton).click();
@@ -94,5 +101,40 @@ public class IntroductionPage {
 	public void clickOnGetStartedButtonOfGraph() {
 		driver.findElement(graphGetStartedBtn).click();
 	}
+	
+	public String getTextForElement(By locator) {
+		String elementText = driver.findElement(locator).getText();
+		return elementText;
+	}
 
+	public String getCurrentUrl() {
+		String elementText = driver.getCurrentUrl();
+		return elementText;
+	}
+
+	public Boolean validateElementDisplayed(By locator) {
+		return driver.findElement(locator).isDisplayed();
+	}
+
+	public String getElementSize(By locator) {
+		String elementText = driver.findElement(locator).getText();
+		return elementText;
+	}
+
+	public String getTextForArrayElements(By locator, Integer posInteger) {
+		String elementText = driver.findElements(locator).get(posInteger).getText();
+		return elementText;
+	}
+
+	public String getAlertText(){
+		Alert alert = driver.switchTo().alert();
+		String alertText = alert.getText();
+		alert.accept();
+
+		return alertText;
+	}
+
+	public WebElement getElement(By locator) {
+		return driver.findElement(locator);
+	}
 }

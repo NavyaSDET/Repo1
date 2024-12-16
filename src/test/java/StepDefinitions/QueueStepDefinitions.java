@@ -3,15 +3,11 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import PageObjects.IntroductionPage;
 import PageObjects.QueuePage;
 
 public class QueueStepDefinitions {
-	public WebDriver driver = Hooks.getDriver();
 	public QueuePage qp = new QueuePage();
 	public IntroductionPage ip = new IntroductionPage();
 
@@ -22,12 +18,12 @@ public class QueueStepDefinitions {
 
 	@Then("The user is on Queue Details page")
 	public void the_user_is_on_queue_details_page() {
-		Assert.assertEquals(driver.findElement(qp.queuepage).getText(), "Queue");
-		Assert.assertTrue(driver.findElement(qp.queuepage).isDisplayed());
-		Assert.assertEquals(driver.getCurrentUrl(), "https://dsportalapp.herokuapp.com/queue/");
-		Assert.assertEquals(driver.findElement(qp.topicsCovered).getText(), "Topics Covered");
-		Assert.assertTrue(driver.findElement(qp.topicsCovered).isDisplayed());
-		Assert.assertTrue(driver.findElement(qp.TopicsCoveredOptions).isDisplayed());
+		Assert.assertEquals(ip.getTextForElement(qp.queuepage), "Queue");
+		Assert.assertTrue(ip.validateElementDisplayed(qp.queuepage));
+		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/queue/");
+		Assert.assertEquals(ip.getTextForElement(qp.topicsCovered), "Topics Covered");
+		Assert.assertTrue(ip.validateElementDisplayed(qp.topicsCovered));
+		Assert.assertTrue(ip.validateElementDisplayed(qp.TopicsCoveredOptions));
 	}
 
 	@When("The user clicks on Implementation of Queue python link")
@@ -37,16 +33,16 @@ public class QueueStepDefinitions {
 
 	@Then("The user is on the Implimentation of Queue in Python page")
 	public void the_user_is_on_the_implimentation_of_queue_in_python_page() {
-		Assert.assertTrue(driver.findElement(qp.implementationOfQueueInPythonPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementationOfQueueInPythonPage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationOfQueueInPythonPage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementationOfQueueInPythonPage),
 				"Implementation of Queue in Python");
 	}
 
 	@Given("The user on implementation Queue in python page")
 	public void the_user_on_implementation_queue_in_python_page() {
 		qp.clickOnImplementationOfQueueInPython();
-		Assert.assertTrue(driver.findElement(qp.implementationOfQueueInPythonPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementationOfQueueInPythonPage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationOfQueueInPythonPage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementationOfQueueInPythonPage),
 				"Implementation of Queue in Python");
 	}
 
@@ -57,16 +53,16 @@ public class QueueStepDefinitions {
 
 	@Then("the user is navigated to Queue in collections.deque")
 	public void the_user_is_navigated_to_queue_in_collections_deque() {
-		Assert.assertTrue(driver.findElement(qp.implementaionUsingCollectionDequePage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementaionUsingCollectionDequePage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementaionUsingCollectionDequePage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementaionUsingCollectionDequePage),
 				"Implementation using collections.deque");
 	}
 
 	@Given("The user on Implementation using collection.deque in python page")
 	public void the_user_on_implementation_using_collection_deque_in_python_page() {
 		qp.clickOnImplementationUsingCollectionsDeque();
-		Assert.assertTrue(driver.findElement(qp.implementaionUsingCollectionDequePage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementaionUsingCollectionDequePage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementaionUsingCollectionDequePage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementaionUsingCollectionDequePage),
 				"Implementation using collections.deque");
 	}
 
@@ -77,15 +73,15 @@ public class QueueStepDefinitions {
 
 	@Then("the user is navigated to Queue Operations Page")
 	public void the_user_is_navigated_to_queue_operations_page() {
-		Assert.assertTrue(driver.findElement(qp.queueOperationsPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.queueOperationsPage).getText(), "Queue Operations");
+		Assert.assertTrue(ip.validateElementDisplayed(qp.queueOperationsPage));
+		Assert.assertEquals(ip.getTextForElement(qp.queueOperationsPage), "Queue Operations");
 	}
 
 	@Given("The user is on Queue Operations page")
 	public void the_user_is_on_queue_operations_page() {
 		qp.clickOnQueueOperations();
-		Assert.assertTrue(driver.findElement(qp.queueOperationsPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.queueOperationsPage).getText(), "Queue Operations");
+		Assert.assertTrue(ip.validateElementDisplayed(qp.queueOperationsPage));
+		Assert.assertEquals(ip.getTextForElement(qp.queueOperationsPage), "Queue Operations");
 	}
 
 	@When("The user click on Implementation using array link")
@@ -95,16 +91,16 @@ public class QueueStepDefinitions {
 
 	@Then("the user is navigated to Implementation using array page")
 	public void the_user_is_navigated_to_implementation_using_array_page() {
-		Assert.assertTrue(driver.findElement(qp.implementationUsingCollectionsArrayPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementationUsingCollectionsArrayPage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationUsingCollectionsArrayPage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementationUsingCollectionsArrayPage),
 				"Implementation using array");
 	}
 
 	@Given("The user is on Implementation using array page")
 	public void the_user_is_on_implementation_using_array_page() {
 		qp.clickOnImplementationUsingArray();
-		Assert.assertTrue(driver.findElement(qp.implementationUsingCollectionsArrayPage).isDisplayed());
-		Assert.assertEquals(driver.findElement(qp.implementationUsingCollectionsArrayPage).getText(),
+		Assert.assertTrue(ip.validateElementDisplayed(qp.implementationUsingCollectionsArrayPage));
+		Assert.assertEquals(ip.getTextForElement(qp.implementationUsingCollectionsArrayPage),
 				"Implementation using array");
 	}
 
