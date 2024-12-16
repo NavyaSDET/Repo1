@@ -194,7 +194,7 @@ Feature: Array detail page
   Scenario: Validate user is presented with error message for the code with the invalid syntax in tryEditor for Even number of digits
     Given The user is on the Practice Questions page of Find Numbers with Even Number of Digits
     When the user click on run button 
-    Then the user should be presented with error message as syntaxError: bad input on line 1
+    Then The user should see an alert error message as "SyntaxError: bad input on line 2"
    
   Scenario: Validate user is able to run the code in tryEditor for Squares of a Sorted Array
     Given The user is on the Practice Questions page of Squares of a Sorted Array
@@ -216,4 +216,4 @@ Feature: Array detail page
   Scenario: Validate user is presented with error message for the code with the invalid syntax in tryEditor for Squares of a Sorted Array
     Given The user is on the Practice Questions page of Squares of a Sorted Array
     When the user click on run button
-    Then the user should be presented with error message as syntaxError: bad input on line 1   
+    Then The user should see an alert error message as "SyntaxError: bad input on line 2"
