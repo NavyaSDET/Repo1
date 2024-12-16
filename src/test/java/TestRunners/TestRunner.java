@@ -8,7 +8,7 @@ import Utilities.ConfigReader;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources/Features/Tree.feature"}, // location of feature files
+@CucumberOptions(features = { "src/test/resources/Features"}, // location of feature files
 glue= {"StepDefinitions"},
 monochrome = false,
 plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
