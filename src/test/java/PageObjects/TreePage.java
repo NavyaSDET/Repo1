@@ -1,10 +1,17 @@
 package PageObjects;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import StepDefinitions.Hooks;
+import Utilities.ExcelReader;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 public class TreePage {
 	public WebDriver driver = Hooks.getDriver();
@@ -68,8 +75,8 @@ public class TreePage {
 
 	By codeEditorPage = By.cssSelector("pre.codeMirror-line");
 	By codeInputField = By.cssSelector(".CodeMirror textarea");
-	By consoleOutput = By.cssSelector("#output");
-	By runButton = By.cssSelector("button[type='button']");
+	public By consoleOutput = By.cssSelector("#output");
+	public By runButton = By.cssSelector("button[type='button']");
 	By okBtn_EditorAlert = By.xpath("");
 
 	/////////////////////////////////////////////////////////////////////// GENERAL
@@ -254,6 +261,22 @@ public class TreePage {
 		alert.accept();
 	}
 
+	public void enterInput(String input)
+	{
+		driver.findElement(codeEditorPage).sendKeys(input);
+	}
+	
+	public void fillTryHereEditor(String sheetname, int row) throws InvalidFormatException, IOException, OpenXML4JException, InterruptedException {
+		ExcelReader reader = new ExcelReader();
+
+		List<Map<String, String>> testdata = reader.getData("./src/test/resources/Excel/TestData.xlsx", sheetname);
+
+
+			String pythonInput = testdata.get(row).get("pythonInput");
+			enterInput(pythonInput);
+
+	}
+	
 	public void checkIfRunButtonIsClicked() {
 		driver.findElement(runButton).isDisplayed();
 	}

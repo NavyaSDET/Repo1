@@ -39,6 +39,7 @@ public class Hooks {
 
     @Before
     public void deleteCookies() throws Exception {
+    	
         if (browser.equals("chrome")) {
             driver = new ChromeDriver();
         } else if (browser.equals("firefox")) {

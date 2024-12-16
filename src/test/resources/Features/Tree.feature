@@ -408,10 +408,4 @@ Scenario: Implementation Of BST
 Given The user is on the Implementation Of BST page
 When The user clicks Practice Questions link
 Then The user is redirected to Practice Questions page.
-
-#Scenario: Try Here Editor page with alert message
-#Given The user is on the Overview of Trees page
-#And The user clicks Try Here button
-#And The user writes the invalid python code and clicks on Run button
-#When The user clicks the ok button in the alert window
-#Then Alert message window is dismissed and user stays on Editor page
+#
