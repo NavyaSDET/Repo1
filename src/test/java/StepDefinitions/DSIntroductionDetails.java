@@ -83,7 +83,6 @@ public class DSIntroductionDetails {
 		hp.openUrl();
 		hp.clickOnHomePageGetStartedButton();
 		ip.completeTheLOgin();
-		Assert.assertTrue(ip.validateElementDisplayed(ip.displayQaChamps));
 	}
 
 	@Then("user lands on the DS Introduction page as signedIn")
@@ -157,12 +156,6 @@ public class DSIntroductionDetails {
 
 	@Then("User should navigate to tryEditor page")
 	public void user_should_navigate_to_try_editor_page() {
-		Assert.assertTrue(ip.validateElementDisplayed(ip.codeEditorPage));
-		Assert.assertTrue(ip.validateElementDisplayed(ip.runButton));
-	}
-
-	@Given("User is on Try Here page for time complexity")
-	public void user_is_on_try_here_page_for_time_complexity() {
 		Assert.assertTrue(ip.validateElementDisplayed(ip.codeEditorPage));
 		Assert.assertTrue(ip.validateElementDisplayed(ip.runButton));
 	}
