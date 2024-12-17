@@ -17,7 +17,6 @@ StepDefinitions\QueueStepDefinitions.class
 StepDefinitions\HomeStepDefinitions.class
 StepDefinitions\Registration.class
 PageObjects\HomePage.class
-StepDefinitions\Hooks.class
 Utilities\ConfigReader.class
 PageObjects\LoginPage.class
 StepDefinitions\StackStepDefinitions.class
