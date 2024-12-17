@@ -3,26 +3,22 @@ package PageObjects;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import StepDefinitions.Hooks;
+import DriverManager.DriverManager;
 import Utilities.ExcelReader;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 public class TreePage {
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 
 	// Tree Page general elements
 
 	private By Tree_GetStartedBtn_HomePage = By.xpath("//div[6]/div/div/a");
-	private By TreePageHeader = By.xpath("//div/h4");
-	private By NumpyNinjaTitle = By.xpath("//a[@class='navbar-brand']");
 	private By DataStructures_DropDownBtn = By.xpath("//a[@class='nav-link dropdown-toggle']");
-	private By SignOutBtn_Tree = By.xpath("//a[@href='/logout']");
 
 	// Tree Page Module elements
 	private By OverviewOfTrees = By.xpath("//a[@href='overview-of-trees']");

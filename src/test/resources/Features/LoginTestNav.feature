@@ -44,7 +44,7 @@ Scenario: DS Algo Sign in Page with valid username and invalid password
 Scenario: DS Algo Sign in Page  with valid username and Valid password
  Given  The user is on the DS Algo Sign in Page
  When The user clicks login button after entering valid userName and password from sheetname "<Sheetname>" and row <rownumber>
- Then user lands on the DS Introduction page as signedIn
+ Then user lands on the home page as signedIn
   Examples: 
       | Sheetname | rownumber  |
       |Login      |    6       |

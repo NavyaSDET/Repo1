@@ -1,11 +1,12 @@
 package PageObjects;
 
-import StepDefinitions.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import DriverManager.DriverManager;
+
 public class GraphPage {
-	WebDriver driver=Hooks.getDriver();
+	WebDriver driver=DriverManager.getDriver();
 
 	public By GraphDetail=By.cssSelector("h4.bg-secondary");
 	public By topicsCovered = By.cssSelector("p.bg-secondary");

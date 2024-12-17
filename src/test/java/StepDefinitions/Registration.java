@@ -1,13 +1,8 @@
 package StepDefinitions;
 
 import java.io.IOException;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import PageObjects.IntroductionPage;
 import PageObjects.RegistrationPage;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -17,7 +12,6 @@ import io.cucumber.java.en.When;
 
 public class Registration {
 
-	private static Logger logger = LogManager.getLogger(); // Log4j library class for logging purpose
 	RegistrationPage RGPage = new RegistrationPage(); // constructor used
 	public IntroductionPage ip = new IntroductionPage();
 

@@ -85,11 +85,11 @@ public class DSIntroductionDetails {
 		ip.completeTheLOgin();
 	}
 
-	@Then("user lands on the DS Introduction page as signedIn")
-	public void user_lands_on_the_ds_introduction_page_as_signed_in() {
-		Assert.assertTrue(ip.validateElementDisplayed(ip.dataStructurePageHeader));
-		Assert.assertEquals(ip.getTextForElement(ip.dataStructurePageHeader), "Data Structures-Introduction");
-		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/data-structures-introduction/");
+	@Then("user lands on the home page as signedIn")
+	public void user_lands_on_the_home_page_as_signed_in() {
+		Assert.assertTrue(ip.validateElementDisplayed(ip.NumpyNinja));
+		Assert.assertTrue(ip.validateElementDisplayed(ip.arrayGetStartedBtn));
+		Assert.assertEquals(ip.getCurrentUrl(), "https://dsportalapp.herokuapp.com/home");
 		Assert.assertTrue(ip.validateElementDisplayed(ip.displayQaChamps));
 	}
 

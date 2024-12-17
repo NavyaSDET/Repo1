@@ -73,7 +73,7 @@ public class ArrayStepDefintions {
 
 	@Then("the user is navigated to basic opertaions in lists")
 	public void the_user_is_navigated_to_basic_opertaions_in_lists() {
-		Assert.assertEquals(ip.getTextForElement(ap.basicOperationsInListLink), "Basic Operations in Lists");
+		Assert.assertEquals(ip.getTextForElement(ap.basicOperationsInListText), "Basic Operations in Lists");
 	}
 
 	@Given("The user is on the Basic operations in lists")

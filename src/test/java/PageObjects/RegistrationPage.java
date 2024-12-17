@@ -9,12 +9,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import StepDefinitions.Hooks;
+import DriverManager.DriverManager;
 import Utilities.ExcelReader;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 public class RegistrationPage {
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 
 	String actualErrorMsgText1;
 	String InvalidUser_errorMsg;

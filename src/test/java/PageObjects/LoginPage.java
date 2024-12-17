@@ -2,13 +2,10 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
-import StepDefinitions.Hooks;
+import DriverManager.DriverManager;
 
 public class LoginPage {
-	WebDriver driver=Hooks.getDriver();
+	WebDriver driver=DriverManager.getDriver();
 
 	public By txt_username = By.id("id_username");
 	public By txt_password = By.id("id_password");

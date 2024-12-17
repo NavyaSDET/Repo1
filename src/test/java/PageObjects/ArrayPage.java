@@ -1,6 +1,5 @@
 package PageObjects;
 
-import StepDefinitions.Hooks;
 import Utilities.ExcelReader;
 
 import java.io.IOException;
@@ -9,17 +8,17 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
+import DriverManager.DriverManager;
+
 public class ArrayPage {
 
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 	public By arrayDetail = By.cssSelector("h4.bg-secondary");
 	public By topicsCovered = By.cssSelector("p.bg-secondary");
 	public By TopicsCoveredOptions = By.cssSelector("a.list-group-item");

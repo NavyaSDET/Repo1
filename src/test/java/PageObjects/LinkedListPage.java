@@ -2,17 +2,16 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import StepDefinitions.Hooks;
+import DriverManager.DriverManager;
 
 public class LinkedListPage {
 
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 	RegistrationPage RGPage;
 
 	// LL Page general elements
 
 	private By LL_GetStartedBtn_HomePage = By.xpath("//div[3]/div/div/a");
-	private By DataStructures_DropDownBtn = By.xpath("//a[@class='nav-link dropdown-toggle']");
 	private By Tree_FromDropDown = By.xpath("//div[@class='dropdown-menu show']/a[@href='/linked-list']");
 
 	// LL HomePage Module elements
@@ -26,7 +25,6 @@ public class LinkedListPage {
 	private By Deletion = By.xpath("//a[@href='deletion-in-linked-list']");
 
 	// LL Details Module elements
-	private By LL_Details_Introduction = By.cssSelector("a[href='/linked-list/introduction/']");
 	private By LL_Details_CreatingLinkedList = By.cssSelector("a[href='/linked-list/creating-linked-list/']");
 	private By LL_Details_TypesOfLinkedList = By.cssSelector("a[href='/linked-list/types-of-linked-list/']");
 	private By LL_Details_ImplementLinkedListInPython = By

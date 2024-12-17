@@ -2,11 +2,11 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import StepDefinitions.Hooks;
+import DriverManager.DriverManager;
 
 public class HomePage {
 
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 
 	public By getStartedButton = By.cssSelector("button.btn");
 	public By contentHeader = By.cssSelector(".content h1");

@@ -1,14 +1,14 @@
 package PageObjects;
 
-import StepDefinitions.Hooks;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import DriverManager.DriverManager;
+
 public class IntroductionPage {
-	public WebDriver driver = Hooks.getDriver();
+	public WebDriver driver = DriverManager.getDriver();
 
 	public By NumpyNinja = By.cssSelector("a[href='/home']");
 	public By Datastructure = By.cssSelector("a.dropdown-toggle");
@@ -69,7 +69,7 @@ public class IntroductionPage {
 	public void clickOnTimeComplexiButton() {
 		driver.findElement(dispalyTimeComplexity).click();
 	}
-	
+
 	public void clickOnDataStructureDropDown() {
 		driver.findElement(Datastructure).click();
 	}
@@ -101,7 +101,7 @@ public class IntroductionPage {
 	public void clickOnGetStartedButtonOfGraph() {
 		driver.findElement(graphGetStartedBtn).click();
 	}
-	
+
 	public String getTextForElement(By locator) {
 		String elementText = driver.findElement(locator).getText();
 		return elementText;
@@ -120,9 +120,9 @@ public class IntroductionPage {
 		return driver.findElement(locator).isDisplayed();
 	}
 
-	public String getElementSize(By locator) {
-		String elementText = driver.findElement(locator).getText();
-		return elementText;
+	public Integer getElementSize(By locator) {
+		Integer elementCount = driver.findElements(locator).size();
+		return elementCount;
 	}
 
 	public String getTextForArrayElements(By locator, Integer posInteger) {

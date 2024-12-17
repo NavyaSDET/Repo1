@@ -7,15 +7,12 @@ import PageObjects.TreePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Tree {
 
 	public RegistrationPage RGPage = new RegistrationPage();
 	public IntroductionPage ip = new IntroductionPage();
 	TreePage treePage = new TreePage();
-	private static Logger logger = LogManager.getLogger(); // Log4j library class for logging purpose
 
 	@When("User clicks on Get Started button from Tree panel")
 	public void user_clicks_on_get_started_button_from_tree_panel() {
@@ -106,7 +103,6 @@ public class Tree {
 
 	@When("The user writes the invalid python code and clicks on Run button")
 	public void the_user_writes_the_invalid_python_code_and_clicks_on_run_button() {
-
 		treePage.writeInTryEditorWindow("printf(hello)");
 	}
 
