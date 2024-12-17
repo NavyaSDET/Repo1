@@ -3,6 +3,7 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import DriverManager.DriverManager;
+import Utilities.ConfigReader;
 
 public class HomePage {
 
@@ -13,7 +14,7 @@ public class HomePage {
 	public By contentText = By.cssSelector("div.content p");
 
 	public void openUrl() {
-		driver.get("https://dsportalapp.herokuapp.com/");
+		driver.get(ConfigReader.getUrl());
 	}
 
 	public void clickOnHomePageGetStartedButton() {

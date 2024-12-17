@@ -28,8 +28,7 @@ public class Hooks {
 	public static void before() throws Throwable {
 		// Get browser Type from config file
 		ConfigReader.loadConfig();
-		// browser = ConfigReader.getBrowserType();
-		browser = "chrome";
+		browser = ConfigReader.getBrowserType();
 	}
 
 	@Before

@@ -57,12 +57,16 @@ public class ConfigReader {
 	public static void setBrowserType(String browser) {
 		browserType = browser;
 	}
+	
+	public static String getUrl() {
+		return properties.getProperty("url");
+	}
 
 	public static String getBrowserType() throws Throwable {
 		if (browserType != null)
 			return browserType;
 		else
-			throw new RuntimeException("browser not specified in the testng.xml");
+			return properties.getProperty("browser");
 	}
 
 }

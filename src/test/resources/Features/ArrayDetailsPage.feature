@@ -127,7 +127,7 @@ Feature: Array detail page
     When the user click on the sorted array link
     Then the user should be redirected to practice question page for sorted array
     
-  Scenario: Validate user is able to run the code in tryEditor for Search the array link
+  Scenario Outline: Validate user is able to run the code in tryEditor for Search the array link
     Given The user is on the Practice Questions page of Search array page
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on run button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -136,7 +136,7 @@ Feature: Array detail page
     | pythonCode |  0       |
     
     
-  Scenario: Validate user is able to Submit the code in tryEditor for Search the array link
+  Scenario Outline: Validate user is able to Submit the code in tryEditor for Search the array link
     Given The user is on the Practice Questions page of Search array page
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on submit button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -150,7 +150,7 @@ Feature: Array detail page
     When the user click on run button
     Then The user should see an alert error message as "SyntaxError: bad input on line 2"
     
-  Scenario: Validate user is able to run the code in tryEditor for Max Consecutive Ones
+  Scenario Outline: Validate user is able to run the code in tryEditor for Max Consecutive Ones
     Given The user is on the Practice Questions page of Max Consecutive Ones
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on run button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -159,7 +159,7 @@ Feature: Array detail page
     | pythonCode |  2        |
     
     
-  Scenario: Validate user is able to Submit the code in tryEditor for Max Consecutive Ones
+  Scenario Outline: Validate user is able to Submit the code in tryEditor for Max Consecutive Ones
     Given The user is on the Practice Questions page of Max Consecutive Ones
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on submit button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -173,7 +173,7 @@ Feature: Array detail page
     When the user click on run button
     Then The user should see an alert error message as "SyntaxError: bad input on line 2"
   
-  Scenario: Validate user is able to run the code in tryEditor for Even number of digits
+  Scenario Outline: Validate user is able to run the code in tryEditor for Even number of digits
     Given The user is on the Practice Questions page of Find Numbers with Even Number of Digits
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on run button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -182,7 +182,7 @@ Feature: Array detail page
     | pythonCode |  4        |
     
     
-  Scenario: Validate user is able to Submit the code in tryEditor for Even number of digits
+  Scenario Outline: Validate user is able to Submit the code in tryEditor for Even number of digits
     Given The user is on the Practice Questions page of Find Numbers with Even Number of Digits
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on submit button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -196,7 +196,7 @@ Feature: Array detail page
     When the user click on run button 
     Then The user should see an alert error message as "SyntaxError: bad input on line 2"
    
-  Scenario: Validate user is able to run the code in tryEditor for Squares of a Sorted Array
+  Scenario Outline: Validate user is able to run the code in tryEditor for Squares of a Sorted Array
     Given The user is on the Practice Questions page of Squares of a Sorted Array
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on run button 
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
@@ -205,7 +205,7 @@ Feature: Array detail page
     | pythonCode  |  6       |
     
     
-  Scenario: Validate user is able to Submit the code in tryEditor for Squares of a Sorted Array
+  Scenario Outline: Validate user is able to Submit the code in tryEditor for Squares of a Sorted Array
     Given The user is on the Practice Questions page of Squares of a Sorted Array
     When The user enter python code in tryEditor page sheet "<Sheetname>" and row <RowNumber> for the Question and click on submit button
     Then the user should be presented with the Run result from sheet "<Sheetname>" and row <RowNumber>
